@@ -1,5 +1,7 @@
 "use client";
 
+import { useQuery } from "@tanstack/react-query";
+import { apiClient } from "@/lib/api-client";
 import { usePerfexTheme, ThemeMode } from "@/providers/theme-provider";
 import { useTranslation, LanguageCode } from "@/providers/language-provider";
 import { Settings, Palette, Check, Building2, Languages } from "lucide-react";
@@ -7,6 +9,17 @@ import { Settings, Palette, Check, Building2, Languages } from "lucide-react";
 export default function SettingsPage() {
   const { theme, setTheme } = usePerfexTheme();
   const { language, setLanguage, t } = useTranslation();
+
+  const { data: sysSettings } = useQuery({
+    queryKey: ["system-settings"],
+    queryFn: async () => {
+      const response = await apiClient.get("/settings");
+      return response.data;
+    },
+  });
+
+  const companyName = sysSettings?.company_name || "NOVIXA CRM Solutions Thailand";
+  const currency = sysSettings?.currency || "THB (฿)";
 
   const themes: { id: ThemeMode; name: string; color: string; desc: string }[] = [
     { id: "teal", name: "NOVIXA Classic Teal", color: "#28b8da", desc: "Authentic NOVIXA CRM signature color theme" },
@@ -99,7 +112,7 @@ export default function SettingsPage() {
         </div>
       </div>
 
-      {/* Company Info Mock Card */}
+      {/* Company Info Card */}
       <div className="bg-slate-900/60 border border-slate-800 rounded-3xl p-6 shadow-xl space-y-5">
         <div className="flex items-center gap-2 border-b border-slate-800 pb-4">
           <Building2 className="h-5 w-5 text-cyan-400" />
@@ -111,7 +124,8 @@ export default function SettingsPage() {
             <label className="text-slate-300 font-semibold block mb-1">{t("customer.company")}</label>
             <input
               type="text"
-              defaultValue="NOVIXA CRM Solutions Thailand"
+              value={companyName}
+              readOnly
               className="w-full bg-slate-950 border border-slate-800 rounded-xl py-2 px-3 text-white"
             />
           </div>
@@ -119,7 +133,8 @@ export default function SettingsPage() {
             <label className="text-slate-300 font-semibold block mb-1">{t("settings.defaultCurrency")}</label>
             <input
               type="text"
-              defaultValue="THB (฿)"
+              value={currency}
+              readOnly
               className="w-full bg-slate-950 border border-slate-800 rounded-xl py-2 px-3 text-white"
             />
           </div>

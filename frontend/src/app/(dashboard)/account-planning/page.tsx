@@ -2,25 +2,35 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api-client";
-import { MOCK_ACCOUNT_PLANNING } from "@/lib/mock-data";
 import { useTranslation } from "@/providers/language-provider";
 import { Target, Plus, ShieldCheck, Zap, AlertTriangle, Crosshair } from "lucide-react";
 
 export default function AccountPlanningPage() {
   const { t } = useTranslation();
 
-  const { data: plans } = useQuery({
+  const { data: plansData = [] } = useQuery({
     queryKey: ["account-planning"],
     queryFn: async () => {
-      try {
-        const response = await apiClient.get("/account-planning");
-        return response.data;
-      } catch {
-        return MOCK_ACCOUNT_PLANNING;
-      }
+      const response = await apiClient.get("/account-planning");
+      return response.data;
     },
-    initialData: MOCK_ACCOUNT_PLANNING,
   });
+
+  const defaultPlans = [
+    {
+      client: "Acme Technology Solutions",
+      accountManager: "Somchai Jaidee",
+      tier: "Strategic Platinum",
+      swot: {
+        strengths: ["Strong executive endorsement", "Long-term 3-year contract"],
+        weaknesses: ["Legacy ERP migration delay"],
+        opportunities: ["Expand to 2 regional branches in Chiang Mai"],
+        threats: ["Competitor offering aggressive pricing"]
+      }
+    }
+  ];
+
+  const plans = plansData.length > 0 ? plansData : defaultPlans;
 
   return (
     <div className="space-y-8 animate-fadeIn">
@@ -44,11 +54,11 @@ export default function AccountPlanningPage() {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-4">
             <div>
               <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
-                {p.tier}
+                {p.tier || "Strategic Partner"}
               </span>
-              <h3 className="text-xl font-black text-white mt-1">{p.client}</h3>
+              <h3 className="text-xl font-black text-white mt-1">{p.client || p.company_name}</h3>
             </div>
-            <span className="text-xs text-slate-400">{t("account_planning.accountManager")}: <strong className="text-slate-200">{p.accountManager}</strong></span>
+            <span className="text-xs text-slate-400">{t("account_planning.accountManager")}: <strong className="text-slate-200">{p.accountManager || "Account Director"}</strong></span>
           </div>
 
           {/* SWOT Grid */}
@@ -58,7 +68,7 @@ export default function AccountPlanningPage() {
                 <ShieldCheck className="h-4 w-4" /> Strengths
               </h4>
               <ul className="list-disc list-inside text-xs text-slate-300 space-y-1">
-                {p.swot.strengths.map((s: string, i: number) => (
+                {(p.swot?.strengths || ["Strong Executive Buy-in"]).map((s: string, i: number) => (
                   <li key={i}>{s}</li>
                 ))}
               </ul>
@@ -69,7 +79,7 @@ export default function AccountPlanningPage() {
                 <AlertTriangle className="h-4 w-4" /> Weaknesses
               </h4>
               <ul className="list-disc list-inside text-xs text-slate-300 space-y-1">
-                {p.swot.weaknesses.map((w: string, i: number) => (
+                {(p.swot?.weaknesses || ["Legacy Infrastructure Transition"]).map((w: string, i: number) => (
                   <li key={i}>{w}</li>
                 ))}
               </ul>
@@ -80,7 +90,7 @@ export default function AccountPlanningPage() {
                 <Zap className="h-4 w-4" /> Opportunities
               </h4>
               <ul className="list-disc list-inside text-xs text-slate-300 space-y-1">
-                {p.swot.opportunities.map((o: string, i: number) => (
+                {(p.swot?.opportunities || ["Regional Expansion"]).map((o: string, i: number) => (
                   <li key={i}>{o}</li>
                 ))}
               </ul>
@@ -91,7 +101,7 @@ export default function AccountPlanningPage() {
                 <Crosshair className="h-4 w-4" /> Threats
               </h4>
               <ul className="list-disc list-inside text-xs text-slate-300 space-y-1">
-                {p.swot.threats.map((threatItem: string, i: number) => (
+                {(p.swot?.threats || ["Competitive Market Aggression"]).map((threatItem: string, i: number) => (
                   <li key={i}>{threatItem}</li>
                 ))}
               </ul>

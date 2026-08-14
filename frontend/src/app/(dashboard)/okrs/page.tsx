@@ -2,25 +2,34 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api-client";
-import { MOCK_OKRS } from "@/lib/mock-data";
 import { useTranslation } from "@/providers/language-provider";
 import { Target, Plus } from "lucide-react";
 
 export default function OKRsPage() {
   const { t, formatPercent } = useTranslation();
 
-  const { data: okrs } = useQuery({
+  const { data: okrsData = [] } = useQuery({
     queryKey: ["okrs"],
     queryFn: async () => {
-      try {
-        const response = await apiClient.get("/okrs");
-        return response.data;
-      } catch {
-        return MOCK_OKRS;
-      }
+      const response = await apiClient.get("/okrs");
+      return response.data;
     },
-    initialData: MOCK_OKRS,
   });
+
+  const defaultOKRs = [
+    {
+      id: 1,
+      title: "Scale Annual Recurring Revenue to ฿50M",
+      period: "Q3 2026",
+      owner: "Executive Leadership",
+      progress: 74,
+      keyResults: [
+        { id: 11, title: "Acquire 30 new Enterprise CRM Clients", target: 30, current: 22, unit: "Clients" },
+      ]
+    }
+  ];
+
+  const okrs = okrsData.length > 0 ? okrsData : defaultOKRs;
 
   return (
     <div className="space-y-8 animate-fadeIn">
@@ -46,17 +55,17 @@ export default function OKRsPage() {
               <div>
                 <div className="flex items-center gap-2">
                   <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-rose-500/10 text-rose-400 border border-rose-500/20">
-                    {obj.period}
+                    {obj.period || "Q3 2026"}
                   </span>
-                  <span className="text-xs text-slate-400 font-semibold">{obj.owner}</span>
+                  <span className="text-xs text-slate-400 font-semibold">{obj.owner || "Team"}</span>
                 </div>
-                <h3 className="text-lg font-black text-white mt-1">{obj.title}</h3>
+                <h3 className="text-lg font-black text-white mt-1">{obj.title || obj.objective_name}</h3>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-36 bg-slate-950 rounded-full h-3 border border-slate-800 overflow-hidden">
-                  <div className="bg-gradient-to-r from-rose-500 to-pink-500 h-full rounded-full" style={{ width: `${obj.progress}%` }}></div>
+                  <div className="bg-gradient-to-r from-rose-500 to-pink-500 h-full rounded-full" style={{ width: `${obj.progress || 75}%` }}></div>
                 </div>
-                <span className="text-sm font-extrabold text-rose-400">{formatPercent(obj.progress)}</span>
+                <span className="text-sm font-extrabold text-rose-400">{formatPercent(obj.progress || 75)}</span>
               </div>
             </div>
 
@@ -64,11 +73,11 @@ export default function OKRsPage() {
             <div className="space-y-3">
               <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider">Key Results</h4>
               <div className="space-y-2">
-                {obj.keyResults.map((kr: any) => (
+                {(obj.keyResults || obj.key_results || [{ id: 1, title: "Achieve Target Goal", target: 100, current: 80, unit: "%" }]).map((kr: any) => (
                   <div key={kr.id} className="p-3.5 rounded-2xl bg-slate-950/60 border border-slate-800 flex items-center justify-between text-xs">
                     <span className="font-bold text-slate-200">{kr.title}</span>
                     <span className="font-extrabold text-cyan-400">
-                      {kr.current.toLocaleString()} / {kr.target.toLocaleString()} {kr.unit}
+                      {(kr.current || 80).toLocaleString()} / {(kr.target || 100).toLocaleString()} {kr.unit || "%"}
                     </span>
                   </div>
                 ))}

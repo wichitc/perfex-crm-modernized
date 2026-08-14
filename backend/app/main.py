@@ -16,6 +16,7 @@ from app.api.v1 import (
     purchase,
     woocommerce,
     recruitment,
+    hr,
     okrs,
     account_planning,
     staff_outsourcing,
@@ -70,6 +71,7 @@ app.include_router(warehouse.router, prefix="/api/v1")
 app.include_router(purchase.router, prefix="/api/v1")
 app.include_router(woocommerce.router, prefix="/api/v1")
 app.include_router(recruitment.router, prefix="/api/v1")
+app.include_router(hr.router, prefix="/api/v1")
 app.include_router(okrs.router, prefix="/api/v1")
 app.include_router(account_planning.router, prefix="/api/v1")
 app.include_router(staff_outsourcing.router, prefix="/api/v1")

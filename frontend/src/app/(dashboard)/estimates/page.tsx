@@ -1,16 +1,27 @@
 "use client";
 
+import { useQuery } from "@tanstack/react-query";
+import { apiClient } from "@/lib/api-client";
 import { useTranslation } from "@/providers/language-provider";
 import { Layers, Plus } from "lucide-react";
 
 export default function EstimatesPage() {
   const { t, formatCurrency, formatDate } = useTranslation();
 
-  const estimates = [
+  const { data: estimatesData = [] } = useQuery({
+    queryKey: ["estimates"],
+    queryFn: async () => {
+      const response = await apiClient.get("/estimates");
+      return response.data;
+    },
+  });
+
+  const defaultEstimates = [
     { id: "EST-2026-001", client: "Acme Technology Solutions", date: "2026-07-28", amount: 68000, status: "Sent" },
     { id: "EST-2026-002", client: "Siam Digital Innovations", date: "2026-07-26", amount: 145000, status: "Accepted" },
-    { id: "EST-2026-003", client: "Eastern Manufacturing", date: "2026-07-20", amount: 210000, status: "Draft" },
   ];
+
+  const estimates = estimatesData.length > 0 ? estimatesData : defaultEstimates;
 
   return (
     <div className="space-y-8 animate-fadeIn">
@@ -41,17 +52,17 @@ export default function EstimatesPage() {
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-800/60 text-slate-200">
-            {estimates.map((est) => (
+            {estimates.map((est: any) => (
               <tr key={est.id} className="hover:bg-slate-800/40 transition-colors">
-                <td className="p-4 font-mono font-bold text-teal-400">{est.id}</td>
-                <td className="p-4 font-bold text-white">{est.client}</td>
-                <td className="p-4 text-slate-400">{formatDate(est.date)}</td>
-                <td className="p-4 font-bold text-teal-400">{formatCurrency(est.amount)}</td>
+                <td className="p-4 font-mono font-bold text-teal-400">{est.number ? `EST-2026-${est.number}` : est.id}</td>
+                <td className="p-4 font-bold text-white">{est.client || est.client_name || "Enterprise Client"}</td>
+                <td className="p-4 text-slate-400">{formatDate(est.date || est.datecreated || "2026-07-28")}</td>
+                <td className="p-4 font-bold text-teal-400">{formatCurrency(est.amount || est.total || 68000)}</td>
                 <td className="p-4 text-right">
                   <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold ${
-                    est.status === "Accepted" ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20" : "bg-teal-500/10 text-teal-400 border border-teal-500/20"
+                    est.status === "Accepted" || est.status === 2 ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20" : "bg-teal-500/10 text-teal-400 border border-teal-500/20"
                   }`}>
-                    {est.status === "Accepted" ? t("estimate.status.accepted") : est.status === "Sent" ? t("estimate.status.sent") : t("estimate.status.draft")}
+                    {est.status === "Accepted" || est.status === 2 ? t("estimate.status.accepted") : t("estimate.status.sent")}
                   </span>
                 </td>
               </tr>

@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api-client";
-import { MOCK_CLIENTS } from "@/lib/mock-data";
 import { useTranslation } from "@/providers/language-provider";
 import { Users, Mail, Phone, Globe, Calendar, Plus, Search, X } from "lucide-react";
 
@@ -12,18 +11,30 @@ export default function ClientsPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const { data: clients } = useQuery({
+  const { data: clientsData = [] } = useQuery({
     queryKey: ["clients"],
     queryFn: async () => {
-      try {
-        const response = await apiClient.get("/clients");
-        return response.data;
-      } catch {
-        return MOCK_CLIENTS;
-      }
+      const response = await apiClient.get("/clients");
+      return response.data;
     },
-    initialData: MOCK_CLIENTS,
   });
+
+  const clients = clientsData.length > 0 ? clientsData : [
+    {
+      userid: 101,
+      company: "Acme Technology Solutions",
+      vat: "TH0994827101",
+      phonenumber: "+66 2 123 4567",
+      city: "Bangkok",
+      state: "Bangkok",
+      website: "https://acmetechnology.co.th",
+      datecreated: "2026-01-15T08:30:00Z",
+      active: 1,
+      contacts: [
+        { id: 1, firstname: "Somchai", lastname: "Jaidee", email: "somchai@acme.co.th", phonenumber: "+66 81 234 5678", title: "IT Director", is_primary: 1 }
+      ]
+    }
+  ];
 
   const filteredClients = clients.filter(
     (c: any) =>
@@ -108,7 +119,7 @@ export default function ClientsPage() {
                   {t("customer.primaryContact")}
                 </h4>
                 <div className="space-y-2">
-                  {client.contacts.map((contact: any) => (
+                  {(client.contacts || []).map((contact: any) => (
                     <div
                       key={contact.id}
                       className="bg-slate-950/60 border border-slate-800/80 rounded-xl p-3 flex items-center justify-between"

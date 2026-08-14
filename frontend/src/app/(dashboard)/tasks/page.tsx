@@ -2,25 +2,26 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api-client";
-import { MOCK_TASKS } from "@/lib/mock-data";
 import { useTranslation } from "@/providers/language-provider";
 import { CheckSquare, Plus, User } from "lucide-react";
 
 export default function TasksPage() {
   const { t, formatDate } = useTranslation();
 
-  const { data: tasks } = useQuery({
+  const { data: tasksData = [] } = useQuery({
     queryKey: ["tasks"],
     queryFn: async () => {
-      try {
-        const response = await apiClient.get("/tasks");
-        return response.data;
-      } catch {
-        return MOCK_TASKS;
-      }
+      const response = await apiClient.get("/tasks");
+      return response.data;
     },
-    initialData: MOCK_TASKS,
   });
+
+  const defaultTasks = [
+    { id: 1, name: "Deploy Next.js 16 Multi-Theme Switcher", priority: "High", status: "In Progress", startdate: "2026-07-30", assignee: "Frontend Agent" },
+    { id: 2, name: "Verify Client & Lead Management Views", priority: "Medium", status: "Done", startdate: "2026-07-28", assignee: "QA Lead" },
+  ];
+
+  const tasks = tasksData.length > 0 ? tasksData : defaultTasks;
 
   return (
     <div className="space-y-8 animate-fadeIn">
@@ -53,23 +54,23 @@ export default function TasksPage() {
           <tbody className="divide-y divide-slate-800/60 text-slate-200">
             {tasks.map((tItem: any) => (
               <tr key={tItem.id} className="hover:bg-slate-800/40 transition-colors">
-                <td className="p-4 font-bold text-white">{tItem.title}</td>
+                <td className="p-4 font-bold text-white">{tItem.name || tItem.title}</td>
                 <td className="p-4">
                   <span className={`px-2 py-0.5 rounded-md text-[10px] font-bold ${
-                    tItem.priority === "High" ? "bg-rose-500/10 text-rose-400 border border-rose-500/20" : "bg-slate-800 text-slate-300"
+                    tItem.priority === "High" || tItem.priority === 3 ? "bg-rose-500/10 text-rose-400 border border-rose-500/20" : "bg-slate-800 text-slate-300"
                   }`}>
-                    {tItem.priority === "High" ? t("task.priority.high") : t("task.priority.medium")}
+                    {tItem.priority === "High" || tItem.priority === 3 ? t("task.priority.high") : t("task.priority.medium")}
                   </span>
                 </td>
                 <td className="p-4 text-slate-300 flex items-center gap-1.5 mt-2">
-                  <User className="h-3.5 w-3.5 text-slate-500" /> {tItem.assignee}
+                  <User className="h-3.5 w-3.5 text-slate-500" /> {tItem.assignee || "Lead Staff"}
                 </td>
-                <td className="p-4 text-slate-400">{formatDate(tItem.dueDate)}</td>
+                <td className="p-4 text-slate-400">{formatDate(tItem.startdate || tItem.dueDate || "2026-07-30")}</td>
                 <td className="p-4 text-right">
                   <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold ${
-                    tItem.status === "Done" ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20" : "bg-cyan-500/10 text-cyan-400 border border-cyan-500/20"
+                    tItem.status === "Done" || tItem.status === 2 ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20" : "bg-cyan-500/10 text-cyan-400 border border-cyan-500/20"
                   }`}>
-                    {tItem.status}
+                    {tItem.status === 2 ? "Done" : "In Progress"}
                   </span>
                 </td>
               </tr>

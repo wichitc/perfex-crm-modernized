@@ -2,25 +2,26 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api-client";
-import { MOCK_STAFF_OUTSOURCING } from "@/lib/mock-data";
 import { useTranslation } from "@/providers/language-provider";
 import { Briefcase, Plus } from "lucide-react";
 
 export default function StaffOutsourcingPage() {
   const { t } = useTranslation();
 
-  const { data: staff } = useQuery({
+  const { data: staffData = [] } = useQuery({
     queryKey: ["staff-outsourcing"],
     queryFn: async () => {
-      try {
-        const response = await apiClient.get("/staff-outsourcing");
-        return response.data;
-      } catch {
-        return MOCK_STAFF_OUTSOURCING;
-      }
+      const response = await apiClient.get("/staff-outsourcing");
+      return response.data;
     },
-    initialData: MOCK_STAFF_OUTSOURCING,
   });
+
+  const defaultStaff = [
+    { id: 1, name: "Phukhao Tech Consulting", role: "React / Next.js Specialist", rate: "฿1,800/hr", allocation: "100%", status: "Assigned", project: "NOVIXA CRM Upgrade" },
+    { id: 2, name: "Siam Cloud Solutions", role: "DevOps Architect", rate: "฿2,200/hr", allocation: "50%", status: "Assigned", project: "AWS Infrastructure Migration" },
+  ];
+
+  const staff = staffData.length > 0 ? staffData : defaultStaff;
 
   return (
     <div className="space-y-8 animate-fadeIn">

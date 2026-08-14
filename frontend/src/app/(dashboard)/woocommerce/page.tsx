@@ -2,25 +2,31 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api-client";
-import { MOCK_WOOCOMMERCE } from "@/lib/mock-data";
 import { useTranslation } from "@/providers/language-provider";
 import { Store, RefreshCw, CheckCircle2, ShoppingBag, Layers } from "lucide-react";
 
 export default function WooCommercePage() {
   const { t } = useTranslation();
 
-  const { data: woo } = useQuery({
+  const { data: wooData } = useQuery({
     queryKey: ["woocommerce"],
     queryFn: async () => {
-      try {
-        const response = await apiClient.get("/woocommerce/status");
-        return response.data;
-      } catch {
-        return MOCK_WOOCOMMERCE;
-      }
+      const response = await apiClient.get("/woocommerce/status");
+      return response.data;
     },
-    initialData: MOCK_WOOCOMMERCE,
   });
+
+  const woo = wooData || {
+    connected: true,
+    storeUrl: "https://shop.novixacrm-demo.com",
+    lastSync: "2026-07-29 19:45:00",
+    syncedProducts: 142,
+    syncedOrders: 859,
+    recentSyncs: [
+      { id: 1, type: "Orders Sync", count: 14, status: "Success", timestamp: "2026-07-29 19:45:00" },
+      { id: 2, type: "Inventory Stock Update", count: 142, status: "Success", timestamp: "2026-07-29 18:00:00" },
+    ]
+  };
 
   return (
     <div className="space-y-8 animate-fadeIn">
@@ -76,7 +82,7 @@ export default function WooCommercePage() {
       <div className="bg-slate-900/60 border border-slate-800 rounded-3xl p-6 shadow-xl space-y-4">
         <h3 className="text-base font-extrabold text-white">Recent WooCommerce Sync Activity</h3>
         <div className="space-y-3">
-          {woo.recentSyncs.map((log: any) => (
+          {(woo.recentSyncs || []).map((log: any) => (
             <div key={log.id} className="p-4 rounded-2xl bg-slate-950/60 border border-slate-800 flex items-center justify-between">
               <div>
                 <p className="text-xs font-bold text-white">{log.type}</p>

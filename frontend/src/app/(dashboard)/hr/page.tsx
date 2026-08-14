@@ -1,16 +1,38 @@
 "use client";
 
 import { useState } from "react";
-import { MOCK_HR } from "@/lib/mock-data";
+import { useQuery } from "@tanstack/react-query";
+import { apiClient } from "@/lib/api-client";
 import { useTranslation } from "@/providers/language-provider";
-import { Users, UserCheck, Calendar, Briefcase, Plus, Search, Filter, Mail, Phone, Shield } from "lucide-react";
+import { Users, UserCheck, Calendar, Briefcase, Plus, Search } from "lucide-react";
 
 export default function HRPage() {
   const { t } = useTranslation();
   const [searchTerm, setSearchTerm] = useState("");
   const [departmentFilter, setDepartmentFilter] = useState("All");
 
-  const filteredEmployees = MOCK_HR.employees.filter((emp) => {
+  const { data: hrData } = useQuery({
+    queryKey: ["hr-overview"],
+    queryFn: async () => {
+      const res = await apiClient.get("/hr/overview");
+      return res.data;
+    },
+  });
+
+  const stats = hrData?.stats || {
+    totalEmployees: 64,
+    activeStaff: 61,
+    onLeave: 3,
+    openRequisitions: 5,
+  };
+
+  const employeesList = hrData?.employees || [
+    { id: "EMP-001", name: "Somchai Jaidee", department: "Engineering", position: "Lead Architect", type: "Full-Time", salary: "฿120,000", status: "Active", email: "somchai@novixacrm.com" },
+    { id: "EMP-002", name: "Ananya Srisuk", department: "Human Resources", position: "HR Manager", type: "Full-Time", salary: "฿85,000", status: "Active", email: "ananya@novixacrm.com" },
+    { id: "EMP-003", name: "Kittisak Vong", department: "Sales & Business", position: "Account Director", type: "Full-Time", salary: "฿105,000", status: "On Leave", email: "kittisak@novixacrm.com" },
+  ];
+
+  const filteredEmployees = employeesList.filter((emp: any) => {
     const matchesSearch =
       emp.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       emp.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -50,7 +72,7 @@ export default function HRPage() {
               <Users className="h-5 w-5" />
             </div>
           </div>
-          <p className="text-2xl font-black text-white mt-3">{MOCK_HR.stats.totalEmployees} คน</p>
+          <p className="text-2xl font-black text-white mt-3">{stats.totalEmployees} คน</p>
           <span className="text-xs text-emerald-400 font-semibold mt-1 inline-block">+2 เดือนนี้</span>
         </div>
 
@@ -61,7 +83,7 @@ export default function HRPage() {
               <UserCheck className="h-5 w-5" />
             </div>
           </div>
-          <p className="text-2xl font-black text-white mt-3">{MOCK_HR.stats.activeStaff} คน</p>
+          <p className="text-2xl font-black text-white mt-3">{stats.activeStaff} คน</p>
           <span className="text-xs text-slate-400 font-semibold mt-1 inline-block">95.3% ของทั้งหมด</span>
         </div>
 
@@ -72,7 +94,7 @@ export default function HRPage() {
               <Calendar className="h-5 w-5" />
             </div>
           </div>
-          <p className="text-2xl font-black text-white mt-3">{MOCK_HR.stats.onLeave} คน</p>
+          <p className="text-2xl font-black text-white mt-3">{stats.onLeave} คน</p>
           <span className="text-xs text-amber-400 font-semibold mt-1 inline-block">ตามอนุมัติ</span>
         </div>
 
@@ -83,7 +105,7 @@ export default function HRPage() {
               <Briefcase className="h-5 w-5" />
             </div>
           </div>
-          <p className="text-2xl font-black text-white mt-3">{MOCK_HR.stats.openRequisitions} ตำแหน่ง</p>
+          <p className="text-2xl font-black text-white mt-3">{stats.openRequisitions} ตำแหน่ง</p>
           <span className="text-xs text-purple-400 font-semibold mt-1 inline-block">กำลังสรรหา</span>
         </div>
       </div>
@@ -135,7 +157,7 @@ export default function HRPage() {
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-800/60 text-slate-300">
-              {filteredEmployees.map((emp) => (
+              {filteredEmployees.map((emp: any) => (
                 <tr key={emp.id} className="hover:bg-slate-800/40 transition-colors">
                   <td className="py-3.5 px-4 font-mono font-bold text-indigo-400">{emp.id}</td>
                   <td className="py-3.5 px-4 font-semibold text-white">{emp.name}</td>

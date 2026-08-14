@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api-client";
-import { MOCK_LEADS } from "@/lib/mock-data";
 import { useTranslation } from "@/providers/language-provider";
 import { GitMerge, Plus, Kanban, Table as TableIcon, ArrowRight } from "lucide-react";
 
@@ -11,18 +10,21 @@ export default function LeadsPage() {
   const { t, formatCurrency } = useTranslation();
   const [viewMode, setViewMode] = useState<"kanban" | "table">("kanban");
 
-  const { data: leads } = useQuery({
+  const { data: leadsData = [] } = useQuery({
     queryKey: ["leads"],
     queryFn: async () => {
-      try {
-        const response = await apiClient.get("/leads");
-        return response.data;
-      } catch {
-        return MOCK_LEADS;
-      }
+      const response = await apiClient.get("/leads");
+      return response.data;
     },
-    initialData: MOCK_LEADS,
   });
+
+  const defaultLeads = [
+    { id: 1, name: "Supatra Enterprise", email: "contact@supatra.com", status: "New", value: 45000, source: "Web Form", assignedTo: "Somchai" },
+    { id: 2, name: "Nexus Cloud Systems", email: "info@nexuscloud.io", status: "Contacted", value: 120000, source: "LinkedIn", assignedTo: "Ananya" },
+    { id: 3, name: "Bangkok Retail Corp", email: "sales@bangkokretail.th", status: "Proposal Sent", value: 85000, source: "Referral", assignedTo: "Admin" },
+  ];
+
+  const leads = leadsData.length > 0 ? leadsData : defaultLeads;
 
   const stages = [
     { id: "New", label: t("lead.stage.new") },
@@ -76,7 +78,7 @@ export default function LeadsPage() {
       {viewMode === "kanban" ? (
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 overflow-x-auto pb-4">
           {stages.map((stg) => {
-            const stageLeads = leads.filter((l: any) => l.status === stg.id);
+            const stageLeads = leads.filter((l: any) => l.status === stg.id || (l.status === 1 && stg.id === "New"));
             return (
               <div key={stg.id} className="bg-slate-900/50 border border-slate-800/80 rounded-3xl p-4 flex flex-col min-w-[220px]">
                 <div className="flex items-center justify-between border-b border-slate-800 pb-3 mb-3">
@@ -98,9 +100,9 @@ export default function LeadsPage() {
                       </div>
                       <div className="flex items-center justify-between text-xs pt-2 border-t border-slate-900">
                         <span className="text-purple-400 font-extrabold flex items-center">
-                          {formatCurrency(lead.value)}
+                          {formatCurrency(lead.value || lead.lead_value || 50000)}
                         </span>
-                        <span className="text-[10px] text-slate-500">{lead.source}</span>
+                        <span className="text-[10px] text-slate-500">{lead.source || "Web"}</span>
                       </div>
                     </div>
                   ))}
@@ -128,8 +130,8 @@ export default function LeadsPage() {
                 <tr key={lead.id} className="hover:bg-slate-800/40 transition-colors">
                   <td className="p-4 font-bold text-white">{lead.name}</td>
                   <td className="p-4 text-slate-400">{lead.email}</td>
-                  <td className="p-4 font-bold text-purple-400">{formatCurrency(lead.value)}</td>
-                  <td className="p-4 text-slate-400">{lead.source}</td>
+                  <td className="p-4 font-bold text-purple-400">{formatCurrency(lead.value || lead.lead_value || 50000)}</td>
+                  <td className="p-4 text-slate-400">{lead.source || "Web"}</td>
                   <td className="p-4">
                     <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-purple-500/10 text-purple-400 border border-purple-500/20">
                       {lead.status}

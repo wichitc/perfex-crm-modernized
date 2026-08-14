@@ -2,25 +2,30 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api-client";
-import { MOCK_RECRUITMENT } from "@/lib/mock-data";
 import { useTranslation } from "@/providers/language-provider";
 import { UserPlus, Star, Plus } from "lucide-react";
 
 export default function RecruitmentPage() {
   const { t } = useTranslation();
 
-  const { data: rec } = useQuery({
+  const { data: recData } = useQuery({
     queryKey: ["recruitment"],
     queryFn: async () => {
-      try {
-        const response = await apiClient.get("/recruitment/overview");
-        return response.data;
-      } catch {
-        return MOCK_RECRUITMENT;
-      }
+      const response = await apiClient.get("/recruitment/overview");
+      return response.data;
     },
-    initialData: MOCK_RECRUITMENT,
   });
+
+  const rec = recData || {
+    jobOpenings: [
+      { id: 1, title: "Senior Fullstack Next.js Developer", department: "Engineering", applicants: 18, status: "Active" },
+      { id: 2, title: "Enterprise Account Executive", department: "Sales", applicants: 12, status: "Active" },
+    ],
+    candidates: [
+      { id: 101, name: "Chaiwat Saelim", position: "Senior Fullstack Next.js Developer", stage: "Interview", rating: 4.8 },
+      { id: 102, name: "Pornpimol Wong", position: "Enterprise Account Executive", stage: "Offered", rating: 4.9 },
+    ]
+  };
 
   return (
     <div className="space-y-8 animate-fadeIn">

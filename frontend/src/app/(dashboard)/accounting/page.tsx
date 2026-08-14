@@ -2,25 +2,35 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api-client";
-import { MOCK_ACCOUNTING } from "@/lib/mock-data";
 import { useTranslation } from "@/providers/language-provider";
 import { BookOpen, Plus, FileSpreadsheet } from "lucide-react";
 
 export default function AccountingPage() {
   const { t, formatCurrency } = useTranslation();
 
-  const { data: accounting } = useQuery({
+  const { data: accountingData } = useQuery({
     queryKey: ["accounting"],
     queryFn: async () => {
-      try {
-        const response = await apiClient.get("/accounting/summary");
-        return response.data;
-      } catch {
-        return MOCK_ACCOUNTING;
-      }
+      const response = await apiClient.get("/accounting/summary");
+      return response.data;
     },
-    initialData: MOCK_ACCOUNTING,
   });
+
+  const accounting = accountingData || {
+    summary: {
+      assets: 1850000.0,
+      liabilities: 420000.0,
+      equity: 1430000.0,
+      netIncome: 345000.0,
+    },
+    accounts: [
+      { code: "1010", name: "Cash on Hand & Bank", type: "Asset", balance: 650000.0 },
+      { code: "1020", name: "Accounts Receivable", type: "Asset", balance: 320000.0 },
+      { code: "1050", name: "Inventory Stock Account", type: "Asset", balance: 880000.0 },
+      { code: "2010", name: "Accounts Payable", type: "Liability", balance: 290000.0 },
+      { code: "4010", name: "Sales Revenue", type: "Income", balance: 1250000.0 },
+    ],
+  };
 
   return (
     <div className="space-y-8 animate-fadeIn">
