@@ -1,0 +1,14 @@
+{
+  "title": "Tasks & Project Management",
+  "subtitle": "Task tracking, project deadlines, priority levels, and staff assignments",
+  "addNewTask": "Create New Task",
+  "taskName": "Task Title",
+  "project": "Associated Project",
+  "assignee": "Assigned Staff",
+  "dueDate": "Due Date",
+  "priority": {
+    "high": "High Priority",
+    "medium": "Medium Priority",
+    "low": "Low Priority"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Leads & Opportunities Pipeline",
+  "subtitle": "Interactive Kanban sales pipeline, lead scoring, deal values, and stage tracking",
+  "addNew": "Create New Lead",
+  "kanbanView": "Kanban Board View",
+  "tableView": "Table List View",
+  "stage": {
+    "new": "New Lead",
+    "contacted": "Contacted",
+    "qualified": "Qualified Opportunity",
+    "proposal": "Proposal Sent",
+    "won": "Closed Won"
+  },
+  "value": "Estimated Deal Value",
+  "assignedTo": "Assigned Sales Rep",
+  "score": "Opportunity Score"
+}

@@ -3,9 +3,12 @@
 import { useQuery } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api-client";
 import { MOCK_RECRUITMENT } from "@/lib/mock-data";
-import { UserPlus, Briefcase, Star, Plus } from "lucide-react";
+import { useTranslation } from "@/providers/language-provider";
+import { UserPlus, Star, Plus } from "lucide-react";
 
 export default function RecruitmentPage() {
+  const { t } = useTranslation();
+
   const { data: rec } = useQuery({
     queryKey: ["recruitment"],
     queryFn: async () => {
@@ -25,14 +28,14 @@ export default function RecruitmentPage() {
         <div>
           <h2 className="text-2xl font-black tracking-tight text-white flex items-center gap-2">
             <UserPlus className="h-6 w-6 text-indigo-400" />
-            Recruitment & HR Portal
+            {t("recruitment.title")}
           </h2>
           <p className="text-xs text-slate-400 mt-1">
-            Manage open headcount requisitions, applicant pipelines, and interview ratings.
+            {t("recruitment.subtitle")}
           </p>
         </div>
         <button className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs shadow-lg shadow-indigo-500/25 transition-all cursor-pointer">
-          <Plus className="h-4 w-4" /> Post New Job Requisition
+          <Plus className="h-4 w-4" /> {t("recruitment.addNewJob")}
         </button>
       </div>
 

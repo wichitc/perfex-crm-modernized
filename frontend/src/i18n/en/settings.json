@@ -1,0 +1,13 @@
+{
+  "title": "System Configuration & Settings",
+  "subtitle": "Global portal preferences, language locale defaults, color themes, company info, and security",
+  "general": "General Preferences",
+  "companyInfo": "Company Profile",
+  "localization": "Language & Localization",
+  "defaultLanguage": "System Default Language",
+  "defaultTimezone": "System Timezone",
+  "defaultCurrency": "Primary Currency",
+  "themeSettings": "Color Theme Customization",
+  "security": "Security & Access",
+  "saveChanges": "Save Settings"
+}

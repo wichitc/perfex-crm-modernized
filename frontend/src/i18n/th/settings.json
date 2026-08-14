@@ -1,0 +1,13 @@
+{
+  "title": "การตั้งค่าระบบองค์กร (System Settings)",
+  "subtitle": "กำหนดค่าทั่วไป, ระบบภาษาหลัก, ธีมสีระบบ, ข้อมูลองค์กร และความปลอดภัย",
+  "general": "ทั่วไป",
+  "companyInfo": "ข้อมูลองค์กร",
+  "localization": "ภาษาและการจัดรูปแบบ",
+  "defaultLanguage": "ภาษาเริ่มต้นของระบบ",
+  "defaultTimezone": "เขตเวลาเริ่มต้น (Timezone)",
+  "defaultCurrency": "สกุลเงินหลัก (Default Currency)",
+  "themeSettings": "ตั้งค่าธีมสีระบบ",
+  "security": "ความปลอดภัยและการเข้าถึง",
+  "saveChanges": "บันทึกการเปลี่ยนแปลง"
+}

@@ -3,9 +3,12 @@
 import { useQuery } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api-client";
 import { MOCK_ACCOUNT_PLANNING } from "@/lib/mock-data";
+import { useTranslation } from "@/providers/language-provider";
 import { Target, Plus, ShieldCheck, Zap, AlertTriangle, Crosshair } from "lucide-react";
 
 export default function AccountPlanningPage() {
+  const { t } = useTranslation();
+
   const { data: plans } = useQuery({
     queryKey: ["account-planning"],
     queryFn: async () => {
@@ -25,14 +28,14 @@ export default function AccountPlanningPage() {
         <div>
           <h2 className="text-2xl font-black tracking-tight text-white flex items-center gap-2">
             <Target className="h-6 w-6 text-indigo-400" />
-            Strategic Account Planning & SWOT
+            {t("account_planning.title")}
           </h2>
           <p className="text-xs text-slate-400 mt-1">
-            Build strategic key account growth blueprints and SWOT matrices for key enterprise clients.
+            {t("account_planning.subtitle")}
           </p>
         </div>
         <button className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs shadow-lg shadow-indigo-500/25 transition-all cursor-pointer">
-          <Plus className="h-4 w-4" /> Create Account Plan
+          <Plus className="h-4 w-4" /> {t("account_planning.newPlan")}
         </button>
       </div>
 
@@ -45,7 +48,7 @@ export default function AccountPlanningPage() {
               </span>
               <h3 className="text-xl font-black text-white mt-1">{p.client}</h3>
             </div>
-            <span className="text-xs text-slate-400">Account Lead: <strong className="text-slate-200">{p.accountManager}</strong></span>
+            <span className="text-xs text-slate-400">{t("account_planning.accountManager")}: <strong className="text-slate-200">{p.accountManager}</strong></span>
           </div>
 
           {/* SWOT Grid */}
@@ -88,8 +91,8 @@ export default function AccountPlanningPage() {
                 <Crosshair className="h-4 w-4" /> Threats
               </h4>
               <ul className="list-disc list-inside text-xs text-slate-300 space-y-1">
-                {p.swot.threats.map((t: string, i: number) => (
-                  <li key={i}>{t}</li>
+                {p.swot.threats.map((threatItem: string, i: number) => (
+                  <li key={i}>{threatItem}</li>
                 ))}
               </ul>
             </div>

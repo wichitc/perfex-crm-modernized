@@ -1,0 +1,9 @@
+{
+  "title": "Purchase Management & Orders",
+  "subtitle": "Vendor purchase orders, expected delivery dates, and receiving status",
+  "addNew": "Create New Purchase Order",
+  "poNumber": "PO Number",
+  "vendor": "Vendor / Supplier",
+  "orderDate": "Order Date",
+  "totalAmount": "Total PO Value"
+}

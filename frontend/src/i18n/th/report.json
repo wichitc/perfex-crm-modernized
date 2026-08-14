@@ -1,0 +1,8 @@
+{
+  "title": "รายงานสรุปผลการดำเนินงาน",
+  "generatedAt": "สร้างรายงาน ณ วันที่",
+  "summary": "สรุปผลรวม",
+  "totalSales": "ยอดขายรวมทั้งหมด",
+  "downloadPdf": "ดาวน์โหลด PDF",
+  "downloadExcel": "ดาวน์โหลด Excel"
+}

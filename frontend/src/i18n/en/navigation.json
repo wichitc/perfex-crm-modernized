@@ -1,0 +1,21 @@
+{
+  "menu": {
+    "dashboard": "Dashboard",
+    "landing": "Landing Page",
+    "clients": "Clients Directory",
+    "leads": "Leads Pipeline",
+    "invoices": "Invoices & Billing",
+    "estimates": "Estimates & Proposals",
+    "accounting": "Accounting & Finance",
+    "warehouse": "Warehouse & Stock",
+    "purchase": "Purchase Management",
+    "woocommerce": "WooCommerce Sync",
+    "recruitment": "Recruitment & HR",
+    "okrs": "OKRs & Goals",
+    "tasks": "Tasks & Projects",
+    "tickets": "Support Desk",
+    "outsourcing": "Staff Outsourcing",
+    "account_planning": "Account Planning",
+    "settings": "System Settings"
+  }
+}

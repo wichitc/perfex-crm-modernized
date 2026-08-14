@@ -4,9 +4,11 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api-client";
 import { MOCK_INVOICES } from "@/lib/mock-data";
-import { Receipt, Calendar, CreditCard, DollarSign, Plus, CheckCircle, ShieldAlert, X, Printer, Download } from "lucide-react";
+import { useTranslation } from "@/providers/language-provider";
+import { Receipt, Plus, X, Printer } from "lucide-react";
 
 export default function InvoicesPage() {
+  const { t, formatCurrency, formatDate } = useTranslation();
   const [selectedInvoice, setSelectedInvoice] = useState<any | null>(null);
   const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
 
@@ -30,14 +32,14 @@ export default function InvoicesPage() {
         <div>
           <h2 className="text-2xl font-black tracking-tight text-white flex items-center gap-2">
             <Receipt className="h-6 w-6 text-amber-400" />
-            Invoices & Billing
+            {t("invoice.title")}
           </h2>
           <p className="text-xs text-slate-400 mt-1">
-            Create, issue, and manage client tax invoices and payments.
+            {t("invoice.subtitle")}
           </p>
         </div>
         <button className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs shadow-lg shadow-amber-500/25 transition-all cursor-pointer">
-          <Plus className="h-4 w-4" /> Create Invoice
+          <Plus className="h-4 w-4" /> {t("invoice.addNew")}
         </button>
       </div>
 
@@ -46,13 +48,13 @@ export default function InvoicesPage() {
         <table className="w-full text-left text-xs">
           <thead className="bg-slate-950/80 text-slate-400 uppercase tracking-wider font-bold border-b border-slate-800">
             <tr>
-              <th className="p-4">Invoice #</th>
-              <th className="p-4">Client</th>
-              <th className="p-4">Date</th>
-              <th className="p-4">Due Date</th>
-              <th className="p-4">Total Amount</th>
-              <th className="p-4">Status</th>
-              <th className="p-4 text-right">Actions</th>
+              <th className="p-4">{t("invoice.number")}</th>
+              <th className="p-4">{t("invoice.client")}</th>
+              <th className="p-4">{t("common.date")}</th>
+              <th className="p-4">{t("invoice.dueDate")}</th>
+              <th className="p-4">{t("invoice.amount")}</th>
+              <th className="p-4">{t("common.status")}</th>
+              <th className="p-4 text-right">{t("common.actions")}</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-800/60 text-slate-200">
@@ -62,9 +64,9 @@ export default function InvoicesPage() {
                   {inv.prefix}{inv.number}
                 </td>
                 <td className="p-4 font-semibold text-slate-200">{inv.clientName}</td>
-                <td className="p-4 text-slate-400">{inv.date}</td>
-                <td className="p-4 text-slate-400">{inv.duedate}</td>
-                <td className="p-4 font-bold text-amber-400">฿{inv.total.toLocaleString()}</td>
+                <td className="p-4 text-slate-400">{formatDate(inv.date)}</td>
+                <td className="p-4 text-slate-400">{formatDate(inv.duedate)}</td>
+                <td className="p-4 font-bold text-amber-400">{formatCurrency(inv.total)}</td>
                 <td className="p-4">
                   <span
                     className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold border ${
@@ -75,7 +77,11 @@ export default function InvoicesPage() {
                         : "bg-rose-500/10 text-rose-400 border-rose-500/20"
                     }`}
                   >
-                    {inv.status === 2 ? "Paid" : inv.status === 1 ? "Unpaid" : "Overdue"}
+                    {inv.status === 2
+                      ? t("invoice.status.paid")
+                      : inv.status === 1
+                      ? t("invoice.status.unpaid")
+                      : t("invoice.status.overdue")}
                   </span>
                 </td>
                 <td className="p-4 text-right space-x-2">
@@ -83,19 +89,8 @@ export default function InvoicesPage() {
                     onClick={() => setSelectedInvoice(inv)}
                     className="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-200 text-xs font-semibold hover:bg-slate-700 cursor-pointer"
                   >
-                    View / Print
+                    {t("common.view")}
                   </button>
-                  {inv.status !== 2 && (
-                    <button
-                      onClick={() => {
-                        setSelectedInvoice(inv);
-                        setIsPaymentModalOpen(true);
-                      }}
-                      className="px-3 py-1.5 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-bold hover:bg-emerald-500/30 cursor-pointer"
-                    >
-                      Record Payment
-                    </button>
-                  )}
                 </td>
               </tr>
             ))}
@@ -112,7 +107,7 @@ export default function InvoicesPage() {
                 <h3 className="text-xl font-extrabold text-white">
                   INVOICE {selectedInvoice.prefix}{selectedInvoice.number}
                 </h3>
-                <p className="text-xs text-slate-400 mt-0.5">Billed to: {selectedInvoice.clientName}</p>
+                <p className="text-xs text-slate-400 mt-0.5">{t("invoice.client")}: {selectedInvoice.clientName}</p>
               </div>
               <button onClick={() => setSelectedInvoice(null)} className="text-slate-400 hover:text-white">
                 <X className="h-6 w-6" />
@@ -121,18 +116,18 @@ export default function InvoicesPage() {
 
             <div className="grid grid-cols-2 gap-4 text-xs bg-slate-950/60 p-4 rounded-2xl border border-slate-800">
               <div>
-                <span className="text-slate-500 block">Issue Date</span>
-                <span className="font-bold text-slate-200">{selectedInvoice.date}</span>
+                <span className="text-slate-500 block">{t("common.date")}</span>
+                <span className="font-bold text-slate-200">{formatDate(selectedInvoice.date)}</span>
               </div>
               <div>
-                <span className="text-slate-500 block">Due Date</span>
-                <span className="font-bold text-slate-200">{selectedInvoice.duedate}</span>
+                <span className="text-slate-500 block">{t("invoice.dueDate")}</span>
+                <span className="font-bold text-slate-200">{formatDate(selectedInvoice.duedate)}</span>
               </div>
             </div>
 
             {/* Line Items */}
             <div className="space-y-3">
-              <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider">Itemized Breakdown</h4>
+              <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider">{t("common.description")}</h4>
               <div className="bg-slate-950/60 rounded-2xl p-4 border border-slate-800 text-xs space-y-2">
                 {selectedInvoice.items.map((item: any) => (
                   <div key={item.id} className="flex justify-between items-center py-1">
@@ -140,7 +135,7 @@ export default function InvoicesPage() {
                       <p className="font-bold text-white">{item.description}</p>
                       <p className="text-[10px] text-slate-400">{item.long_description}</p>
                     </div>
-                    <span className="font-extrabold text-amber-400">฿{item.rate.toLocaleString()}</span>
+                    <span className="font-extrabold text-amber-400">{formatCurrency(item.rate)}</span>
                   </div>
                 ))}
               </div>
@@ -148,8 +143,8 @@ export default function InvoicesPage() {
 
             {/* Total Footer */}
             <div className="flex justify-between items-center pt-4 border-t border-slate-800">
-              <span className="text-xs font-bold text-slate-400">TOTAL DUE AMOUNT</span>
-              <span className="text-2xl font-black text-amber-400">฿{selectedInvoice.total.toLocaleString()}</span>
+              <span className="text-xs font-bold text-slate-400">{t("common.total")}</span>
+              <span className="text-2xl font-black text-amber-400">{formatCurrency(selectedInvoice.total)}</span>
             </div>
 
             <div className="flex justify-end gap-3 pt-2">
@@ -157,10 +152,10 @@ export default function InvoicesPage() {
                 onClick={() => window.print()}
                 className="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-800 text-slate-200 text-xs font-semibold hover:bg-slate-700"
               >
-                <Printer className="h-4 w-4" /> Print / Save PDF
+                <Printer className="h-4 w-4" /> Print / PDF
               </button>
               <button onClick={() => setSelectedInvoice(null)} className="px-4 py-2 rounded-xl bg-cyan-500 text-slate-950 text-xs font-bold">
-                Close
+                {t("common.close")}
               </button>
             </div>
           </div>

@@ -1,0 +1,6 @@
+{
+  "paymentReceived": "Payment Received",
+  "invoicePaid": "Invoice #{{number}} has been successfully paid.",
+  "newLead": "New Qualified Lead",
+  "leadQualified": "Lead {{name}} converted to qualified opportunity."
+}

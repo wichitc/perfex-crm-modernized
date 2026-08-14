@@ -1,0 +1,9 @@
+{
+  "title": "WooCommerce Integration & Sync",
+  "subtitle": "Online store orders sync, client matching, and inventory auto-update",
+  "syncNow": "Sync Now",
+  "storeName": "Store Name",
+  "lastSync": "Last Synced At",
+  "syncedOrders": "Synced Orders Count",
+  "status": "Connection Status"
+}

@@ -1,0 +1,12 @@
+{
+  "title": "Enterprise CRM Dashboard",
+  "subtitle": "Real-time enterprise operations overview, revenue analytics, active client status, and sales pipeline performance",
+  "stat": {
+    "totalRevenue": "Total Revenue",
+    "activeClients": "Active Clients",
+    "convertedLeads": "Converted Leads",
+    "pendingInvoices": "Pending Invoices"
+  },
+  "recentActivities": "Recent System Activities",
+  "salesOverview": "Annual Sales Performance Overview"
+}

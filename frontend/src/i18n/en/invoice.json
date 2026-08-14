@@ -1,0 +1,15 @@
+{
+  "title": "Invoices & Billing Management",
+  "subtitle": "Billing invoices ledger, payment statuses, outstanding balances, and due dates",
+  "addNew": "Create New Invoice",
+  "number": "Invoice Number",
+  "client": "Client / Company",
+  "amount": "Total Amount",
+  "dueDate": "Due Date",
+  "status": {
+    "paid": "Paid",
+    "unpaid": "Unpaid",
+    "overdue": "Overdue",
+    "partiallyPaid": "Partially Paid"
+  }
+}

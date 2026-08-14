@@ -1,0 +1,14 @@
+{
+  "title": "Support Desk & Ticket Operations",
+  "subtitle": "Client support tickets, department routing, SLA resolution times, and ticket status",
+  "openTicket": "Open Support Ticket",
+  "subject": "Ticket Subject",
+  "client": "Client Company",
+  "department": "Support Department",
+  "status": {
+    "open": "Open",
+    "inProgress": "In Progress",
+    "resolved": "Resolved",
+    "closed": "Closed"
+  }
+}

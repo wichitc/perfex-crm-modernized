@@ -1,0 +1,14 @@
+{
+  "title": "Estimates & Project Proposals",
+  "subtitle": "Project price quotes, proposal validity dates, and client acceptance tracking",
+  "addNew": "Create New Estimate",
+  "number": "Estimate Number",
+  "client": "Client",
+  "validUntil": "Valid Until",
+  "status": {
+    "sent": "Sent",
+    "accepted": "Accepted",
+    "declined": "Declined",
+    "draft": "Draft"
+  }
+}

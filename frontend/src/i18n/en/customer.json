@@ -1,0 +1,20 @@
+{
+  "title": "Customer Management",
+  "subtitle": "Directory of client companies, primary contact details, client groups, and active accounts",
+  "addNew": "Create New Customer",
+  "company": "Company Name",
+  "primaryContact": "Primary Contact",
+  "email": "Email Address",
+  "phone": "Phone Number",
+  "group": "Client Group",
+  "status": "Status",
+  "actions": "Actions",
+  "searchPlaceholder": "Search company, contact, or email...",
+  "filterGroup": "Filter by Client Group",
+  "allGroups": "All Client Groups",
+  "active": "Active",
+  "inactive": "Inactive",
+  "vip": "VIP Client",
+  "corporate": "Enterprise Corporate",
+  "sme": "SME Business"
+}

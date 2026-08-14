@@ -1,0 +1,9 @@
+{
+  "title": "Staff Outsourcing & Resource Booking",
+  "subtitle": "Contractor management, hourly billing rates, skills matrix, and project assignment",
+  "bookResource": "Book Expert Resource",
+  "contractorName": "Contractor Name",
+  "role": "Skill / Specialization",
+  "hourlyRate": "Hourly Bill Rate",
+  "clientProject": "Assigned Client Project"
+}

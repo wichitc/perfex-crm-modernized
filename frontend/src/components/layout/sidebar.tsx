@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { usePerfexTheme } from "@/providers/theme-provider";
+import { useTranslation } from "@/providers/language-provider";
 import {
   Shield,
   LayoutDashboard,
@@ -27,25 +28,26 @@ import {
 export default function Sidebar() {
   const pathname = usePathname();
   const { themeConfig } = usePerfexTheme();
+  const { t } = useTranslation();
 
   const menuItems = [
-    { name: "Dashboard", href: "/", icon: LayoutDashboard },
-    { name: "Landing Page", href: "/landing", icon: Globe },
-    { name: "Clients Directory", href: "/clients", icon: Users },
-    { name: "Leads Pipeline", href: "/leads", icon: GitMerge },
-    { name: "Invoices & Billing", href: "/invoices", icon: Receipt },
-    { name: "Estimates & Proposals", href: "/estimates", icon: Layers },
-    { name: "Accounting & Finance", href: "/accounting", icon: BookOpen },
-    { name: "Warehouse & Stock", href: "/warehouse", icon: Package },
-    { name: "Purchase Management", href: "/purchase", icon: ShoppingCart },
-    { name: "WooCommerce Sync", href: "/woocommerce", icon: Store },
-    { name: "Recruitment & HR", href: "/recruitment", icon: UserPlus },
-    { name: "OKRs & Goals", href: "/okrs", icon: Target },
-    { name: "Tasks & Projects", href: "/tasks", icon: CheckSquare },
-    { name: "Support Desk", href: "/tickets", icon: LifeBuoy },
-    { name: "Staff Outsourcing", href: "/staff-outsourcing", icon: Briefcase },
-    { name: "Account Planning", href: "/account-planning", icon: Target },
-    { name: "System Settings", href: "/settings", icon: Settings },
+    { name: t("navigation.menu.dashboard"), href: "/", icon: LayoutDashboard },
+    { name: t("navigation.menu.landing"), href: "/landing", icon: Globe },
+    { name: t("navigation.menu.clients"), href: "/clients", icon: Users },
+    { name: t("navigation.menu.leads"), href: "/leads", icon: GitMerge },
+    { name: t("navigation.menu.invoices"), href: "/invoices", icon: Receipt },
+    { name: t("navigation.menu.estimates"), href: "/estimates", icon: Layers },
+    { name: t("navigation.menu.accounting"), href: "/accounting", icon: BookOpen },
+    { name: t("navigation.menu.warehouse"), href: "/warehouse", icon: Package },
+    { name: t("navigation.menu.purchase"), href: "/purchase", icon: ShoppingCart },
+    { name: t("navigation.menu.woocommerce"), href: "/woocommerce", icon: Store },
+    { name: t("navigation.menu.recruitment"), href: "/recruitment", icon: UserPlus },
+    { name: t("navigation.menu.okrs"), href: "/okrs", icon: Target },
+    { name: t("navigation.menu.tasks"), href: "/tasks", icon: CheckSquare },
+    { name: t("navigation.menu.tickets"), href: "/tickets", icon: LifeBuoy },
+    { name: t("navigation.menu.outsourcing"), href: "/staff-outsourcing", icon: Briefcase },
+    { name: t("navigation.menu.account_planning"), href: "/account-planning", icon: Target },
+    { name: t("navigation.menu.settings"), href: "/settings", icon: Settings },
   ];
 
   return (
@@ -108,7 +110,7 @@ export default function Sidebar() {
         <div className="flex items-center justify-between text-[11px] text-slate-400">
           <span className="flex items-center gap-1.5">
             <span className="h-2 w-2 rounded-full bg-emerald-400 animate-ping"></span>
-            System Operational
+            {t("common.systemOperational")}
           </span>
           <span className="font-mono text-slate-500">React 19</span>
         </div>

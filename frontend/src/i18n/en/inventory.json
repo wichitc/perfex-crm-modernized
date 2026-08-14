@@ -1,0 +1,11 @@
+{
+  "title": "Warehouse & Stock Inventory",
+  "subtitle": "Product SKUs, warehouse locations, stock balances, and low-stock alerts",
+  "addNewItem": "Add New Item",
+  "sku": "SKU Code",
+  "itemName": "Item Name",
+  "warehouse": "Warehouse Location",
+  "quantity": "Quantity On Hand",
+  "minStock": "Min Stock Level",
+  "unitPrice": "Unit Price"
+}

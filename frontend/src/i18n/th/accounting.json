@@ -1,0 +1,11 @@
+{
+  "title": "ระบบบัญชีและการเงินคู่ (Double-Entry Ledger)",
+  "subtitle": "ผังบัญชี (Chart of Accounts), รายการรายวัน (Journal Entries) และงบทดลองย่อย",
+  "addNewEntry": "บันทึกรายการเดบิต/เครดิต",
+  "accountCode": "รหัสบัญชี",
+  "accountName": "ชื่อบัญชี",
+  "type": "ประเภทบัญชี",
+  "debit": "เดบิต (Debit)",
+  "credit": "เครดิต (Credit)",
+  "balance": "ยอดคงเหลือ"
+}

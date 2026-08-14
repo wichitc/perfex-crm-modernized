@@ -1,0 +1,6 @@
+{
+  "customerNotFound": "Customer record not found in system.",
+  "permissionDenied": "Permission denied for this action.",
+  "systemError": "An unexpected system error occurred. Please try again.",
+  "sessionExpired": "Session expired. Please sign in again."
+}

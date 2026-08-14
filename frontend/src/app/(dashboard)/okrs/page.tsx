@@ -3,9 +3,12 @@
 import { useQuery } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api-client";
 import { MOCK_OKRS } from "@/lib/mock-data";
-import { Target, Plus, CheckCircle2 } from "lucide-react";
+import { useTranslation } from "@/providers/language-provider";
+import { Target, Plus } from "lucide-react";
 
 export default function OKRsPage() {
+  const { t, formatPercent } = useTranslation();
+
   const { data: okrs } = useQuery({
     queryKey: ["okrs"],
     queryFn: async () => {
@@ -25,14 +28,14 @@ export default function OKRsPage() {
         <div>
           <h2 className="text-2xl font-black tracking-tight text-white flex items-center gap-2">
             <Target className="h-6 w-6 text-rose-400" />
-            Objectives & Key Results (OKRs)
+            {t("okrs.title")}
           </h2>
           <p className="text-xs text-slate-400 mt-1">
-            Align quarterly strategic goals and track real-time Key Result progress.
+            {t("okrs.subtitle")}
           </p>
         </div>
         <button className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs shadow-lg shadow-rose-500/25 transition-all cursor-pointer">
-          <Plus className="h-4 w-4" /> Add Objective
+          <Plus className="h-4 w-4" /> {t("okrs.addNewOkr")}
         </button>
       </div>
 
@@ -53,7 +56,7 @@ export default function OKRsPage() {
                 <div className="w-36 bg-slate-950 rounded-full h-3 border border-slate-800 overflow-hidden">
                   <div className="bg-gradient-to-r from-rose-500 to-pink-500 h-full rounded-full" style={{ width: `${obj.progress}%` }}></div>
                 </div>
-                <span className="text-sm font-extrabold text-rose-400">{obj.progress}%</span>
+                <span className="text-sm font-extrabold text-rose-400">{formatPercent(obj.progress)}</span>
               </div>
             </div>
 

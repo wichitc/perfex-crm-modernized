@@ -1,0 +1,11 @@
+{
+  "title": "Double-Entry Accounting & General Ledger",
+  "subtitle": "Chart of Accounts, Journal Entries, Trial Balances, and Financial Sub-ledgers",
+  "addNewEntry": "New Journal Entry",
+  "accountCode": "Account Code",
+  "accountName": "Account Name",
+  "type": "Account Type",
+  "debit": "Debit",
+  "credit": "Credit",
+  "balance": "Balance"
+}

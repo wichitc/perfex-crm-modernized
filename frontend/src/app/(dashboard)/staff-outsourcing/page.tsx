@@ -3,9 +3,12 @@
 import { useQuery } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api-client";
 import { MOCK_STAFF_OUTSOURCING } from "@/lib/mock-data";
-import { Briefcase, Plus, Calendar, UserCheck } from "lucide-react";
+import { useTranslation } from "@/providers/language-provider";
+import { Briefcase, Plus } from "lucide-react";
 
 export default function StaffOutsourcingPage() {
+  const { t } = useTranslation();
+
   const { data: staff } = useQuery({
     queryKey: ["staff-outsourcing"],
     queryFn: async () => {
@@ -25,14 +28,14 @@ export default function StaffOutsourcingPage() {
         <div>
           <h2 className="text-2xl font-black tracking-tight text-white flex items-center gap-2">
             <Briefcase className="h-6 w-6 text-amber-400" />
-            Staff Outsourcing & Resource Booking
+            {t("outsourcing.title")}
           </h2>
           <p className="text-xs text-slate-400 mt-1">
-            Contractor resource allocations, hourly rate cards, and project assignments.
+            {t("outsourcing.subtitle")}
           </p>
         </div>
         <button className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs shadow-lg shadow-amber-500/25 transition-all cursor-pointer">
-          <Plus className="h-4 w-4" /> Book External Resource
+          <Plus className="h-4 w-4" /> {t("outsourcing.bookResource")}
         </button>
       </div>
 
@@ -40,12 +43,12 @@ export default function StaffOutsourcingPage() {
         <table className="w-full text-left text-xs">
           <thead className="bg-slate-950/80 text-slate-400 uppercase tracking-wider font-bold border-b border-slate-800">
             <tr>
-              <th className="p-4">Vendor / Consultant</th>
-              <th className="p-4">Role Specialty</th>
-              <th className="p-4">Hourly Rate</th>
+              <th className="p-4">{t("outsourcing.contractorName")}</th>
+              <th className="p-4">{t("outsourcing.role")}</th>
+              <th className="p-4">{t("outsourcing.hourlyRate")}</th>
               <th className="p-4">Allocation</th>
-              <th className="p-4">Project Assigned</th>
-              <th className="p-4 text-right">Status</th>
+              <th className="p-4">{t("outsourcing.clientProject")}</th>
+              <th className="p-4 text-right">{t("common.status")}</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-800/60 text-slate-200">

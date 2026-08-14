@@ -3,9 +3,12 @@
 import { useQuery } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api-client";
 import { MOCK_WOOCOMMERCE } from "@/lib/mock-data";
-import { Store, RefreshCw, CheckCircle2, ShoppingBag, Users, Layers } from "lucide-react";
+import { useTranslation } from "@/providers/language-provider";
+import { Store, RefreshCw, CheckCircle2, ShoppingBag, Layers } from "lucide-react";
 
 export default function WooCommercePage() {
+  const { t } = useTranslation();
+
   const { data: woo } = useQuery({
     queryKey: ["woocommerce"],
     queryFn: async () => {
@@ -25,14 +28,14 @@ export default function WooCommercePage() {
         <div>
           <h2 className="text-2xl font-black tracking-tight text-white flex items-center gap-2">
             <Store className="h-6 w-6 text-purple-400" />
-            WooCommerce Store Connector
+            {t("woocommerce.title")}
           </h2>
           <p className="text-xs text-slate-400 mt-1">
-            Synchronize WooCommerce online shop orders, product catalog, and customer profiles.
+            {t("woocommerce.subtitle")}
           </p>
         </div>
         <button className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs shadow-lg shadow-purple-500/25 transition-all cursor-pointer">
-          <RefreshCw className="h-4 w-4" /> Trigger Manual Sync
+          <RefreshCw className="h-4 w-4" /> {t("woocommerce.syncNow")}
         </button>
       </div>
 
@@ -43,7 +46,7 @@ export default function WooCommercePage() {
             <ShoppingBag className="h-6 w-6" />
           </div>
           <div>
-            <span className="text-xs text-slate-400 font-semibold uppercase">Synced Products</span>
+            <span className="text-xs text-slate-400 font-semibold uppercase">{t("inventory.itemName")}</span>
             <h3 className="text-2xl font-black text-white">{woo.syncedProducts} SKUs</h3>
           </div>
         </div>
@@ -53,7 +56,7 @@ export default function WooCommercePage() {
             <Layers className="h-6 w-6" />
           </div>
           <div>
-            <span className="text-xs text-slate-400 font-semibold uppercase">Synced Orders</span>
+            <span className="text-xs text-slate-400 font-semibold uppercase">{t("woocommerce.syncedOrders")}</span>
             <h3 className="text-2xl font-black text-white">{woo.syncedOrders} Orders</h3>
           </div>
         </div>
@@ -63,8 +66,8 @@ export default function WooCommercePage() {
             <CheckCircle2 className="h-6 w-6" />
           </div>
           <div>
-            <span className="text-xs text-slate-400 font-semibold uppercase">Connection Status</span>
-            <h3 className="text-sm font-bold text-emerald-400">Connected & Operational</h3>
+            <span className="text-xs text-slate-400 font-semibold uppercase">{t("woocommerce.status")}</span>
+            <h3 className="text-sm font-bold text-emerald-400">{t("common.systemOperational")}</h3>
           </div>
         </div>
       </div>
