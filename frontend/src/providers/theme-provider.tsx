@@ -18,7 +18,7 @@ interface ThemeContextType {
 
 const THEME_CONFIGS: Record<ThemeMode, { name: string; primary: string; primaryBg: string; sidebarBg: string; badgeBg: string }> = {
   teal: {
-    name: "Perfex Classic Teal",
+    name: "NOVIXA Classic Teal",
     primary: "#28b8da",
     primaryBg: "from-cyan-500 to-teal-600",
     sidebarBg: "bg-[#25292e]",

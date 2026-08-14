@@ -34,8 +34,8 @@ async def lifespan(app: FastAPI):
     yield
 
 app = FastAPI(
-    title="Perfex CRM Modernized API",
-    description="Modernized AI-Ready Clean Architecture API for Perfex CRM (Python FastAPI & Next.js)",
+    title="NOVIXA CRM Modernized API",
+    description="Modernized AI-Ready Clean Architecture API for NOVIXA CRM (Python FastAPI & Next.js)",
     version="1.0.0",
     lifespan=lifespan
 )
@@ -79,6 +79,6 @@ app.include_router(settings_router.router, prefix="/api/v1")
 async def root():
     return {
         "status": "online",
-        "message": "Welcome to Perfex CRM Modernized API",
+        "message": "Welcome to NOVIXA CRM Modernized API",
         "docs_url": "/docs"
     }

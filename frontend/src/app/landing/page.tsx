@@ -48,8 +48,8 @@ export default function LandingPage() {
 
   const faqs = [
     {
-      q: "What is Perfex CRM Modernized 2026?",
-      a: "It is a complete enterprise rebuild of the classic Perfex CRM architecture, powered by a high-performance Python FastAPI async backend and a Next.js 16 App Router frontend with React 19."
+      q: "What is NOVIXA CRM Modernized 2026?",
+      a: "It is a complete enterprise rebuild of the classic NOVIXA CRM architecture, powered by a high-performance Python FastAPI async backend and a Next.js 16 App Router frontend with React 19."
     },
     {
       q: "How does the FastAPI Backend connect with Next.js?",
@@ -60,7 +60,7 @@ export default function LandingPage() {
       a: "Yes! The backend infrastructure contains a dual DB engine that automatically falls back to an async SQLite database (perfexcrm.db) if local PostgreSQL is offline, ensuring zero-friction local execution."
     },
     {
-      q: "Which custom Perfex CRM modules are supported?",
+      q: "Which custom NOVIXA CRM modules are supported?",
       a: "All 16 core & custom modules are fully supported out of the box: Accounting, Warehouse, Purchase, Recruitment, WooCommerce, OKRs, Account Planning, Staff Outsourcing, Tickets, Estimates, and Settings."
     }
   ];
@@ -81,7 +81,7 @@ export default function LandingPage() {
             </div>
             <div>
               <span className="text-xl font-black tracking-tight text-white flex items-center gap-2">
-                Perfex CRM <span className="text-xs px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 font-bold">2026 Edition</span>
+                NOVIXA CRM <span className="text-xs px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 font-bold">2026 Edition</span>
               </span>
               <span className="text-[10px] text-slate-400 block -mt-1 font-semibold uppercase tracking-wider">FastAPI & Next.js 16</span>
             </div>
@@ -471,7 +471,7 @@ export default function LandingPage() {
             <div className="h-8 w-8 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center">
               <Shield className="h-5 w-5 text-slate-950" />
             </div>
-            <span className="font-extrabold text-white text-sm">Perfex CRM 2026</span>
+            <span className="font-extrabold text-white text-sm">NOVIXA CRM 2026</span>
           </div>
 
           <div className="flex items-center gap-6 font-semibold">
@@ -481,7 +481,7 @@ export default function LandingPage() {
             <a href="#pricing" className="hover:text-white">Pricing</a>
           </div>
 
-          <p>© 2026 Perfex CRM Modernized. Built with Python FastAPI & Next.js 16.</p>
+          <p>© 2026 NOVIXA CRM Modernized. Built with Python FastAPI & Next.js 16.</p>
         </div>
       </footer>
     </div>

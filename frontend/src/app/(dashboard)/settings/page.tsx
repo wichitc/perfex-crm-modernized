@@ -9,7 +9,7 @@ export default function SettingsPage() {
   const { language, setLanguage, t } = useTranslation();
 
   const themes: { id: ThemeMode; name: string; color: string; desc: string }[] = [
-    { id: "teal", name: "Perfex Classic Teal", color: "#28b8da", desc: "Authentic Perfex CRM signature color theme" },
+    { id: "teal", name: "NOVIXA Classic Teal", color: "#28b8da", desc: "Authentic NOVIXA CRM signature color theme" },
     { id: "dark", name: "Midnight Dark", color: "#6366f1", desc: "Sleek dark mode tailored for low light" },
     { id: "light", name: "Clean Light", color: "#0284c7", desc: "Bright corporate look with high contrast" },
     { id: "green", name: "Emerald Green", color: "#10b981", desc: "Fresh vibrant green accent scheme" },
@@ -111,7 +111,7 @@ export default function SettingsPage() {
             <label className="text-slate-300 font-semibold block mb-1">{t("customer.company")}</label>
             <input
               type="text"
-              defaultValue="Perfex CRM Solutions Thailand"
+              defaultValue="NOVIXA CRM Solutions Thailand"
               className="w-full bg-slate-950 border border-slate-800 rounded-xl py-2 px-3 text-white"
             />
           </div>

@@ -62,7 +62,7 @@ export default function Sidebar() {
           </div>
           <div>
             <h1 className="text-lg font-black tracking-tight text-white flex items-center gap-1.5">
-              Perfex CRM
+              NOVIXA CRM
               <span className="text-[10px] bg-cyan-500/20 text-cyan-400 font-bold px-1.5 py-0.5 rounded-md border border-cyan-500/30">
                 v2026
               </span>

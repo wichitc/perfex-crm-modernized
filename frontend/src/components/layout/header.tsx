@@ -28,7 +28,7 @@ export default function Header() {
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
 
   const themes: { id: ThemeMode; name: string; color: string }[] = [
-    { id: "teal", name: "Perfex Classic Teal", color: "#28b8da" },
+    { id: "teal", name: "NOVIXA Classic Teal", color: "#28b8da" },
     { id: "dark", name: "Midnight Dark", color: "#6366f1" },
     { id: "light", name: "Clean Light", color: "#0284c7" },
     { id: "green", name: "Emerald Green", color: "#10b981" },

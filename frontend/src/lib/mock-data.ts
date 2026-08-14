@@ -4,7 +4,7 @@ export const MOCK_USER = {
   staffid: 1,
   firstname: "System",
   lastname: "Administrator",
-  email: "admin@perfexcrm.com",
+  email: "admin@novixacrm.com",
   admin: 1,
   role: 1,
   scopes: ["admin:all"],
@@ -171,7 +171,7 @@ export const MOCK_PURCHASE_ORDERS = [
 
 export const MOCK_WOOCOMMERCE = {
   connected: true,
-  storeUrl: "https://shop.perfexcrm-demo.com",
+  storeUrl: "https://shop.novixacrm-demo.com",
   lastSync: "2026-07-29 19:45:00",
   syncedProducts: 142,
   syncedOrders: 859,

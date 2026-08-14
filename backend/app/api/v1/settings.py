@@ -19,7 +19,7 @@ async def get_settings(
     settings_dict = {r.name: r.value for r in rows if r.value}
     
     return SystemSettingResponse(
-        company_name=settings_dict.get("company_name", "Perfex CRM Modernized"),
+        company_name=settings_dict.get("company_name", "NOVIXA CRM Modernized"),
         company_domain=settings_dict.get("company_domain", "https://crm.company.com"),
         timezone=settings_dict.get("timezone", "Asia/Bangkok"),
         date_format=settings_dict.get("date_format", "Y-m-d"),

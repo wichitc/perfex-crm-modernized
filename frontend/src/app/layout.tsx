@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Perfex CRM - Modern Next.js Portal",
-  description: "Modern CRM and custom modules dashboard with Perfex CRM Theme Support.",
+  title: "NOVIXA CRM - Modern Next.js Portal",
+  description: "Modern CRM and custom modules dashboard powered by NOVIXA CRM.",
 };
 
 export default function RootLayout({
