@@ -1,0 +1,16 @@
+bigint: BIGINT
+char: CHAR
+date: DATE
+datetime: TIMESTAMP
+decimal: NUMERIC
+double: DOUBLE PRECISION
+float: DOUBLE PRECISION
+int: INTEGER
+longtext: TEXT
+mediumtext: TEXT
+smallint: SMALLINT
+text: TEXT
+time: TIME
+timestamp: TIMESTAMP
+tinyint: SMALLINT
+varchar: VARCHAR

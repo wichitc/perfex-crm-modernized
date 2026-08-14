@@ -1,0 +1,13 @@
+# Documentation files (keep locally, don't commit)
+*.md
+!README.md
+
+# Cursor/IDE files
+.cursorindexingignore
+.specstory/
+.cursor/
+
+# Local development
+*.ps1
+*.zip
+*.lnk

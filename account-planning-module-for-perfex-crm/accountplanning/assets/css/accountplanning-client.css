@@ -1,0 +1,84 @@
+/* Mobile-friendly styles for Account Planning client portal */
+@media (max-width: 768px) {
+    #wrapper .content .row .col-md-12 {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    #wrapper .content .panel_s .panel-body {
+        padding: 15px 10px;
+    }
+    #wrapper .content .panel_s .panel-body .table {
+        font-size: 14px;
+    }
+    #wrapper .content .panel_s .panel-body .table th,
+    #wrapper .content .panel_s .panel-body .table td {
+        padding: 8px 6px;
+    }
+    #wrapper .content .panel_s .panel-body .table thead {
+        display: none;
+    }
+    #wrapper .content .panel_s .panel-body .table tbody tr {
+        display: block;
+        border: 1px solid #e4e7ea;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        padding: 10px;
+        background: #fff;
+    }
+    #wrapper .content .panel_s .panel-body .table tbody tr td {
+        display: block;
+        text-align: left;
+        border: none;
+        padding: 4px 0;
+    }
+    #wrapper .content .panel_s .panel-body .table tbody tr td[data-label]:before {
+        content: attr(data-label);
+        font-weight: 600;
+        display: inline-block;
+        min-width: 100px;
+        margin-right: 8px;
+    }
+    #wrapper .content .panel_s .panel-body .table tbody tr td[data-label=""]:before {
+        content: none;
+    }
+    #wrapper .content .panel_s .panel-body .table tbody tr td:last-child {
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px solid #eee;
+    }
+    #wrapper .content .btn,
+    #wrapper .content .btn-sm {
+        display: block;
+        width: 100%;
+        margin-bottom: 8px;
+        text-align: center;
+    }
+    #wrapper .content .btn-default,
+    #wrapper .content .btn-info {
+        padding: 10px 15px;
+    }
+    #wrapper .content .mtop15 .btn {
+        margin-bottom: 10px;
+    }
+    #wrapper .content h4.bold {
+        font-size: 18px;
+    }
+    #wrapper .content .list-unstyled li {
+        padding: 6px 0;
+        font-size: 14px;
+    }
+    #wrapper .content .well {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    #wrapper .content h4.bold {
+        font-size: 16px;
+    }
+    #wrapper .content .panel_s .panel-body .table tbody tr td:before {
+        min-width: 80px;
+        font-size: 13px;
+    }
+}

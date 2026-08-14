@@ -1,0 +1,590 @@
+__PFX__woocommerce_stores:
+  application_impact: low
+  postgres_table: __pfx__woocommerce_stores
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblactivity_log:
+  application_impact: low
+  postgres_table: tblactivity_log
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblannouncements:
+  application_impact: low
+  postgres_table: tblannouncements
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblclients:
+  application_impact: low
+  postgres_table: tblclients
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblconsent_purposes:
+  application_impact: low
+  postgres_table: tblconsent_purposes
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblconsents:
+  application_impact: low
+  postgres_table: tblconsents
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblcontact_permissions:
+  application_impact: low
+  postgres_table: tblcontact_permissions
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblcontacts:
+  application_impact: low
+  postgres_table: tblcontacts
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblcontract_comments:
+  application_impact: low
+  postgres_table: tblcontract_comments
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblcontract_renewals:
+  application_impact: low
+  postgres_table: tblcontract_renewals
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblcontracts:
+  application_impact: low
+  postgres_table: tblcontracts
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblcontracts_types:
+  application_impact: low
+  postgres_table: tblcontracts_types
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblcountries:
+  application_impact: low
+  postgres_table: tblcountries
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblcreditnote_refunds:
+  application_impact: low
+  postgres_table: tblcreditnote_refunds
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblcreditnotes:
+  application_impact: low
+  postgres_table: tblcreditnotes
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblcredits:
+  application_impact: low
+  postgres_table: tblcredits
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblcurrencies:
+  application_impact: low
+  postgres_table: tblcurrencies
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblcustomer_admins:
+  application_impact: low
+  postgres_table: tblcustomer_admins
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblcustomer_groups:
+  application_impact: low
+  postgres_table: tblcustomer_groups
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblcustomers_groups:
+  application_impact: low
+  postgres_table: tblcustomers_groups
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblcustomfields:
+  application_impact: low
+  postgres_table: tblcustomfields
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblcustomfieldsvalues:
+  application_impact: low
+  postgres_table: tblcustomfieldsvalues
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tbldepartments:
+  application_impact: low
+  postgres_table: tbldepartments
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tbldismissed_announcements:
+  application_impact: low
+  postgres_table: tbldismissed_announcements
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblemailtemplates:
+  application_impact: low
+  postgres_table: tblemailtemplates
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblestimate_request_forms:
+  application_impact: low
+  postgres_table: tblestimate_request_forms
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblestimate_request_status:
+  application_impact: low
+  postgres_table: tblestimate_request_status
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblestimate_requests:
+  application_impact: low
+  postgres_table: tblestimate_requests
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblestimates:
+  application_impact: low
+  postgres_table: tblestimates
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblevents:
+  application_impact: low
+  postgres_table: tblevents
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblexpenses:
+  application_impact: low
+  postgres_table: tblexpenses
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblexpenses_categories:
+  application_impact: low
+  postgres_table: tblexpenses_categories
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblfiles:
+  application_impact: low
+  postgres_table: tblfiles
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblfilter_defaults:
+  application_impact: low
+  postgres_table: tblfilter_defaults
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblfilters:
+  application_impact: low
+  postgres_table: tblfilters
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblform_question_box:
+  application_impact: low
+  postgres_table: tblform_question_box
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblform_question_box_description:
+  application_impact: low
+  postgres_table: tblform_question_box_description
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblform_questions:
+  application_impact: low
+  postgres_table: tblform_questions
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblform_results:
+  application_impact: low
+  postgres_table: tblform_results
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblgdpr_requests:
+  application_impact: low
+  postgres_table: tblgdpr_requests
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblinvoicepaymentrecords:
+  application_impact: low
+  postgres_table: tblinvoicepaymentrecords
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblinvoices:
+  application_impact: low
+  postgres_table: tblinvoices
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblitem_tax:
+  application_impact: low
+  postgres_table: tblitem_tax
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblitemable:
+  application_impact: low
+  postgres_table: tblitemable
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblitems:
+  application_impact: low
+  postgres_table: tblitems
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblitems_groups:
+  application_impact: low
+  postgres_table: tblitems_groups
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblknowedge_base_article_feedback:
+  application_impact: low
+  postgres_table: tblknowedge_base_article_feedback
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblknowledge_base:
+  application_impact: low
+  postgres_table: tblknowledge_base
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblknowledge_base_groups:
+  application_impact: low
+  postgres_table: tblknowledge_base_groups
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tbllead_activity_log:
+  application_impact: low
+  postgres_table: tbllead_activity_log
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tbllead_integration_emails:
+  application_impact: low
+  postgres_table: tbllead_integration_emails
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblleads:
+  application_impact: low
+  postgres_table: tblleads
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblleads_email_integration:
+  application_impact: low
+  postgres_table: tblleads_email_integration
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblleads_sources:
+  application_impact: low
+  postgres_table: tblleads_sources
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblleads_status:
+  application_impact: low
+  postgres_table: tblleads_status
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblmail_queue:
+  application_impact: low
+  postgres_table: tblmail_queue
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblmigrations:
+  application_impact: low
+  postgres_table: tblmigrations
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblmilestones:
+  application_impact: low
+  postgres_table: tblmilestones
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblmodules:
+  application_impact: low
+  postgres_table: tblmodules
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblnewsfeed_comment_likes:
+  application_impact: low
+  postgres_table: tblnewsfeed_comment_likes
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblnewsfeed_post_comments:
+  application_impact: low
+  postgres_table: tblnewsfeed_post_comments
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblnewsfeed_post_likes:
+  application_impact: low
+  postgres_table: tblnewsfeed_post_likes
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblnewsfeed_posts:
+  application_impact: low
+  postgres_table: tblnewsfeed_posts
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblnotes:
+  application_impact: low
+  postgres_table: tblnotes
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblnotifications:
+  application_impact: low
+  postgres_table: tblnotifications
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tbloptions:
+  application_impact: low
+  postgres_table: tbloptions
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblpayment_attempts:
+  application_impact: low
+  postgres_table: tblpayment_attempts
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblpayment_modes:
+  application_impact: low
+  postgres_table: tblpayment_modes
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblpinned_projects:
+  application_impact: low
+  postgres_table: tblpinned_projects
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblproject_activity:
+  application_impact: low
+  postgres_table: tblproject_activity
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblproject_files:
+  application_impact: low
+  postgres_table: tblproject_files
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblproject_members:
+  application_impact: low
+  postgres_table: tblproject_members
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblproject_notes:
+  application_impact: low
+  postgres_table: tblproject_notes
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblproject_settings:
+  application_impact: low
+  postgres_table: tblproject_settings
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblprojectdiscussioncomments:
+  application_impact: low
+  postgres_table: tblprojectdiscussioncomments
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblprojectdiscussions:
+  application_impact: low
+  postgres_table: tblprojectdiscussions
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblprojects:
+  application_impact: low
+  postgres_table: tblprojects
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblproposal_comments:
+  application_impact: low
+  postgres_table: tblproposal_comments
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblproposals:
+  application_impact: low
+  postgres_table: tblproposals
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblrelated_items:
+  application_impact: low
+  postgres_table: tblrelated_items
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblreminders:
+  application_impact: low
+  postgres_table: tblreminders
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblroles:
+  application_impact: low
+  postgres_table: tblroles
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblsales_activity:
+  application_impact: low
+  postgres_table: tblsales_activity
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblscheduled_emails:
+  application_impact: low
+  postgres_table: tblscheduled_emails
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblservices:
+  application_impact: low
+  postgres_table: tblservices
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblsessions:
+  application_impact: low
+  postgres_table: tblsessions
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblshared_customer_files:
+  application_impact: low
+  postgres_table: tblshared_customer_files
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblspam_filters:
+  application_impact: low
+  postgres_table: tblspam_filters
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblstaff:
+  application_impact: low
+  postgres_table: tblstaff
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblstaff_departments:
+  application_impact: low
+  postgres_table: tblstaff_departments
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblstaff_permissions:
+  application_impact: low
+  postgres_table: tblstaff_permissions
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblsubscriptions:
+  application_impact: low
+  postgres_table: tblsubscriptions
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tbltaggables:
+  application_impact: low
+  postgres_table: tbltaggables
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tbltags:
+  application_impact: low
+  postgres_table: tbltags
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tbltask_assigned:
+  application_impact: low
+  postgres_table: tbltask_assigned
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tbltask_checklist_items:
+  application_impact: low
+  postgres_table: tbltask_checklist_items
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tbltask_comments:
+  application_impact: low
+  postgres_table: tbltask_comments
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tbltask_followers:
+  application_impact: low
+  postgres_table: tbltask_followers
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tbltasks:
+  application_impact: low
+  postgres_table: tbltasks
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tbltasks_checklist_templates:
+  application_impact: low
+  postgres_table: tbltasks_checklist_templates
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tbltaskstimers:
+  application_impact: low
+  postgres_table: tbltaskstimers
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tbltaxes:
+  application_impact: low
+  postgres_table: tbltaxes
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tbltemplates:
+  application_impact: low
+  postgres_table: tbltemplates
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblticket_attachments:
+  application_impact: low
+  postgres_table: tblticket_attachments
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblticket_replies:
+  application_impact: low
+  postgres_table: tblticket_replies
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tbltickets:
+  application_impact: low
+  postgres_table: tbltickets
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tbltickets_pipe_log:
+  application_impact: low
+  postgres_table: tbltickets_pipe_log
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tbltickets_predefined_replies:
+  application_impact: low
+  postgres_table: tbltickets_predefined_replies
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tbltickets_priorities:
+  application_impact: low
+  postgres_table: tbltickets_priorities
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tbltickets_status:
+  application_impact: low
+  postgres_table: tbltickets_status
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tbltodos:
+  application_impact: low
+  postgres_table: tbltodos
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tbltracked_mails:
+  application_impact: low
+  postgres_table: tbltracked_mails
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tbltwocheckout_log:
+  application_impact: low
+  postgres_table: tbltwocheckout_log
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tbluser_auto_login:
+  application_impact: low
+  postgres_table: tbluser_auto_login
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tbluser_meta:
+  application_impact: low
+  postgres_table: tbluser_meta
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblvault:
+  application_impact: low
+  postgres_table: tblvault
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblviews_tracking:
+  application_impact: low
+  postgres_table: tblviews_tracking
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public
+tblweb_to_lead:
+  application_impact: low
+  postgres_table: tblweb_to_lead
+  reason: Preserve exact legacy name structure for full application compatibility
+  schema: public

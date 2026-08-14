@@ -1,0 +1,62 @@
+{
+    "packages": [
+        {
+            "name": "automattic/woocommerce",
+            "version": "3.1.1",
+            "version_normalized": "3.1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/woocommerce/wc-api-php.git",
+                "reference": "e378120df655b7dacbeff4756e23b41b66fe9688"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/woocommerce/wc-api-php/zipball/e378120df655b7dacbeff4756e23b41b66fe9688",
+                "reference": "e378120df655b7dacbeff4756e23b41b66fe9688",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">= 7.4.0"
+            },
+            "require-dev": {
+                "doctrine/instantiator": "^1.5.0",
+                "phpunit/phpunit": "^9.5.0",
+                "squizlabs/php_codesniffer": "3.*"
+            },
+            "time": "2026-01-30T16:26:03+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Automattic\\WooCommerce\\": [
+                        "src/WooCommerce"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Claudio Sanches",
+                    "email": "claudio.sanches@automattic.com"
+                }
+            ],
+            "description": "A PHP wrapper for the WooCommerce REST API",
+            "keywords": [
+                "api",
+                "woocommerce"
+            ],
+            "support": {
+                "issues": "https://github.com/woocommerce/wc-api-php/issues",
+                "source": "https://github.com/woocommerce/wc-api-php/tree/3.1.1"
+            },
+            "install-path": "../automattic/woocommerce"
+        }
+    ],
+    "dev": false,
+    "dev-package-names": []
+}

@@ -1,0 +1,1064 @@
+[
+  {
+    "index_name": "staffid",
+    "table": "tblactivity_log",
+    "columns": [
+      "staffid"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "country",
+    "table": "tblclients",
+    "columns": [
+      "country"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "leadid",
+    "table": "tblclients",
+    "columns": [
+      "leadid"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "company",
+    "table": "tblclients",
+    "columns": [
+      "company"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "active",
+    "table": "tblclients",
+    "columns": [
+      "active"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "purpose_id",
+    "table": "tblconsents",
+    "columns": [
+      "purpose_id"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "contact_id",
+    "table": "tblconsents",
+    "columns": [
+      "contact_id"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "lead_id",
+    "table": "tblconsents",
+    "columns": [
+      "lead_id"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "userid",
+    "table": "tblcontacts",
+    "columns": [
+      "userid"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "firstname",
+    "table": "tblcontacts",
+    "columns": [
+      "firstname"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "lastname",
+    "table": "tblcontacts",
+    "columns": [
+      "lastname"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "email",
+    "table": "tblcontacts",
+    "columns": [
+      "email"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "is_primary",
+    "table": "tblcontacts",
+    "columns": [
+      "is_primary"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "client",
+    "table": "tblcontracts",
+    "columns": [
+      "client"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "contract_type",
+    "table": "tblcontracts",
+    "columns": [
+      "contract_type"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "currency",
+    "table": "tblcreditnotes",
+    "columns": [
+      "currency"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "clientid",
+    "table": "tblcreditnotes",
+    "columns": [
+      "clientid"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "project_id",
+    "table": "tblcreditnotes",
+    "columns": [
+      "project_id"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "formatted_number",
+    "table": "tblcreditnotes",
+    "columns": [
+      "formatted_number"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "name",
+    "table": "tblcustomers_groups",
+    "columns": [
+      "name"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "customer_id",
+    "table": "tblcustomer_admins",
+    "columns": [
+      "customer_id"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "staff_id",
+    "table": "tblcustomer_admins",
+    "columns": [
+      "staff_id"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "groupid",
+    "table": "tblcustomer_groups",
+    "columns": [
+      "groupid"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "customer_id",
+    "table": "tblcustomer_groups",
+    "columns": [
+      "customer_id"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "relid",
+    "table": "tblcustomfieldsvalues",
+    "columns": [
+      "relid"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "fieldto",
+    "table": "tblcustomfieldsvalues",
+    "columns": [
+      "fieldto"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "fieldid",
+    "table": "tblcustomfieldsvalues",
+    "columns": [
+      "fieldid"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "name",
+    "table": "tbldepartments",
+    "columns": [
+      "name"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "announcementid",
+    "table": "tbldismissed_announcements",
+    "columns": [
+      "announcementid"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "staff",
+    "table": "tbldismissed_announcements",
+    "columns": [
+      "staff"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "userid",
+    "table": "tbldismissed_announcements",
+    "columns": [
+      "userid"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "clientid",
+    "table": "tblestimates",
+    "columns": [
+      "clientid"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "currency",
+    "table": "tblestimates",
+    "columns": [
+      "currency"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "project_id",
+    "table": "tblestimates",
+    "columns": [
+      "project_id"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "sale_agent",
+    "table": "tblestimates",
+    "columns": [
+      "sale_agent"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "status",
+    "table": "tblestimates",
+    "columns": [
+      "status"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "formatted_number",
+    "table": "tblestimates",
+    "columns": [
+      "formatted_number"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "clientid",
+    "table": "tblexpenses",
+    "columns": [
+      "clientid"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "project_id",
+    "table": "tblexpenses",
+    "columns": [
+      "project_id"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "category",
+    "table": "tblexpenses",
+    "columns": [
+      "category"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "currency",
+    "table": "tblexpenses",
+    "columns": [
+      "currency"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "rel_id",
+    "table": "tblfiles",
+    "columns": [
+      "rel_id"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "rel_type",
+    "table": "tblfiles",
+    "columns": [
+      "rel_type"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "filter_id",
+    "table": "tblfilter_defaults",
+    "columns": [
+      "filter_id"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "staff_id",
+    "table": "tblfilter_defaults",
+    "columns": [
+      "staff_id"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "invoiceid",
+    "table": "tblinvoicepaymentrecords",
+    "columns": [
+      "invoiceid"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "paymentmethod",
+    "table": "tblinvoicepaymentrecords",
+    "columns": [
+      "paymentmethod"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "currency",
+    "table": "tblinvoices",
+    "columns": [
+      "currency"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "clientid",
+    "table": "tblinvoices",
+    "columns": [
+      "clientid"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "project_id",
+    "table": "tblinvoices",
+    "columns": [
+      "project_id"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "sale_agent",
+    "table": "tblinvoices",
+    "columns": [
+      "sale_agent"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "total",
+    "table": "tblinvoices",
+    "columns": [
+      "total"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "status",
+    "table": "tblinvoices",
+    "columns": [
+      "status"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "formatted_number",
+    "table": "tblinvoices",
+    "columns": [
+      "formatted_number"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "rel_id",
+    "table": "tblitemable",
+    "columns": [
+      "rel_id"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "rel_type",
+    "table": "tblitemable",
+    "columns": [
+      "rel_type"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "qty",
+    "table": "tblitemable",
+    "columns": [
+      "qty"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "rate",
+    "table": "tblitemable",
+    "columns": [
+      "rate"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "tax",
+    "table": "tblitems",
+    "columns": [
+      "tax"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "tax2",
+    "table": "tblitems",
+    "columns": [
+      "tax2"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "group_id",
+    "table": "tblitems",
+    "columns": [
+      "group_id"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "itemid",
+    "table": "tblitem_tax",
+    "columns": [
+      "itemid"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "rel_id",
+    "table": "tblitem_tax",
+    "columns": [
+      "rel_id"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "name",
+    "table": "tblleads",
+    "columns": [
+      "name"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "company",
+    "table": "tblleads",
+    "columns": [
+      "company"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "email",
+    "table": "tblleads",
+    "columns": [
+      "email"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "assigned",
+    "table": "tblleads",
+    "columns": [
+      "assigned"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "status",
+    "table": "tblleads",
+    "columns": [
+      "status"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "source",
+    "table": "tblleads",
+    "columns": [
+      "source"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "lastcontact",
+    "table": "tblleads",
+    "columns": [
+      "lastcontact"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "dateadded",
+    "table": "tblleads",
+    "columns": [
+      "dateadded"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "leadorder",
+    "table": "tblleads",
+    "columns": [
+      "leadorder"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "from_form_id",
+    "table": "tblleads",
+    "columns": [
+      "from_form_id"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "name",
+    "table": "tblleads_sources",
+    "columns": [
+      "name"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "name",
+    "table": "tblleads_status",
+    "columns": [
+      "name"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "rel_id",
+    "table": "tblnotes",
+    "columns": [
+      "rel_id"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "rel_type",
+    "table": "tblnotes",
+    "columns": [
+      "rel_type"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "name",
+    "table": "tbloptions",
+    "columns": [
+      "name"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "project_id",
+    "table": "tblpinned_projects",
+    "columns": [
+      "project_id"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "clientid",
+    "table": "tblprojects",
+    "columns": [
+      "clientid"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "name",
+    "table": "tblprojects",
+    "columns": [
+      "name"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "project_id",
+    "table": "tblproject_members",
+    "columns": [
+      "project_id"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "staff_id",
+    "table": "tblproject_members",
+    "columns": [
+      "staff_id"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "project_id",
+    "table": "tblproject_settings",
+    "columns": [
+      "project_id"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "status",
+    "table": "tblproposals",
+    "columns": [
+      "status"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "rel_id",
+    "table": "tblreminders",
+    "columns": [
+      "rel_id"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "rel_type",
+    "table": "tblreminders",
+    "columns": [
+      "rel_type"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "staff",
+    "table": "tblreminders",
+    "columns": [
+      "staff"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "ci_sessions_timestamp",
+    "table": "tblsessions",
+    "columns": [
+      "timestamp"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "firstname",
+    "table": "tblstaff",
+    "columns": [
+      "firstname"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "lastname",
+    "table": "tblstaff",
+    "columns": [
+      "lastname"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "clientid",
+    "table": "tblsubscriptions",
+    "columns": [
+      "clientid"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "currency",
+    "table": "tblsubscriptions",
+    "columns": [
+      "currency"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "tax_id",
+    "table": "tblsubscriptions",
+    "columns": [
+      "tax_id"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "rel_id",
+    "table": "tbltaggables",
+    "columns": [
+      "rel_id"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "rel_type",
+    "table": "tbltaggables",
+    "columns": [
+      "rel_type"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "tag_id",
+    "table": "tbltaggables",
+    "columns": [
+      "tag_id"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "name",
+    "table": "tbltags",
+    "columns": [
+      "name"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "rel_id",
+    "table": "tbltasks",
+    "columns": [
+      "rel_id"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "rel_type",
+    "table": "tbltasks",
+    "columns": [
+      "rel_type"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "milestone",
+    "table": "tbltasks",
+    "columns": [
+      "milestone"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "kanban_order",
+    "table": "tbltasks",
+    "columns": [
+      "kanban_order"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "status",
+    "table": "tbltasks",
+    "columns": [
+      "status"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "task_id",
+    "table": "tbltaskstimers",
+    "columns": [
+      "task_id"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "staff_id",
+    "table": "tbltaskstimers",
+    "columns": [
+      "staff_id"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "taskid",
+    "table": "tbltask_assigned",
+    "columns": [
+      "taskid"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "staffid",
+    "table": "tbltask_assigned",
+    "columns": [
+      "staffid"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "taskid",
+    "table": "tbltask_checklist_items",
+    "columns": [
+      "taskid"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "file_id",
+    "table": "tbltask_comments",
+    "columns": [
+      "file_id"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "taskid",
+    "table": "tbltask_comments",
+    "columns": [
+      "taskid"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "service",
+    "table": "tbltickets",
+    "columns": [
+      "service"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "department",
+    "table": "tbltickets",
+    "columns": [
+      "department"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "status",
+    "table": "tbltickets",
+    "columns": [
+      "status"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "userid",
+    "table": "tbltickets",
+    "columns": [
+      "userid"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "priority",
+    "table": "tbltickets",
+    "columns": [
+      "priority"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "project_id",
+    "table": "tbltickets",
+    "columns": [
+      "project_id"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "contactid",
+    "table": "tbltickets",
+    "columns": [
+      "contactid"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  },
+  {
+    "index_name": "invoice_id",
+    "table": "tbltwocheckout_log",
+    "columns": [
+      "invoice_id"
+    ],
+    "unique": false,
+    "index_type": "BTREE"
+  }
+]

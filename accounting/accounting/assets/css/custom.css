@@ -1,0 +1,324 @@
+
+.check-card {
+  border: 1px solid #c0c0c0;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 25px;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  height: 386px;
+  width: 890px;
+  margin: 0 auto;
+  position: relative;
+}
+.check-card .address{
+  text-transform: uppercase;
+  font-size: 15px;
+  font-family: Tahoma;
+}
+
+.check-card .bank-name{
+  text-transform: uppercase;
+  font-size: 15px;
+  font-family: Tahoma;
+}
+
+.check-card .address h4, .check-card .bank-name h4{
+ font-weight: bold;
+}
+.check-card .date-input{
+  margin-top: 40px;
+  width: 100%;
+}
+.frcard{
+
+  justify-content: center;
+}
+.signature{
+  margin-top: 33px; 
+}
+.card-number{
+  font-family: 'MicrFont';
+  letter-spacing: 2px;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.check-border-bottom{
+  border-bottom: 1px solid #000;
+}
+.money_text {
+  height: 15px;
+}
+
+.accounting.checks #small-table.col-md-3 .dataTables_wrapper .row:nth-child(2) .col-md-7,
+.accounting.checks #small-table.col-md-3 .dataTables_wrapper .row:nth-child(2) .col-md-5,
+.accounting.checks #small-table.col-md-3 .dataTables_wrapper .row:nth-child(2) .col-md-5 .dataTables_filter label,
+.accounting.checks #small-table.col-md-3 .dataTables_wrapper .row:nth-child(2) .col-md-5 .dataTables_filter .input-group,
+.accounting.checks #small-table.col-md-3 .dataTables_wrapper .row:nth-child(2) .col-md-5 .dataTables_filter .input-group input[type="search"]
+{
+  width: 100% !important;
+}
+.check-font-style1{
+  font-family: fantasy;
+}
+
+.img_void_check_style{
+    z-index: 10000;
+    position: absolute;
+    margin-top: 80px;
+    margin-left: 300px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.template-box label {
+  font-weight: 600;
+  font-size: 2rem;
+  margin-left: 10px;
+}
+
+.align-items-center {
+  -ms-flex-align: center!important;
+  align-items: center!important;
+}
+.justify-content-center {
+  -ms-flex-pack: center!important;
+  justify-content: center!important;
+}
+.d-flex {
+  display: -ms-flexbox!important;
+  display: flex!important;
+}
+
+.dflexy {
+  display: -webkit-flex!important;
+  display: -ms-flexbox!important;
+  display: flex!important;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.px-10{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.ip_style {
+    display: none;
+    width: 1px;
+    height: 1px;
+    border: 0px;
+}
+
+.signature-pad--body {
+    border-radius: 4px;
+    position: relative;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    border: 1px solid #c0cbda;
+}
+
+.img_style {
+    width: 150px;
+    height: 50px;
+}
+
+.text-wrap {
+  word-break: break-word !important;
+}
+
+.width-250{
+  width: 250px;
+}
+
+.acc-text-info{
+  color: #31708f !important;
+}
+
+.acc-text-success{
+  color: #3c763d !important;
+}
+.bill-card{
+  height: 349px !important;
+}
+
+.check-company-info-row {
+  display: flex;
+  gap: 10px; /* Khoảng cách giữa image và info */
+}
+
+.check-company-logo img {
+  width: 60px;   /* hoặc 80px, tùy bạn */
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px; /* Bo góc nhẹ nếu muốn */
+  max-width: none;
+}
+
+.check-company-address {
+  display: flex;
+  flex-direction: column;
+}
+
+.date-input .input-group-addon{
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+.bill .dz-preview{
+  margin: 0px;
+}
+.bill .dz-details, .bill .dz-image, .bill .dz-progress{
+  max-height: 100px;
+}
+
+.apr_div {
+  text-align: center; 
+  font-size: 15px;
+}
+
+/* Approval Timeline Styles */
+.approval-timeline {
+  position: relative;
+  padding-left: 25px;
+  margin-top: 15px;
+}
+.approval-timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 5px;
+  bottom: 5px;
+  width: 2px;
+  background: #e2e8f0;
+}
+.approval-step {
+  position: relative;
+  margin-bottom: 20px;
+}
+.approval-step:last-child {
+  margin-bottom: 0;
+}
+.approval-icon-indicator {
+  position: absolute;
+  left: -25px;
+  top: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 1px #cbd5e1;
+  z-index: 2;
+}
+.approval-step.approved .approval-icon-indicator {
+  background: #22c55e;
+  box-shadow: 0 0 0 1px #22c55e;
+}
+.approval-step.rejected .approval-icon-indicator {
+  background: #ef4444;
+  box-shadow: 0 0 0 1px #ef4444;
+}
+.approval-step.pending .approval-icon-indicator {
+  background: #f59e0b;
+  box-shadow: 0 0 0 1px #f59e0b;
+}
+.approval-content {
+  background: #f8fafc;
+  border: 1px solid #f1f5f9;
+  border-radius: 6px;
+  padding: 12px 15px;
+}
+.approval-content h6 {
+  margin: 0 0 4px 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e293b;
+}
+.approval-content .position {
+  font-size: 11px;
+  color: #64748b;
+  display: block;
+  margin-bottom: 8px;
+}
+.approval-content .signature-container {
+  margin-top: 8px;
+}
+.approval-content .signature-container img {
+  max-height: 40px;
+  object-fit: contain;
+}
+.approval-content .approval-date {
+  font-size: 11px;
+  color: #64748b;
+  margin-top: 6px;
+  margin-bottom: 0;
+}
+.approval-content .approval-note {
+  font-size: 12px;
+  color: #334155;
+  background: #fff;
+  padding: 6px 10px;
+  border-left: 3px solid #cbd5e1;
+  margin-top: 8px;
+  border-radius: 0 4px 4px 0;
+}
+
+.panel-flex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.margin-0 {
+  margin: 0 !important;
+}
+.z-9999 {
+  z-index: 9999 !important;
+}
+.min-width-250 {
+  min-width: 250px !important;
+}
+.padding-15 {
+  padding: 15px !important;
+}
+.no-left-right-padding {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.font-weight-600 {
+  font-weight: 600 !important;
+}
+.signer-label-size {
+  font-size: 10px !important;
+  padding: 2px 5px !important;
+}
+.display-block-desc {
+  display: block !important;
+  font-size: 11px !important;
+  color: #64748b !important;
+  margin-bottom: 5px !important;
+}
+.max-width-150-img {
+  max-width: 150px !important;
+  height: auto !important;
+}
+.width-80-img {
+  width: 80px !important;
+  height: auto !important;
+}
+.step-status-date-margin {
+  margin-top: 5px !important;
+  font-size: 11px !important;
+}
+.step-note-padding {
+  margin-top: 5px !important;
+  padding: 5px 8px !important;
+  background-color: #f8fafc !important;
+  border-left: 2px solid #cbd5e1 !important;
+  font-size: 11px !important;
+}
+

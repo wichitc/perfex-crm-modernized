@@ -1,0 +1,362 @@
+<?php
+
+defined('BASEPATH') or exit('No direct script access allowed');
+
+/*
+Module Name: Human Resources Management
+Module URI: https://codecanyon.net/item/human-resources-management-hr-module-for-perfex-crm/26620578
+Description: Human Resource Management module for Perfex
+Version: 2.6.3
+Requires at least: 2.3.*
+Author: Themesic Interactive
+Author URI: https://codecanyon.net/user/themesic/portfolio
+*/
+
+define('HRM_MODULE', 'hrm');
+define('HRM_MODULE_UPLOAD_FOLDER', module_dir_path(HRM_MODULE, 'uploads'));
+require_once __DIR__.'/vendor/autoload.php';
+modules\hrm\core\Apiinit::the_da_vinci_code(HRM_MODULE);
+modules\hrm\core\Apiinit::ease_of_mind(HRM_MODULE);
+hooks()->add_action('admin_init', 'hrm_permissions');
+hooks()->add_action('app_admin_head', 'hrm_add_head_components');
+hooks()->add_action('app_admin_footer', 'hrm_add_footer_components');
+hooks()->add_action('admin_init', 'hrm_module_init_menu_items');
+
+/**
+* Register activation module hook
+*/
+register_activation_hook(HRM_MODULE, 'hrm_module_activation_hook');
+
+function hrm_module_activation_hook()
+{
+    $CI = &get_instance();
+    require_once(__DIR__ . '/install.php');
+}
+
+/**
+* Register language files, must be registered if the module is using languages
+*/
+register_language_files(HRM_MODULE, [HRM_MODULE]);
+
+
+$CI = & get_instance();
+$CI->load->helper(HRM_MODULE . '/hrm');
+
+/**
+ * Init goals module menu items in setup in admin_init hook
+ * @return null
+ */
+function hrm_module_init_menu_items()
+{
+    $CI = &get_instance();
+    if (has_permission('hrm', '', 'view')) {
+
+        $CI->app_menu->add_sidebar_menu_item('HRM', [
+                'name'     => _l('hrm'),
+                'icon'     => 'fa fa-user-circle',
+                'href'     => admin_url('#'),
+        ]);
+        $CI->app_menu->add_sidebar_children_item('HRM', [
+                'slug'     => 'hrm_dashboard',
+                'name'     => _l('dashboard'),
+                'icon'     => 'fa fa-home',
+                
+                'href'     => admin_url('hrm'),
+        ]);
+        $CI->app_menu->add_sidebar_children_item('HRM', [
+                'slug'     => 'hrm_staff',
+                'name'     => _l('staff'),
+                'icon'     => 'fa fa-address-book',
+                
+                'href'     => admin_url('hrm/staff_infor'),
+        ]);
+        $CI->app_menu->add_sidebar_children_item('HRM', [
+                'slug'     => 'hrm_job_descriptions',
+                'name'     => _l('job_descriptions'),
+                'icon'     => 'fa fa-briefcase',
+                'href'     => admin_url('hrm/job_descriptions'),
+        ]);
+        $CI->app_menu->add_sidebar_children_item('HRM', [
+                'slug'     => 'hrm_organizational_chart',
+                'name'     => _l('organizational_chart'),
+                'icon'     => 'fa fa-sitemap',
+                'href'     => admin_url('hrm/organizational_chart'),
+        ]);
+        $CI->app_menu->add_sidebar_children_item('HRM', [
+                'slug'     => 'hrm_onboarding',
+                'name'     => _l('onboarding'),
+                'icon'     => 'fa fa-user-plus',
+                'href'     => admin_url('hrm/onboarding'),
+        ]);
+        $CI->app_menu->add_sidebar_children_item('HRM', [
+                'slug'     => 'hrm_staff_contract',
+                'name'     => _l('staff_contract'),
+                'icon'     => 'fa fa-file',
+                'href'     => admin_url('hrm/contracts'),
+        ]);
+        $CI->app_menu->add_sidebar_children_item('HRM', [
+                'slug'     => 'hrm_training',
+                'name'     => _l('training'),
+                'icon'     => 'fa fa-graduation-cap',
+                'href'     => admin_url('hrm/training'),
+        ]);
+        $CI->app_menu->add_sidebar_children_item('HRM', [
+                'slug'     => 'hrm_layoff',
+                'name'     => _l('layoff_management'),
+                'icon'     => 'fa fa-user-times',
+                'href'     => admin_url('hrm/layoff'),
+        ]);
+        $CI->app_menu->add_sidebar_children_item('HRM', [
+                'slug'     => 'hrm_policies',
+                'name'     => _l('policies_qa'),
+                'icon'     => 'fa fa-question-circle',
+                'href'     => admin_url('hrm/policies'),
+        ]);
+        $CI->app_menu->add_sidebar_children_item('HRM', [
+                'slug'     => 'hrm_insurrance',
+                'name'     => _l('insurrance'),
+                'icon'     => 'fa fa-medkit',
+                'href'     => admin_url('hrm/insurances'),
+        ]);
+        if (is_admin()) {
+            $CI->app_menu->add_sidebar_children_item('HRM', [
+                    'slug'     => 'hrm_timekeeping',
+                    'name'     => _l('timekeeping'),
+                    'icon'     => 'fa fa fa-pencil',
+                    'href'     => admin_url('hrm/timekeeping'),
+            ]);
+        }
+
+        if (is_admin()) {
+        $CI->app_menu->add_sidebar_children_item('HRM', [
+                'slug'     => 'hrm_payroll',
+                'name'     => _l('payroll'),
+                'icon'     => 'fa fa-dollar',
+                'href'     => admin_url('hrm/payroll'),
+        ]);
+        }
+
+        if (is_admin()) {
+            $CI->app_menu->add_sidebar_children_item('HRM', [
+                    'slug'     => 'hrm_deductions',
+                    'name'     => _l('staff_deductions'),
+                    'icon'     => 'fa fa-minus-circle',
+                    'href'     => admin_url('hrm/deductions'),
+            ]);
+            $CI->app_menu->add_sidebar_children_item('HRM', [
+                    'slug'     => 'hrm_thirteenth_month',
+                    'name'     => _l('thirteenth_month_salary'),
+                    'icon'     => 'fa fa-gift',
+                    'href'     => admin_url('hrm/thirteenth_month'),
+            ]);
+        }
+
+        $CI->app_menu->add_sidebar_children_item('HRM', [
+                'slug'     => 'hrm_reports',
+                'name'     => _l('hr_reports'),
+                'icon'     => 'fa fa-bar-chart',
+                'href'     => admin_url('hrm/reports'),
+        ]);
+        $CI->app_menu->add_sidebar_children_item('HRM', [
+                'slug'     => 'hrm_assets',
+                'name'     => _l('my_assets'),
+                'icon'     => 'fa fa-laptop',
+                'href'     => admin_url('hrm/assets'),
+        ]);
+        $CI->app_menu->add_sidebar_children_item('HRM', [
+                'slug'     => 'hrm_helpdesk',
+                'name'     => _l('hr_helpdesk'),
+                'icon'     => 'fa fa-question-circle',
+                'href'     => admin_url('hrm/helpdesk'),
+        ]);
+        $CI->app_menu->add_sidebar_children_item('HRM', [
+                'slug'     => 'hrm_performance',
+                'name'     => _l('performance_management'),
+                'icon'     => 'fa fa-trophy',
+                'href'     => admin_url('hrm/performance'),
+        ]);
+        $CI->app_menu->add_sidebar_children_item('HRM', [
+                'slug'     => 'hrm_learning',
+                'name'     => _l('learning_paths'),
+                'icon'     => 'fa fa-book',
+                'href'     => admin_url('hrm/learning'),
+        ]);
+        $CI->app_menu->add_sidebar_children_item('HRM', [
+                'slug'     => 'hrm_engagement',
+                'name'     => _l('employee_engagement'),
+                'icon'     => 'fa fa-heart',
+                'href'     => admin_url('hrm/engagement'),
+        ]);
+        $CI->app_menu->add_sidebar_children_item('HRM', [
+                'slug'     => 'hrm_documents',
+                'name'     => _l('hr_documents'),
+                'icon'     => 'fa fa-folder-open',
+                'href'     => admin_url('hrm/documents'),
+        ]);
+        $CI->app_menu->add_sidebar_children_item('HRM', [
+                'slug'     => 'hrm_custom_reports',
+                'name'     => _l('custom_reports'),
+                'icon'     => 'fa fa-pie-chart',
+                'href'     => admin_url('hrm/custom_reports'),
+        ]);
+
+        if (is_admin()) {
+            $CI->app_menu->add_sidebar_children_item('HRM', [
+                    'slug'     => 'hrm_setting',
+                    'name'     => _l('setting'),
+                    'icon'     => 'fa fa-cog',
+                    'href'     => admin_url('hrm/setting'),
+            ]);
+        }
+    }
+}
+
+
+function hrm_permissions()
+{
+    $capabilities = [];
+
+    $capabilities['capabilities'] = [
+            'view'   => _l('permission_view') . '(' . _l('permission_global') . ')',
+            'create' => _l('permission_create'),
+            'edit'   => _l('permission_edit'),
+            'delete' => _l('permission_delete'),
+    ];
+
+    register_staff_capabilities('hrm', $capabilities, _l('hrm'));
+}
+
+
+function hrm_add_head_components(){
+    $CI = &get_instance();
+	$viewuri = $_SERVER['REQUEST_URI'];
+	
+	echo '<link href="' . module_dir_url('hrm','assets/css/style.css') .'"  rel="stylesheet" type="text/css" />';
+	echo '<link href="' . module_dir_url('hrm','assets/plugins/ComboTree/style.css') .'"  rel="stylesheet" type="text/css" />';
+
+	$is_hrm_dashboard = (strpos($viewuri, 'admin/hrm') !== false) && (strpos($viewuri, 'admin/hrm/') === false) && (strpos($viewuri, 'admin/hrm?') === false);
+	if ($is_hrm_dashboard) {
+		echo '<style>#wrapper { height: 2000px !important; }</style>';
+	}
+	
+	if ($viewuri == '/admin/hrm/timekeeping?group=allocate_shiftwork' || $viewuri == '/admin/hrm/payroll?group=payroll_type' || $viewuri == '/admin/hrm/timekeeping?group=table_shiftwork' || $viewuri == '/admin/hrm/insurances' || strpos($viewuri, 'payroll') !== false ) {
+		echo '<script src="'.module_dir_url('hrm', 'assets/plugins/handsontable/handsontable.full.min.js').'"></script>';
+		echo '<link href="' . base_url('modules/hrm/assets/plugins/handsontable/handsontable.full.min.css') .'"  rel="stylesheet" type="text/css" />';
+	}
+
+	if ($viewuri == '/admin/hrm/insurances') {
+		echo '<link href="' . base_url('modules/hrm/assets/css/datepicker.css') .'"  rel="stylesheet" type="text/css" />';
+	}
+	
+	if (strpos($viewuri, '/admin/hrm/member/') !== false) {
+		echo '<link href="' . base_url('modules/hrm/assets/css/member.css') .'"  rel="stylesheet" type="text/css" />';
+	}
+	
+	if ($viewuri == '/admin/hrm/payroll?group=payroll_type') {
+		echo '<link href="' . base_url('modules/hrm/assets/css/newpayrolltype.css') .'"  rel="stylesheet" type="text/css" />';
+	}
+	
+	if (strpos($viewuri, '/admin/hrm/payroll_table') !== false) {
+		echo '<link href="' . base_url('modules/hrm/assets/css/newpayrolltable.css') .'"  rel="stylesheet" type="text/css" />';
+	}
+	
+	if (strpos($viewuri, '/admin/hrm/profile/') !== false) {
+		echo '<link href="' . base_url('modules/hrm/assets/css/profile.css') .'"  rel="stylesheet" type="text/css" />';
+	}
+	
+}
+
+
+function hrm_add_footer_components(){
+    $CI = &get_instance();
+	$viewuri = $_SERVER['REQUEST_URI'];
+	$is_hrm_dashboard = (strpos($viewuri, 'admin/hrm') !== false) && (strpos($viewuri, 'admin/hrm/') === false) && (strpos($viewuri, 'admin/hrm?') === false);
+
+	if ($is_hrm_dashboard) {
+		echo '<script src="'.module_dir_url('hrm', 'assets/plugins/highcharts/highcharts.js').'"></script>';
+		echo '<script src="'.module_dir_url('hrm', 'assets/plugins/highcharts/modules/variable-pie.js').'"></script>';
+		echo '<script src="'.module_dir_url('hrm', 'assets/plugins/circle-progress/circle-progress.min.js').'"></script>';
+	}
+
+	echo '<script src="'.module_dir_url('hrm', 'assets/plugins/ComboTree/comboTreePlugin.js').'"></script>';
+    echo '<script src="'.module_dir_url('hrm', 'assets/plugins/ComboTree/icontains.js').'"></script>';
+    echo '<script src="'.module_dir_url('hrm', 'assets/js/sidebar_active.js').'"></script>';
+
+	if (strpos($viewuri, '/admin/hrm/setting?group=workplace') !== false) {
+		echo '<script src="'.module_dir_url('hrm', 'assets/js/workplace.js').'"></script>';
+	}
+
+	if (strpos($viewuri, 'payslip') !== false || $viewuri == '/admin/hrm/payroll') {
+		echo '<script src="'.module_dir_url('hrm', 'assets/js/payslip.js').'"></script>';
+	}
+	
+	if (strpos($viewuri, 'payroll') !== false) {
+		echo '<script src="'.module_dir_url('hrm', 'assets/js/payroll.js').'"></script>';
+		echo '<script src="'.module_dir_url('hrm', 'assets/js/payrollincludes.js').'"></script>';
+		echo '<script src="'.module_dir_url('hrm', 'assets/js/payslip.js').'"></script>';
+	}
+	
+	if (strpos($viewuri, 'job_position') !== false) {
+		echo '<script src="'.module_dir_url('hrm', 'assets/js/jobposition.js').'"></script>';
+	}
+	
+	if (strpos($viewuri, 'contract_type') !== false || $viewuri == '/admin/hrm/setting') {
+		echo '<script src="'.module_dir_url('hrm', 'assets/js/contracttype.js').'"></script>';
+	}
+	
+	if (strpos($viewuri, 'allowance_type') !== false) {
+		echo '<script src="'.module_dir_url('hrm', 'assets/js/allowancetype.js').'"></script>';
+	}
+	
+	if (strpos($viewuri, '/admin/hrm/member') !== false) {
+		echo '<script src="'.module_dir_url('hrm', 'assets/js/member.js').'"></script>';
+	}
+
+	if (strpos($viewuri, '/admin/hrm/contract/') !== false || $viewuri == '/admin/hrm/contract') {
+		echo '<script src="'.module_dir_url('hrm', 'assets/js/contract.js').'"></script>';
+	}
+
+	if (strpos($viewuri, 'manage_staff') !== false || $viewuri == '/admin/hrm/staff_infor') {
+		echo '<script src="'.module_dir_url('hrm', 'assets/js/managestaff.js').'"></script>';
+	}
+	
+	if (strpos($viewuri, 'manage_setting') !== false) {
+		echo '<script src="'.module_dir_url('hrm', 'assets/js/managesetting.js').'"></script>';
+	}
+	
+	if (strpos($viewuri, 'manage_dayoff') !== false || strpos($viewuri, 'timekeeping') !== false) {
+		echo '<script src="'.module_dir_url('hrm', 'assets/js/managedayoff.js').'"></script>';
+	}
+}
+
+
+hooks()->add_action('app_init', HRM_MODULE.'_actLib');
+function hrm_actLib()
+{
+    $CI = &get_instance();
+    $CI->load->library(HRM_MODULE.'/Hrm_aeiou');
+    $envato_res = $CI->hrm_aeiou->validatePurchase(HRM_MODULE);
+    if (!$envato_res) {
+        set_alert('danger', 'One of your modules failed its verification and got deactivated. Please reactivate or contact support.');
+    }
+}
+
+hooks()->add_action('pre_activate_module', HRM_MODULE.'_sidecheck');
+function hrm_sidecheck($module_name)
+{
+    if (HRM_MODULE == $module_name['system_name']) {
+        modules\hrm\core\Apiinit::activate($module_name);
+    }
+}
+
+hooks()->add_action('pre_deactivate_module', HRM_MODULE.'_deregister');
+function hrm_deregister($module_name)
+{
+    if (HRM_MODULE == $module_name['system_name']) {
+        delete_option(HRM_MODULE.'_verification_id');
+        delete_option(HRM_MODULE.'_last_verification');
+        delete_option(HRM_MODULE.'_product_token');
+        delete_option(HRM_MODULE.'_heartbeat');
+    }
+}
+

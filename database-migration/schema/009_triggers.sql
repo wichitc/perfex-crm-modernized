@@ -1,0 +1,2 @@
+-- PostgreSQL Schema Migration: 009_triggers.sql
+-- Description: Automated timestamp and audit triggers

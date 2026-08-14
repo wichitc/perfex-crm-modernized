@@ -1,0 +1,622 @@
+/*******ROOT CSS COLOR********/
+
+:root {
+  --main-bg-color: rgb(251 146 60);
+  --white-bg-color: #fff;
+  --header-search-bg: rgba(0, 0, 0, 0.2);
+  --black-text-color: #000;
+  --orange-text-color: #fb7a10;
+  --menu-hover-bg: rgba(200, 200, 200, 0.2);
+}
+
+body {
+  background-color: #e3e8ee !important;
+}
+
+#header {
+  background: var(--main-bg-color) !important;
+}
+
+#top_search input {
+  background: white;
+}
+
+.nanobar {
+  height: 0;
+}
+
+#side-menu {
+  background: var(--main-bg-color) !important;
+}
+
+#side-menu li.active > a {
+  background: #fff !important;
+  border-color: var(--main-bg-color) !important;
+}
+
+#side-menu.nav > li > a:focus,
+#side-menu.nav > li > a:hover {
+  background: #fff;
+  border-color: transparent !important;
+}
+
+.dashboard_user {
+  background: var(--main-bg-color) !important;
+  opacity: 0.9;
+}
+
+#side-menu li a {
+  color: #fff;
+}
+
+.btn-info {
+  background: var(--main-bg-color) !important;
+  border-color: var(--main-bg-color) !important;
+}
+
+.btn-info:hover {
+  background: var(--main-bg-color) !important;
+  border-color: var(--main-bg-color) !important;
+}
+
+.radio-primary input[type="radio"]:checked + label::after {
+  background-color: var(--main-bg-color) !important;
+}
+
+.radio-primary input[type="radio"]:checked + label::before {
+  border-color: var(--main-bg-color) !important;
+}
+
+#frame .content {
+  background-color: transparent;
+}
+
+.start_chat:after {
+  border-radius: 10px;
+}
+
+#frame #sidepanel #profile,
+#frame .content .contact-profile,
+.message-input button,
+.clear-conversation,
+.sent .message {
+  background-color: var(--main-bg-color) !important;
+}
+
+#frame #sidepanel #search input,
+.select_msg_optn select {
+  background-color: #c25e0b !important;
+  border: 0 !important;
+  --tw-ring-color: transparent !important;
+}
+
+div#bottom-bar .active_btn {
+  color: var(--main-bg-color) !important;
+}
+
+.message-input button {
+  color: white;
+}
+
+ul.nav.nav-second-level.collapse.in .active .sub-menu-text {
+  color: black !important;
+}
+
+#frame #sidepanel #profile .wrap img.online {
+  border: 2px solid #c25e0b;
+}
+
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover {
+  background: var(--main-bg-color) !important;
+  border-color: var(--main-bg-color) !important;
+}
+
+a {
+  color: var(--main-bg-color);
+}
+
+.tw-text-primary-600 {
+  color: var(--main-bg-color) !important;
+}
+
+table.dataTable thead > tr > th {
+  color: var(--black-text-color);
+}
+
+#side-menu li .nav-second-level li a {
+  color: var(--black-text-color);
+}
+
+#side-menu li .nav-second-level li.active a {
+  background: var(--main-bg-color) !important;
+}
+
+#side-menu.nav > li.pinned_project > a:hover {
+  color: #000;
+}
+
+.dataTables_length select:focus,
+.uneditable-input:focus,
+input[type="color"]:focus,
+input[type="date"]:focus,
+input[type="datetime-local"]:focus,
+input[type="datetime"]:focus,
+input[type="email"]:focus,
+input[type="file"]:focus,
+input[type="month"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="text"]:focus,
+input[type="time"]:focus,
+input[type="url"]:focus,
+input[type="week"]:focus,
+select.form-control:focus,
+textarea.form-control:focus {
+  border-color: #bfcbd9;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li > a:focus,
+.nav-tabs > li > a:hover {
+  color: --main-bg-color;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover,
+.navbar-pills.nav-tabs > li > a:focus,
+.navbar-pills.nav-tabs > li > a:hover {
+  border-bottom: 1px solid var(--main-bg-color) !important;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li > a:focus,
+.hrm-bgblue {
+  background-color: var(--white-bg-color);
+}
+
+.btn-success {
+  background: var(--main-bg-color) !important;
+}
+
+.checkbox-info input[type="checkbox"]:checked + label::before,
+.checkbox-info input[type="radio"]:checked + label::before {
+  background-color: transparent !important;
+  border-color: var(--main-bg-color) !important;
+}
+
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:focus,
+.dropdown-menu > .active > a:hover {
+  background: var(--main-bg-color) !important;
+}
+
+.user-data .home-activity .nav-tabs > li.active > a,
+.user-data .home-activity .nav-tabs > li.active > a:focus,
+.user-data .home-activity .nav-tabs > li.active > a:hover,
+.user-data .home-activity .nav-tabs > li > a:focus,
+.user-data .home-activity .nav-tabs > li > a:hover {
+  color: --main-bg-color !important;
+}
+
+.btn-info.active,
+.btn-info:active,
+.open > .dropdown-toggle.btn-info {
+  background: var(--main-bg-color) !important !important;
+  opacity: 0.9;
+  border-color: var(--main-bg-color) !important !important;
+}
+
+.btn-info.disabled,
+.btn-info.disabled.active,
+.btn-info.disabled.focus,
+.btn-info.disabled:active,
+.btn-info.disabled:focus,
+.btn-info.disabled:hover,
+.btn-info[disabled],
+.btn-info[disabled].active,
+.btn-info[disabled].focus,
+.btn-info[disabled]:active,
+.btn-info[disabled]:focus,
+.btn-info[disabled]:hover,
+fieldset[disabled] .btn-info,
+fieldset[disabled] .btn-info.active,
+fieldset[disabled] .btn-info.focus,
+fieldset[disabled] .btn-info:active,
+fieldset[disabled] .btn-info:focus,
+fieldset[disabled] .btn-info:hover {
+  background: var(--main-bg-color) !important;
+  opacity: 0.9;
+}
+
+.activity-feed .feed-item {
+  border-left: 2px solid var(--main-bg-color) !important;
+}
+
+.card-ttl {
+  background-color: var(--main-bg-color) !important;
+}
+
+.label-info {
+  background: 0 0;
+  border: 1px solid var(--main-bg-color) !important;
+  color: --main-bg-color;
+}
+
+.modal-header {
+  background: var(--main-bg-color) !important;
+  opacity: 0.9;
+}
+
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current,
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_default,
+.xdsoft_datetimepicker
+  .xdsoft_timepicker
+  .xdsoft_time_box
+  > div
+  > div.xdsoft_current {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: var(--main-bg-color) !important;
+  border-radius: 3px;
+  opacity: 0.9;
+}
+
+#setup-menu-wrapper {
+  background: var(--white-bg-color);
+}
+
+.btn-primary {
+  color: #fff;
+  background: var(--main-bg-color) !important !important;
+}
+
+.checkbox-primary input[type="checkbox"]:checked + label::before,
+.checkbox-primary input[type="radio"]:checked + label::before {
+  background-color: var(--main-bg-color) !important;
+  border-color: var(--main-bg-color) !important;
+}
+
+#top_search {
+  padding-top: 7px;
+}
+
+.btn-success.active,
+.btn-success:active,
+.btn-success:focus,
+.btn-success:hover,
+.open .dropdown-toggle.btn-success {
+  background-color: var(--main-bg-color) !important;
+  border-color: var(--main-bg-color) !important;
+}
+
+.text-info {
+  color: var(--main-bg-color) !important;
+}
+
+.dropzone .dz-message {
+  color: var(--main-bg-color) !important;
+}
+
+.table.items thead {
+  background-color: var(--main-bg-color) !important;
+}
+
+.radio-primary
+  input[type="radio"]:checked
+  + label::before
+  .radio-primary
+  input[type="radio"]:checked
+  + label::after {
+  background-color: var(--main-bg-color) !important !important;
+}
+
+.login_admin {
+  background-color: var(--main-bg-color) !important;
+}
+
+.ringing {
+  background-color: var(--main-bg-color);
+}
+
+#setup-menu li .nav-second-level li.active a {
+  background-color: var(--main-bg-color);
+}
+
+.cut a {
+  background-color: transparent;
+  border: 1px solid #710303;
+  color: #ff0c0c;
+}
+
+.dropdown-toggle.profile {
+  background-color: white;
+}
+
+.navbar-right i {
+  color: white !important;
+}
+
+.btn.btn-primary {
+  background-color: var(--main-bg-color) !important;
+  border-color: transparent !important;
+  color: white !important;
+}
+
+.sidebar.animated.display-block a {
+  color: white;
+  border-radius: 0.375rem !important;
+}
+
+.customizer-heading {
+  color: white;
+}
+
+.fc-button-primary.fc-button-active,
+.fc-button-primary.focus,
+.fc-button-primary:active,
+.fc-button-primary:focus,
+.fc-button-primary:hover {
+  background-color: var(--main-bg-color) !important;
+  border-color: transparent !important;
+  color: white !important;
+}
+
+.fc-button-primary.fc-button-active:focus,
+.fc-button-primary.fc-button-active:hover,
+.fc-button-primary:active:focus,
+.fc-button-primary:active:hover {
+  background-color: var(--main-bg-color) !important;
+  border-color: transparent !important;
+  color: white !important;
+}
+
+.fc-next-button,
+.fc-prev-button {
+  background-color: var(--main-bg-color) !important;
+  border-color: transparent !important;
+  color: white !important;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label {
+  background-color: var(--main-bg-color);
+  border: 0;
+}
+
+#small-calendar .fc-col-header-cell a {
+  color: white !important;
+}
+
+#appointment_manager .fc-col-header-cell a {
+  color: white !important;
+}
+
+#appointment_manager .fc-dayGridMonth-view .fc-daygrid-dot-event {
+  background-color: var(--main-bg-color) !important;
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label,
+.onoffswitch-checkbox:checked + .onoffswitch-label:before {
+  border-color: transparent;
+}
+
+#top_search_button button {
+  color: var(--orange-text-color) !important;
+}
+
+#side-menu li.active > a {
+  border-color: transparent !important;
+}
+
+#widget-top_stats .fa-balance-scale {
+  color: var(--orange-text-color) !important;
+}
+
+#widget-top_stats .progress-bar-danger {
+  color: var(--orange-text-color) !important;
+}
+
+#widget-top_stats .fa-tty {
+  color: var(--orange-text-color) !important;
+}
+
+#widget-top_stats .progress-bar-success {
+  color: var(--orange-text-color) !important;
+}
+
+#widget-top_stats .fa-cubes {
+  background-color: transparent !important;
+}
+
+#side-menu li .nav-second-level li a {
+  color: white;
+}
+
+.quick-stats-projects .no-percent-text {
+  color: var(--orange-text-color) !important;
+}
+
+#widget-finance_overview .text-dark {
+  background: var(--main-bg-color) !important;
+}
+
+.screen-options-btn {
+  background: var(--main-bg-color) !important;
+}
+
+#widget-projects_chart .padding-5,
+#widget-tickets_chart .padding-5,
+#widget-leads_chart .padding-5,
+#widget-projects_activity .padding-5 {
+  background: var(--main-bg-color) !important;
+}
+
+#widget-user_data .nav li a:hover {
+  background: var(--main-bg-color) !important;
+}
+
+#widget-user_data .nav .active a {
+  background: var(--main-bg-color) !important;
+}
+
+.home-activity .mbot20 {
+  background: var(--main-bg-color) !important;
+}
+
+.sidebar ul.nav li a i.menu-icon {
+  color: white;
+}
+
+.btn.active,
+.btn:active {
+  border-color: transparent !important;
+}
+.activity-feed .feed-item {
+  border-left: 2px solid var(--main-bg-color) !important;
+}
+.modal-header {
+  background: var(--main-bg-color) !important;
+}
+.checkbox-primary input[type="checkbox"]:checked + label::after,
+.checkbox-primary input[type="radio"]:checked + label::after {
+  color: #fb7a10;
+}
+#side-menu.nav > li > a:focus,
+#side-menu.nav > li > a:hover {
+  border-color: transparent !important;
+}
+#side-menu.nav > li > a:focus,
+#side-menu.nav > li > a:hover {
+  background: rgb(255 255 255) !important;
+  color: black;
+}
+div#DataTables_Table_1_info {
+  position: relative;
+  top: 40px;
+}
+body #wrapper th {
+  color: var(--orange-text-color) !important;
+}
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_desc_disabled:after {
+  color: var(--orange-text-color) !important;
+}
+.checkbox label::after {
+  color: var(--orange-text-color) !important;
+}
+.color_confi_btn {
+  background: var(--main-bg-color) !important;
+}
+#widget-finance_overview .show-tick {
+  background: var(--main-bg-color) !important;
+}
+
+#widget-top_stats .fa-tasks {
+  background-color: rgb(252 78 27) !important;
+}
+#widget-top_stats .progress-bar-default {
+  background-color: rgb(214 66 23) !important;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li > a:focus,
+.nav-tabs > li > a:hover {
+  color: var(--orange-text-color);
+}
+.nav.nav-tabs.profile-tabs.row.customer-profile-tabs.nav-tabs-horizontal
+  .active
+  a {
+  color: var(--orange-text-color) !important;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li > a:focus,
+.nav-tabs > li > a:hover {
+  border-bottom: 1px solid var(--orange-text-color) !important;
+}
+.user-data .home-activity .nav-tabs > li.active > a,
+.user-data .home-activity .nav-tabs > li.active > a:focus,
+.user-data .home-activity .nav-tabs > li.active > a:hover,
+.user-data .home-activity .nav-tabs > li > a:focus,
+.user-data .home-activity .nav-tabs > li > a:hover {
+  border-bottom: 0;
+  color: #ffffff !important;
+  margin-bottom: 2px;
+}
+ul#setup-menu {
+  background: var(--main-bg-color) !important;
+}
+
+.sidebar {
+  background: var(--main-bg-color) !important;
+}
+
+.contact.active p {
+  color: white !important;
+}
+
+.contact.active small {
+  color: white !important;
+}
+
+#profile-img {
+  border: 2px solid #d38a52 !important;
+}
+
+#frame #sidepanel #contacts ul li.contact.active,
+ul#contacts .selected,
+ul#lead-contacts .active {
+  background-color: #ffe3cb !important;
+}
+
+ul#lead-contacts .active .name,
+ul#lead-contacts small,
+ul#lead-contacts .preview,
+ul#lead-contacts .last_active {
+  color: #000000 !important;
+}
+
+.modal-title {
+  color: white;
+}
+
+.tw-flex.tw-flex-col.tw-gap-6
+  h4.tw-mt-0.tw-mb-4.tw-text-sm.tw-text-neutral-500.tw-font-medium {
+  color: black;
+  background-color: #e9e9e9;
+  border-left: 3px solid #fb923c;
+}
+
+#side-menu .active a i {
+    color: black !important;
+}
+
+#side-menu li a:hover .menu-icon{color: black !important;}
+
+.clients .tw-grid.tw-grid-cols-2.md\:tw-grid-cols-3.lg\:tw-grid-cols-6.tw-gap-2 .tw-font-medium.tw-bg-white .popover-title {
+    background-color: var(--main-bg-color) !important;;}
+
+.clients .tw-grid.tw-grid-cols-2.md\:tw-grid-cols-3.lg\:tw-grid-cols-6.tw-gap-2 .tw-font-medium.tw-bg-white .popover.bottom>.arrow:after {
+
+    border-bottom-color: var(--main-bg-color) !important;;
+}
+
+.sidebar .active>a>.fa.arrow:before {
+    content: "\f107";
+    color: black;
+}

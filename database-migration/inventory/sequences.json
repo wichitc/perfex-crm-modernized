@@ -1,0 +1,547 @@
+[
+  {
+    "sequence_name": "tblactivity_log_id_seq",
+    "table": "tblactivity_log",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblannouncements_announcementid_seq",
+    "table": "tblannouncements",
+    "column": "announcementid"
+  },
+  {
+    "sequence_name": "tblclients_userid_seq",
+    "table": "tblclients",
+    "column": "userid"
+  },
+  {
+    "sequence_name": "tblconsents_id_seq",
+    "table": "tblconsents",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblconsent_purposes_id_seq",
+    "table": "tblconsent_purposes",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblcontacts_id_seq",
+    "table": "tblcontacts",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblcontact_permissions_id_seq",
+    "table": "tblcontact_permissions",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblcontracts_id_seq",
+    "table": "tblcontracts",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblcontracts_types_id_seq",
+    "table": "tblcontracts_types",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblcontract_comments_id_seq",
+    "table": "tblcontract_comments",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblcontract_renewals_id_seq",
+    "table": "tblcontract_renewals",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblcountries_country_id_seq",
+    "table": "tblcountries",
+    "column": "country_id"
+  },
+  {
+    "sequence_name": "tblcreditnotes_id_seq",
+    "table": "tblcreditnotes",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblcreditnote_refunds_id_seq",
+    "table": "tblcreditnote_refunds",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblcredits_id_seq",
+    "table": "tblcredits",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblcurrencies_id_seq",
+    "table": "tblcurrencies",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblcustomers_groups_id_seq",
+    "table": "tblcustomers_groups",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblcustomer_groups_id_seq",
+    "table": "tblcustomer_groups",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblcustomfields_id_seq",
+    "table": "tblcustomfields",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblcustomfieldsvalues_id_seq",
+    "table": "tblcustomfieldsvalues",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tbldepartments_departmentid_seq",
+    "table": "tbldepartments",
+    "column": "departmentid"
+  },
+  {
+    "sequence_name": "tbldismissed_announcements_dismissedannouncementid_seq",
+    "table": "tbldismissed_announcements",
+    "column": "dismissedannouncementid"
+  },
+  {
+    "sequence_name": "tblemailtemplates_emailtemplateid_seq",
+    "table": "tblemailtemplates",
+    "column": "emailtemplateid"
+  },
+  {
+    "sequence_name": "tblestimates_id_seq",
+    "table": "tblestimates",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblestimate_requests_id_seq",
+    "table": "tblestimate_requests",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblestimate_request_forms_id_seq",
+    "table": "tblestimate_request_forms",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblestimate_request_status_id_seq",
+    "table": "tblestimate_request_status",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblevents_eventid_seq",
+    "table": "tblevents",
+    "column": "eventid"
+  },
+  {
+    "sequence_name": "tblexpenses_id_seq",
+    "table": "tblexpenses",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblexpenses_categories_id_seq",
+    "table": "tblexpenses_categories",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblfiles_id_seq",
+    "table": "tblfiles",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblfilters_id_seq",
+    "table": "tblfilters",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblform_questions_questionid_seq",
+    "table": "tblform_questions",
+    "column": "questionid"
+  },
+  {
+    "sequence_name": "tblform_question_box_boxid_seq",
+    "table": "tblform_question_box",
+    "column": "boxid"
+  },
+  {
+    "sequence_name": "tblform_question_box_description_questionboxdescriptionid_seq",
+    "table": "tblform_question_box_description",
+    "column": "questionboxdescriptionid"
+  },
+  {
+    "sequence_name": "tblform_results_resultid_seq",
+    "table": "tblform_results",
+    "column": "resultid"
+  },
+  {
+    "sequence_name": "tblgdpr_requests_id_seq",
+    "table": "tblgdpr_requests",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblinvoicepaymentrecords_id_seq",
+    "table": "tblinvoicepaymentrecords",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblinvoices_id_seq",
+    "table": "tblinvoices",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblitemable_id_seq",
+    "table": "tblitemable",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblitems_id_seq",
+    "table": "tblitems",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblitems_groups_id_seq",
+    "table": "tblitems_groups",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblitem_tax_id_seq",
+    "table": "tblitem_tax",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblknowedge_base_article_feedback_articleanswerid_seq",
+    "table": "tblknowedge_base_article_feedback",
+    "column": "articleanswerid"
+  },
+  {
+    "sequence_name": "tblknowledge_base_articleid_seq",
+    "table": "tblknowledge_base",
+    "column": "articleid"
+  },
+  {
+    "sequence_name": "tblknowledge_base_groups_groupid_seq",
+    "table": "tblknowledge_base_groups",
+    "column": "groupid"
+  },
+  {
+    "sequence_name": "tblleads_id_seq",
+    "table": "tblleads",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblleads_email_integration_id_seq",
+    "table": "tblleads_email_integration",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblleads_sources_id_seq",
+    "table": "tblleads_sources",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblleads_status_id_seq",
+    "table": "tblleads_status",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tbllead_activity_log_id_seq",
+    "table": "tbllead_activity_log",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tbllead_integration_emails_id_seq",
+    "table": "tbllead_integration_emails",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblmail_queue_id_seq",
+    "table": "tblmail_queue",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblmilestones_id_seq",
+    "table": "tblmilestones",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblmodules_id_seq",
+    "table": "tblmodules",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblnewsfeed_comment_likes_id_seq",
+    "table": "tblnewsfeed_comment_likes",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblnewsfeed_posts_postid_seq",
+    "table": "tblnewsfeed_posts",
+    "column": "postid"
+  },
+  {
+    "sequence_name": "tblnewsfeed_post_comments_id_seq",
+    "table": "tblnewsfeed_post_comments",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblnewsfeed_post_likes_id_seq",
+    "table": "tblnewsfeed_post_likes",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblnotes_id_seq",
+    "table": "tblnotes",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblnotifications_id_seq",
+    "table": "tblnotifications",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tbloptions_id_seq",
+    "table": "tbloptions",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblpayment_attempts_id_seq",
+    "table": "tblpayment_attempts",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblpayment_modes_id_seq",
+    "table": "tblpayment_modes",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblpinned_projects_id_seq",
+    "table": "tblpinned_projects",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblprojectdiscussioncomments_id_seq",
+    "table": "tblprojectdiscussioncomments",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblprojectdiscussions_id_seq",
+    "table": "tblprojectdiscussions",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblprojects_id_seq",
+    "table": "tblprojects",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblproject_activity_id_seq",
+    "table": "tblproject_activity",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblproject_files_id_seq",
+    "table": "tblproject_files",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblproject_members_id_seq",
+    "table": "tblproject_members",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblproject_notes_id_seq",
+    "table": "tblproject_notes",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblproject_settings_id_seq",
+    "table": "tblproject_settings",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblproposals_id_seq",
+    "table": "tblproposals",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblproposal_comments_id_seq",
+    "table": "tblproposal_comments",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblrelated_items_id_seq",
+    "table": "tblrelated_items",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblreminders_id_seq",
+    "table": "tblreminders",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblroles_roleid_seq",
+    "table": "tblroles",
+    "column": "roleid"
+  },
+  {
+    "sequence_name": "tblsales_activity_id_seq",
+    "table": "tblsales_activity",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblscheduled_emails_id_seq",
+    "table": "tblscheduled_emails",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblservices_serviceid_seq",
+    "table": "tblservices",
+    "column": "serviceid"
+  },
+  {
+    "sequence_name": "tblspam_filters_id_seq",
+    "table": "tblspam_filters",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblstaff_staffid_seq",
+    "table": "tblstaff",
+    "column": "staffid"
+  },
+  {
+    "sequence_name": "tblstaff_departments_staffdepartmentid_seq",
+    "table": "tblstaff_departments",
+    "column": "staffdepartmentid"
+  },
+  {
+    "sequence_name": "tblsubscriptions_id_seq",
+    "table": "tblsubscriptions",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tbltags_id_seq",
+    "table": "tbltags",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tbltasks_id_seq",
+    "table": "tbltasks",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tbltaskstimers_id_seq",
+    "table": "tbltaskstimers",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tbltasks_checklist_templates_id_seq",
+    "table": "tbltasks_checklist_templates",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tbltask_assigned_id_seq",
+    "table": "tbltask_assigned",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tbltask_checklist_items_id_seq",
+    "table": "tbltask_checklist_items",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tbltask_comments_id_seq",
+    "table": "tbltask_comments",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tbltask_followers_id_seq",
+    "table": "tbltask_followers",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tbltaxes_id_seq",
+    "table": "tbltaxes",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tbltemplates_id_seq",
+    "table": "tbltemplates",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tbltickets_ticketid_seq",
+    "table": "tbltickets",
+    "column": "ticketid"
+  },
+  {
+    "sequence_name": "tbltickets_pipe_log_id_seq",
+    "table": "tbltickets_pipe_log",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tbltickets_predefined_replies_id_seq",
+    "table": "tbltickets_predefined_replies",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tbltickets_priorities_priorityid_seq",
+    "table": "tbltickets_priorities",
+    "column": "priorityid"
+  },
+  {
+    "sequence_name": "tbltickets_status_ticketstatusid_seq",
+    "table": "tbltickets_status",
+    "column": "ticketstatusid"
+  },
+  {
+    "sequence_name": "tblticket_attachments_id_seq",
+    "table": "tblticket_attachments",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblticket_replies_id_seq",
+    "table": "tblticket_replies",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tbltodos_todoid_seq",
+    "table": "tbltodos",
+    "column": "todoid"
+  },
+  {
+    "sequence_name": "tbltracked_mails_id_seq",
+    "table": "tbltracked_mails",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tbltwocheckout_log_id_seq",
+    "table": "tbltwocheckout_log",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tbluser_meta_umeta_id_seq",
+    "table": "tbluser_meta",
+    "column": "umeta_id"
+  },
+  {
+    "sequence_name": "tblvault_id_seq",
+    "table": "tblvault",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblviews_tracking_id_seq",
+    "table": "tblviews_tracking",
+    "column": "id"
+  },
+  {
+    "sequence_name": "tblweb_to_lead_id_seq",
+    "table": "tblweb_to_lead",
+    "column": "id"
+  }
+]

@@ -1,0 +1,4896 @@
+{
+  "tblactivity_log": {
+    "table_name": "tblactivity_log",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "description",
+      "date",
+      "staffid"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "staffid",
+        "table": "tblactivity_log",
+        "columns": [
+          "staffid"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblactivity_log_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblannouncements": {
+    "table_name": "tblannouncements",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "announcementid",
+      "name",
+      "message",
+      "showtousers",
+      "showtostaff",
+      "showname",
+      "dateadded",
+      "userid"
+    ],
+    "primary_key": [
+      "announcementid"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "announcementid",
+    "sequence": "tblannouncements_announcementid_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblclients": {
+    "table_name": "tblclients",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "userid",
+      "company",
+      "vat",
+      "phonenumber",
+      "country",
+      "city",
+      "zip",
+      "state",
+      "address",
+      "website",
+      "datecreated",
+      "active",
+      "leadid",
+      "billing_street",
+      "billing_city",
+      "billing_state",
+      "billing_zip",
+      "billing_country",
+      "shipping_street",
+      "shipping_city",
+      "shipping_state",
+      "shipping_zip",
+      "shipping_country",
+      "longitude",
+      "latitude",
+      "default_language",
+      "default_currency",
+      "show_primary_contact",
+      "stripe_id",
+      "registration_confirmed",
+      "addedfrom"
+    ],
+    "primary_key": [
+      "userid"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "country",
+        "table": "tblclients",
+        "columns": [
+          "country"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "leadid",
+        "table": "tblclients",
+        "columns": [
+          "leadid"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "company",
+        "table": "tblclients",
+        "columns": [
+          "company"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "active",
+        "table": "tblclients",
+        "columns": [
+          "active"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "userid",
+    "sequence": "tblclients_userid_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblconsents": {
+    "table_name": "tblconsents",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "action",
+      "date",
+      "ip",
+      "contact_id",
+      "lead_id",
+      "description",
+      "opt_in_purpose_description",
+      "purpose_id",
+      "staff_name"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "purpose_id",
+        "table": "tblconsents",
+        "columns": [
+          "purpose_id"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "contact_id",
+        "table": "tblconsents",
+        "columns": [
+          "contact_id"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "lead_id",
+        "table": "tblconsents",
+        "columns": [
+          "lead_id"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblconsents_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblconsent_purposes": {
+    "table_name": "tblconsent_purposes",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "name",
+      "description",
+      "date_created",
+      "last_updated"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblconsent_purposes_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblcontacts": {
+    "table_name": "tblcontacts",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "userid",
+      "is_primary",
+      "firstname",
+      "lastname",
+      "email",
+      "phonenumber",
+      "title",
+      "datecreated",
+      "password",
+      "new_pass_key",
+      "new_pass_key_requested",
+      "email_verified_at",
+      "email_verification_key",
+      "email_verification_sent_at",
+      "last_ip",
+      "last_login",
+      "last_password_change",
+      "active",
+      "profile_image",
+      "direction",
+      "invoice_emails",
+      "estimate_emails",
+      "credit_note_emails",
+      "contract_emails",
+      "task_emails",
+      "project_emails",
+      "ticket_emails"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "userid",
+        "table": "tblcontacts",
+        "columns": [
+          "userid"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "firstname",
+        "table": "tblcontacts",
+        "columns": [
+          "firstname"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "lastname",
+        "table": "tblcontacts",
+        "columns": [
+          "lastname"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "email",
+        "table": "tblcontacts",
+        "columns": [
+          "email"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "is_primary",
+        "table": "tblcontacts",
+        "columns": [
+          "is_primary"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblcontacts_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblcontact_permissions": {
+    "table_name": "tblcontact_permissions",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "permission_id",
+      "userid"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblcontact_permissions_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblcontracts": {
+    "table_name": "tblcontracts",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "content",
+      "description",
+      "subject",
+      "client",
+      "datestart",
+      "dateend",
+      "contract_type",
+      "project_id",
+      "addedfrom",
+      "dateadded",
+      "isexpirynotified",
+      "contract_value",
+      "trash",
+      "not_visible_to_client",
+      "hash",
+      "signed",
+      "signature",
+      "marked_as_signed",
+      "acceptance_firstname",
+      "acceptance_lastname",
+      "acceptance_email",
+      "acceptance_date",
+      "acceptance_ip",
+      "short_link",
+      "last_sent_at",
+      "contacts_sent_to",
+      "last_sign_reminder_at"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "client",
+        "table": "tblcontracts",
+        "columns": [
+          "client"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "contract_type",
+        "table": "tblcontracts",
+        "columns": [
+          "contract_type"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblcontracts_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblcontracts_types": {
+    "table_name": "tblcontracts_types",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "name"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblcontracts_types_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblcontract_comments": {
+    "table_name": "tblcontract_comments",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "content",
+      "contract_id",
+      "staffid",
+      "dateadded"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblcontract_comments_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblcontract_renewals": {
+    "table_name": "tblcontract_renewals",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "contractid",
+      "old_start_date",
+      "new_start_date",
+      "old_end_date",
+      "new_end_date",
+      "old_value",
+      "new_value",
+      "date_renewed",
+      "renewed_by",
+      "renewed_by_staff_id",
+      "is_on_old_expiry_notified"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblcontract_renewals_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblcountries": {
+    "table_name": "tblcountries",
+    "schema": "public",
+    "row_count": 1,
+    "size": "0 KB",
+    "columns": [
+      "country_id",
+      "iso2",
+      "short_name",
+      "long_name",
+      "iso3",
+      "numcode",
+      "un_member",
+      "calling_code",
+      "cctld"
+    ],
+    "primary_key": [
+      "country_id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "country_id",
+    "sequence": "tblcountries_country_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblcreditnotes": {
+    "table_name": "tblcreditnotes",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "clientid",
+      "deleted_customer_name",
+      "number",
+      "prefix",
+      "number_format",
+      "formatted_number",
+      "datecreated",
+      "date",
+      "adminnote",
+      "terms",
+      "clientnote",
+      "currency",
+      "subtotal",
+      "total_tax",
+      "total",
+      "adjustment",
+      "addedfrom",
+      "status",
+      "project_id",
+      "discount_percent",
+      "discount_total",
+      "discount_type",
+      "billing_street",
+      "billing_city",
+      "billing_state",
+      "billing_zip",
+      "billing_country",
+      "shipping_street",
+      "shipping_city",
+      "shipping_state",
+      "shipping_zip",
+      "shipping_country",
+      "include_shipping",
+      "show_shipping_on_credit_note",
+      "show_quantity_as",
+      "reference_no"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "currency",
+        "table": "tblcreditnotes",
+        "columns": [
+          "currency"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "clientid",
+        "table": "tblcreditnotes",
+        "columns": [
+          "clientid"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "project_id",
+        "table": "tblcreditnotes",
+        "columns": [
+          "project_id"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "formatted_number",
+        "table": "tblcreditnotes",
+        "columns": [
+          "formatted_number"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblcreditnotes_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblcreditnote_refunds": {
+    "table_name": "tblcreditnote_refunds",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "credit_note_id",
+      "staff_id",
+      "refunded_on",
+      "payment_mode",
+      "note",
+      "amount",
+      "created_at"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblcreditnote_refunds_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblcredits": {
+    "table_name": "tblcredits",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "invoice_id",
+      "credit_id",
+      "staff_id",
+      "date",
+      "date_applied",
+      "amount"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblcredits_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblcurrencies": {
+    "table_name": "tblcurrencies",
+    "schema": "public",
+    "row_count": 1,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "symbol",
+      "name",
+      "decimal_separator",
+      "thousand_separator",
+      "placement",
+      "isdefault"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblcurrencies_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblcustomers_groups": {
+    "table_name": "tblcustomers_groups",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "name"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "name",
+        "table": "tblcustomers_groups",
+        "columns": [
+          "name"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblcustomers_groups_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblcustomer_admins": {
+    "table_name": "tblcustomer_admins",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "staff_id",
+      "customer_id",
+      "date_assigned"
+    ],
+    "primary_key": [],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "customer_id",
+        "table": "tblcustomer_admins",
+        "columns": [
+          "customer_id"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "staff_id",
+        "table": "tblcustomer_admins",
+        "columns": [
+          "staff_id"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": null,
+    "sequence": null,
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblcustomer_groups": {
+    "table_name": "tblcustomer_groups",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "groupid",
+      "customer_id"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "groupid",
+        "table": "tblcustomer_groups",
+        "columns": [
+          "groupid"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "customer_id",
+        "table": "tblcustomer_groups",
+        "columns": [
+          "customer_id"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblcustomer_groups_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblcustomfields": {
+    "table_name": "tblcustomfields",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "fieldto",
+      "name",
+      "slug",
+      "required",
+      "type",
+      "options",
+      "display_inline",
+      "field_order",
+      "active",
+      "show_on_pdf",
+      "show_on_ticket_form",
+      "only_admin",
+      "show_on_table",
+      "show_on_client_portal",
+      "disalow_client_to_edit",
+      "bs_column",
+      "default_value"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblcustomfields_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblcustomfieldsvalues": {
+    "table_name": "tblcustomfieldsvalues",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "relid",
+      "fieldid",
+      "fieldto",
+      "value"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "relid",
+        "table": "tblcustomfieldsvalues",
+        "columns": [
+          "relid"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "fieldto",
+        "table": "tblcustomfieldsvalues",
+        "columns": [
+          "fieldto"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "fieldid",
+        "table": "tblcustomfieldsvalues",
+        "columns": [
+          "fieldid"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblcustomfieldsvalues_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tbldepartments": {
+    "table_name": "tbldepartments",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "departmentid",
+      "name",
+      "imap_username",
+      "email",
+      "email_from_header",
+      "host",
+      "password",
+      "encryption",
+      "folder",
+      "delete_after_import",
+      "calendar_id",
+      "hidefromclient"
+    ],
+    "primary_key": [
+      "departmentid"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "name",
+        "table": "tbldepartments",
+        "columns": [
+          "name"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "departmentid",
+    "sequence": "tbldepartments_departmentid_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tbldismissed_announcements": {
+    "table_name": "tbldismissed_announcements",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "dismissedannouncementid",
+      "announcementid",
+      "staff",
+      "userid"
+    ],
+    "primary_key": [
+      "dismissedannouncementid"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "announcementid",
+        "table": "tbldismissed_announcements",
+        "columns": [
+          "announcementid"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "staff",
+        "table": "tbldismissed_announcements",
+        "columns": [
+          "staff"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "userid",
+        "table": "tbldismissed_announcements",
+        "columns": [
+          "userid"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "dismissedannouncementid",
+    "sequence": "tbldismissed_announcements_dismissedannouncementid_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblemailtemplates": {
+    "table_name": "tblemailtemplates",
+    "schema": "public",
+    "row_count": 2,
+    "size": "0 KB",
+    "columns": [
+      "emailtemplateid",
+      "type",
+      "slug",
+      "language",
+      "name",
+      "subject",
+      "message",
+      "fromname",
+      "fromemail",
+      "plaintext",
+      "active",
+      "order"
+    ],
+    "primary_key": [
+      "emailtemplateid"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "emailtemplateid",
+    "sequence": "tblemailtemplates_emailtemplateid_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblestimates": {
+    "table_name": "tblestimates",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "sent",
+      "datesend",
+      "clientid",
+      "deleted_customer_name",
+      "project_id",
+      "number",
+      "prefix",
+      "number_format",
+      "formatted_number",
+      "hash",
+      "datecreated",
+      "date",
+      "expirydate",
+      "currency",
+      "subtotal",
+      "total_tax",
+      "total",
+      "adjustment",
+      "addedfrom",
+      "status",
+      "clientnote",
+      "adminnote",
+      "discount_percent",
+      "discount_total",
+      "discount_type",
+      "invoiceid",
+      "invoiced_date",
+      "terms",
+      "reference_no",
+      "sale_agent",
+      "billing_street",
+      "billing_city",
+      "billing_state",
+      "billing_zip",
+      "billing_country",
+      "shipping_street",
+      "shipping_city",
+      "shipping_state",
+      "shipping_zip",
+      "shipping_country",
+      "include_shipping",
+      "show_shipping_on_estimate",
+      "show_quantity_as",
+      "pipeline_order",
+      "is_expiry_notified",
+      "acceptance_firstname",
+      "acceptance_lastname",
+      "acceptance_email",
+      "acceptance_date",
+      "acceptance_ip",
+      "signature",
+      "short_link"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "clientid",
+        "table": "tblestimates",
+        "columns": [
+          "clientid"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "currency",
+        "table": "tblestimates",
+        "columns": [
+          "currency"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "project_id",
+        "table": "tblestimates",
+        "columns": [
+          "project_id"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "sale_agent",
+        "table": "tblestimates",
+        "columns": [
+          "sale_agent"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "status",
+        "table": "tblestimates",
+        "columns": [
+          "status"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "formatted_number",
+        "table": "tblestimates",
+        "columns": [
+          "formatted_number"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblestimates_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblestimate_requests": {
+    "table_name": "tblestimate_requests",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "email",
+      "submission",
+      "last_status_change",
+      "date_estimated",
+      "from_form_id",
+      "assigned",
+      "status",
+      "default_language",
+      "date_added"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblestimate_requests_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblestimate_request_forms": {
+    "table_name": "tblestimate_request_forms",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "form_key",
+      "type",
+      "name",
+      "form_data",
+      "recaptcha",
+      "status",
+      "submit_btn_name",
+      "submit_btn_bg_color",
+      "submit_btn_text_color",
+      "success_submit_msg",
+      "submit_action",
+      "submit_redirect_url",
+      "language",
+      "dateadded",
+      "notify_type",
+      "notify_ids",
+      "responsible",
+      "notify_request_submitted"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblestimate_request_forms_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblestimate_request_status": {
+    "table_name": "tblestimate_request_status",
+    "schema": "public",
+    "row_count": 1,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "name",
+      "statusorder",
+      "color",
+      "flag"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblestimate_request_status_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblevents": {
+    "table_name": "tblevents",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "eventid",
+      "title",
+      "description",
+      "userid",
+      "start",
+      "end",
+      "public",
+      "color",
+      "isstartnotified",
+      "reminder_before",
+      "reminder_before_type"
+    ],
+    "primary_key": [
+      "eventid"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "eventid",
+    "sequence": "tblevents_eventid_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblexpenses": {
+    "table_name": "tblexpenses",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "category",
+      "currency",
+      "amount",
+      "tax",
+      "tax2",
+      "reference_no",
+      "note",
+      "expense_name",
+      "clientid",
+      "project_id",
+      "billable",
+      "invoiceid",
+      "paymentmode",
+      "date",
+      "recurring_type",
+      "repeat_every",
+      "recurring",
+      "cycles",
+      "total_cycles",
+      "custom_recurring",
+      "last_recurring_date",
+      "create_invoice_billable",
+      "send_invoice_to_customer",
+      "recurring_from",
+      "dateadded",
+      "addedfrom"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "clientid",
+        "table": "tblexpenses",
+        "columns": [
+          "clientid"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "project_id",
+        "table": "tblexpenses",
+        "columns": [
+          "project_id"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "category",
+        "table": "tblexpenses",
+        "columns": [
+          "category"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "currency",
+        "table": "tblexpenses",
+        "columns": [
+          "currency"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblexpenses_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblexpenses_categories": {
+    "table_name": "tblexpenses_categories",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "name",
+      "description"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblexpenses_categories_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblfiles": {
+    "table_name": "tblfiles",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "rel_id",
+      "rel_type",
+      "file_name",
+      "filetype",
+      "visible_to_customer",
+      "attachment_key",
+      "external",
+      "external_link",
+      "thumbnail_link",
+      "staffid",
+      "contact_id",
+      "task_comment_id",
+      "dateadded"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "rel_id",
+        "table": "tblfiles",
+        "columns": [
+          "rel_id"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "rel_type",
+        "table": "tblfiles",
+        "columns": [
+          "rel_type"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblfiles_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblfilters": {
+    "table_name": "tblfilters",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "name",
+      "builder",
+      "staff_id",
+      "identifier",
+      "is_shared"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblfilters_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblfilter_defaults": {
+    "table_name": "tblfilter_defaults",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "filter_id",
+      "staff_id",
+      "identifier",
+      "view"
+    ],
+    "primary_key": [],
+    "foreign_keys": [
+      {
+        "constraint_name": "tblfilter_defaults_ibfk_1",
+        "table": "tblfilter_defaults",
+        "column": "filter_id",
+        "ref_table": "tblfilters",
+        "ref_column": "id",
+        "on_delete": "CASCADE",
+        "on_update": "RESTRICT"
+      },
+      {
+        "constraint_name": "tblfilter_defaults_ibfk_2",
+        "table": "tblfilter_defaults",
+        "column": "staff_id",
+        "ref_table": "tblstaff",
+        "ref_column": "staffid",
+        "on_delete": "CASCADE",
+        "on_update": "RESTRICT"
+      }
+    ],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "filter_id",
+        "table": "tblfilter_defaults",
+        "columns": [
+          "filter_id"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "staff_id",
+        "table": "tblfilter_defaults",
+        "columns": [
+          "staff_id"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": null,
+    "sequence": null,
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblform_questions": {
+    "table_name": "tblform_questions",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "questionid",
+      "rel_id",
+      "rel_type",
+      "question",
+      "required",
+      "question_order"
+    ],
+    "primary_key": [
+      "questionid"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "questionid",
+    "sequence": "tblform_questions_questionid_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblform_question_box": {
+    "table_name": "tblform_question_box",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "boxid",
+      "boxtype",
+      "questionid"
+    ],
+    "primary_key": [
+      "boxid"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "boxid",
+    "sequence": "tblform_question_box_boxid_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblform_question_box_description": {
+    "table_name": "tblform_question_box_description",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "questionboxdescriptionid",
+      "description",
+      "boxid",
+      "questionid"
+    ],
+    "primary_key": [
+      "questionboxdescriptionid"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "questionboxdescriptionid",
+    "sequence": "tblform_question_box_description_questionboxdescriptionid_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblform_results": {
+    "table_name": "tblform_results",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "resultid",
+      "boxid",
+      "boxdescriptionid",
+      "rel_id",
+      "rel_type",
+      "questionid",
+      "answer",
+      "resultsetid"
+    ],
+    "primary_key": [
+      "resultid"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "resultid",
+    "sequence": "tblform_results_resultid_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblgdpr_requests": {
+    "table_name": "tblgdpr_requests",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "clientid",
+      "contact_id",
+      "lead_id",
+      "request_type",
+      "status",
+      "request_date",
+      "request_from",
+      "description"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblgdpr_requests_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblinvoicepaymentrecords": {
+    "table_name": "tblinvoicepaymentrecords",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "invoiceid",
+      "amount",
+      "paymentmode",
+      "paymentmethod",
+      "date",
+      "daterecorded",
+      "note",
+      "transactionid"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "invoiceid",
+        "table": "tblinvoicepaymentrecords",
+        "columns": [
+          "invoiceid"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "paymentmethod",
+        "table": "tblinvoicepaymentrecords",
+        "columns": [
+          "paymentmethod"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblinvoicepaymentrecords_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblinvoices": {
+    "table_name": "tblinvoices",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "sent",
+      "datesend",
+      "clientid",
+      "deleted_customer_name",
+      "number",
+      "prefix",
+      "number_format",
+      "formatted_number",
+      "datecreated",
+      "date",
+      "duedate",
+      "currency",
+      "subtotal",
+      "total_tax",
+      "total",
+      "adjustment",
+      "addedfrom",
+      "hash",
+      "status",
+      "clientnote",
+      "adminnote",
+      "last_overdue_reminder",
+      "last_due_reminder",
+      "cancel_overdue_reminders",
+      "allowed_payment_modes",
+      "token",
+      "discount_percent",
+      "discount_total",
+      "discount_type",
+      "recurring",
+      "recurring_type",
+      "custom_recurring",
+      "cycles",
+      "total_cycles",
+      "is_recurring_from",
+      "last_recurring_date",
+      "terms",
+      "sale_agent",
+      "billing_street",
+      "billing_city",
+      "billing_state",
+      "billing_zip",
+      "billing_country",
+      "shipping_street",
+      "shipping_city",
+      "shipping_state",
+      "shipping_zip",
+      "shipping_country",
+      "include_shipping",
+      "show_shipping_on_invoice",
+      "show_quantity_as",
+      "project_id",
+      "subscription_id",
+      "short_link"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "currency",
+        "table": "tblinvoices",
+        "columns": [
+          "currency"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "clientid",
+        "table": "tblinvoices",
+        "columns": [
+          "clientid"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "project_id",
+        "table": "tblinvoices",
+        "columns": [
+          "project_id"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "sale_agent",
+        "table": "tblinvoices",
+        "columns": [
+          "sale_agent"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "total",
+        "table": "tblinvoices",
+        "columns": [
+          "total"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "status",
+        "table": "tblinvoices",
+        "columns": [
+          "status"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "formatted_number",
+        "table": "tblinvoices",
+        "columns": [
+          "formatted_number"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblinvoices_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblitemable": {
+    "table_name": "tblitemable",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "rel_id",
+      "rel_type",
+      "description",
+      "long_description",
+      "qty",
+      "rate",
+      "unit",
+      "is_optional",
+      "is_selected",
+      "item_order"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "rel_id",
+        "table": "tblitemable",
+        "columns": [
+          "rel_id"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "rel_type",
+        "table": "tblitemable",
+        "columns": [
+          "rel_type"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "qty",
+        "table": "tblitemable",
+        "columns": [
+          "qty"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "rate",
+        "table": "tblitemable",
+        "columns": [
+          "rate"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblitemable_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblitems": {
+    "table_name": "tblitems",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "description",
+      "long_description",
+      "rate",
+      "tax",
+      "tax2",
+      "unit",
+      "group_id"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "tax",
+        "table": "tblitems",
+        "columns": [
+          "tax"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "tax2",
+        "table": "tblitems",
+        "columns": [
+          "tax2"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "group_id",
+        "table": "tblitems",
+        "columns": [
+          "group_id"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblitems_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblitems_groups": {
+    "table_name": "tblitems_groups",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "name"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblitems_groups_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblitem_tax": {
+    "table_name": "tblitem_tax",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "itemid",
+      "rel_id",
+      "rel_type",
+      "taxrate",
+      "taxname"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "itemid",
+        "table": "tblitem_tax",
+        "columns": [
+          "itemid"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "rel_id",
+        "table": "tblitem_tax",
+        "columns": [
+          "rel_id"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblitem_tax_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblknowedge_base_article_feedback": {
+    "table_name": "tblknowedge_base_article_feedback",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "articleanswerid",
+      "articleid",
+      "answer",
+      "ip",
+      "date"
+    ],
+    "primary_key": [
+      "articleanswerid"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "articleanswerid",
+    "sequence": "tblknowedge_base_article_feedback_articleanswerid_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblknowledge_base": {
+    "table_name": "tblknowledge_base",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "articleid",
+      "articlegroup",
+      "subject",
+      "description",
+      "slug",
+      "active",
+      "datecreated",
+      "article_order",
+      "staff_article"
+    ],
+    "primary_key": [
+      "articleid"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "articleid",
+    "sequence": "tblknowledge_base_articleid_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblknowledge_base_groups": {
+    "table_name": "tblknowledge_base_groups",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "groupid",
+      "name",
+      "group_slug",
+      "description",
+      "active",
+      "color",
+      "group_order"
+    ],
+    "primary_key": [
+      "groupid"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "groupid",
+    "sequence": "tblknowledge_base_groups_groupid_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblleads": {
+    "table_name": "tblleads",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "hash",
+      "name",
+      "title",
+      "company",
+      "description",
+      "country",
+      "zip",
+      "city",
+      "state",
+      "address",
+      "assigned",
+      "dateadded",
+      "from_form_id",
+      "status",
+      "source",
+      "lastcontact",
+      "dateassigned",
+      "last_status_change",
+      "addedfrom",
+      "email",
+      "website",
+      "leadorder",
+      "phonenumber",
+      "date_converted",
+      "lost",
+      "junk",
+      "last_lead_status",
+      "is_imported_from_email_integration",
+      "email_integration_uid",
+      "is_public",
+      "default_language",
+      "client_id",
+      "lead_value"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "name",
+        "table": "tblleads",
+        "columns": [
+          "name"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "company",
+        "table": "tblleads",
+        "columns": [
+          "company"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "email",
+        "table": "tblleads",
+        "columns": [
+          "email"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "assigned",
+        "table": "tblleads",
+        "columns": [
+          "assigned"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "status",
+        "table": "tblleads",
+        "columns": [
+          "status"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "source",
+        "table": "tblleads",
+        "columns": [
+          "source"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "lastcontact",
+        "table": "tblleads",
+        "columns": [
+          "lastcontact"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "dateadded",
+        "table": "tblleads",
+        "columns": [
+          "dateadded"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "leadorder",
+        "table": "tblleads",
+        "columns": [
+          "leadorder"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "from_form_id",
+        "table": "tblleads",
+        "columns": [
+          "from_form_id"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblleads_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblleads_email_integration": {
+    "table_name": "tblleads_email_integration",
+    "schema": "public",
+    "row_count": 1,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "active",
+      "email",
+      "imap_server",
+      "password",
+      "check_every",
+      "responsible",
+      "lead_source",
+      "lead_status",
+      "encryption",
+      "folder",
+      "last_run",
+      "notify_lead_imported",
+      "notify_lead_contact_more_times",
+      "notify_type",
+      "notify_ids",
+      "mark_public",
+      "only_loop_on_unseen_emails",
+      "delete_after_import",
+      "create_task_if_customer"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblleads_email_integration_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblleads_sources": {
+    "table_name": "tblleads_sources",
+    "schema": "public",
+    "row_count": 1,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "name"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "name",
+        "table": "tblleads_sources",
+        "columns": [
+          "name"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblleads_sources_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblleads_status": {
+    "table_name": "tblleads_status",
+    "schema": "public",
+    "row_count": 1,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "name",
+      "statusorder",
+      "color",
+      "isdefault"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "name",
+        "table": "tblleads_status",
+        "columns": [
+          "name"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblleads_status_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tbllead_activity_log": {
+    "table_name": "tbllead_activity_log",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "leadid",
+      "description",
+      "additional_data",
+      "date",
+      "staffid",
+      "full_name",
+      "custom_activity"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tbllead_activity_log_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tbllead_integration_emails": {
+    "table_name": "tbllead_integration_emails",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "subject",
+      "body",
+      "dateadded",
+      "leadid",
+      "emailid"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tbllead_integration_emails_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblmail_queue": {
+    "table_name": "tblmail_queue",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "engine",
+      "email",
+      "cc",
+      "bcc",
+      "message",
+      "alt_message",
+      "status",
+      "date",
+      "headers",
+      "attachments"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblmail_queue_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblmigrations": {
+    "table_name": "tblmigrations",
+    "schema": "public",
+    "row_count": 1,
+    "size": "0 KB",
+    "columns": [
+      "version"
+    ],
+    "primary_key": [],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": null,
+    "sequence": null,
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblmilestones": {
+    "table_name": "tblmilestones",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "name",
+      "description",
+      "description_visible_to_customer",
+      "start_date",
+      "due_date",
+      "project_id",
+      "color",
+      "milestone_order",
+      "datecreated",
+      "hide_from_customer"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblmilestones_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblmodules": {
+    "table_name": "tblmodules",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "module_name",
+      "installed_version",
+      "active"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblmodules_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblnewsfeed_comment_likes": {
+    "table_name": "tblnewsfeed_comment_likes",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "postid",
+      "commentid",
+      "userid",
+      "dateliked"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblnewsfeed_comment_likes_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblnewsfeed_posts": {
+    "table_name": "tblnewsfeed_posts",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "postid",
+      "creator",
+      "datecreated",
+      "visibility",
+      "content",
+      "pinned",
+      "datepinned"
+    ],
+    "primary_key": [
+      "postid"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "postid",
+    "sequence": "tblnewsfeed_posts_postid_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblnewsfeed_post_comments": {
+    "table_name": "tblnewsfeed_post_comments",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "content",
+      "userid",
+      "postid",
+      "dateadded"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblnewsfeed_post_comments_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblnewsfeed_post_likes": {
+    "table_name": "tblnewsfeed_post_likes",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "postid",
+      "userid",
+      "dateliked"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblnewsfeed_post_likes_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblnotes": {
+    "table_name": "tblnotes",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "rel_id",
+      "rel_type",
+      "description",
+      "date_contacted",
+      "addedfrom",
+      "dateadded"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "rel_id",
+        "table": "tblnotes",
+        "columns": [
+          "rel_id"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "rel_type",
+        "table": "tblnotes",
+        "columns": [
+          "rel_type"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblnotes_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblnotifications": {
+    "table_name": "tblnotifications",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "isread",
+      "isread_inline",
+      "date",
+      "description",
+      "fromuserid",
+      "fromclientid",
+      "from_fullname",
+      "touserid",
+      "fromcompany",
+      "link",
+      "additional_data"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblnotifications_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tbloptions": {
+    "table_name": "tbloptions",
+    "schema": "public",
+    "row_count": 1,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "name",
+      "value",
+      "autoload"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "name",
+        "table": "tbloptions",
+        "columns": [
+          "name"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tbloptions_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblpayment_attempts": {
+    "table_name": "tblpayment_attempts",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "reference",
+      "invoice_id",
+      "amount",
+      "fee",
+      "payment_gateway",
+      "created_at"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblpayment_attempts_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblpayment_modes": {
+    "table_name": "tblpayment_modes",
+    "schema": "public",
+    "row_count": 1,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "name",
+      "description",
+      "show_on_pdf",
+      "invoices_only",
+      "expenses_only",
+      "selected_by_default",
+      "active"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblpayment_modes_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblpinned_projects": {
+    "table_name": "tblpinned_projects",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "project_id",
+      "staff_id"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "project_id",
+        "table": "tblpinned_projects",
+        "columns": [
+          "project_id"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblpinned_projects_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblprojectdiscussioncomments": {
+    "table_name": "tblprojectdiscussioncomments",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "discussion_id",
+      "discussion_type",
+      "parent",
+      "created",
+      "modified",
+      "content",
+      "staff_id",
+      "contact_id",
+      "fullname",
+      "file_name",
+      "file_mime_type"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblprojectdiscussioncomments_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblprojectdiscussions": {
+    "table_name": "tblprojectdiscussions",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "project_id",
+      "subject",
+      "description",
+      "show_to_customer",
+      "datecreated",
+      "last_activity",
+      "staff_id",
+      "contact_id"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblprojectdiscussions_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblprojects": {
+    "table_name": "tblprojects",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "name",
+      "description",
+      "status",
+      "clientid",
+      "billing_type",
+      "start_date",
+      "deadline",
+      "project_created",
+      "date_finished",
+      "progress",
+      "progress_from_tasks",
+      "project_cost",
+      "project_rate_per_hour",
+      "estimated_hours",
+      "addedfrom",
+      "contact_notification",
+      "notify_contacts"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "clientid",
+        "table": "tblprojects",
+        "columns": [
+          "clientid"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "name",
+        "table": "tblprojects",
+        "columns": [
+          "name"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblprojects_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblproject_activity": {
+    "table_name": "tblproject_activity",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "project_id",
+      "staff_id",
+      "contact_id",
+      "fullname",
+      "visible_to_customer",
+      "description_key",
+      "additional_data",
+      "dateadded"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblproject_activity_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblproject_files": {
+    "table_name": "tblproject_files",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "file_name",
+      "original_file_name",
+      "subject",
+      "description",
+      "filetype",
+      "dateadded",
+      "last_activity",
+      "project_id",
+      "visible_to_customer",
+      "staffid",
+      "contact_id",
+      "external",
+      "external_link",
+      "thumbnail_link"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblproject_files_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblproject_members": {
+    "table_name": "tblproject_members",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "project_id",
+      "staff_id"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "project_id",
+        "table": "tblproject_members",
+        "columns": [
+          "project_id"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "staff_id",
+        "table": "tblproject_members",
+        "columns": [
+          "staff_id"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblproject_members_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblproject_notes": {
+    "table_name": "tblproject_notes",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "project_id",
+      "title",
+      "content",
+      "staff_id",
+      "dateadded"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblproject_notes_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblproject_settings": {
+    "table_name": "tblproject_settings",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "project_id",
+      "name",
+      "value"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "project_id",
+        "table": "tblproject_settings",
+        "columns": [
+          "project_id"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblproject_settings_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblproposals": {
+    "table_name": "tblproposals",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "subject",
+      "content",
+      "addedfrom",
+      "datecreated",
+      "total",
+      "subtotal",
+      "total_tax",
+      "adjustment",
+      "discount_percent",
+      "discount_total",
+      "discount_type",
+      "show_quantity_as",
+      "currency",
+      "open_till",
+      "date",
+      "rel_id",
+      "rel_type",
+      "assigned",
+      "hash",
+      "proposal_to",
+      "project_id",
+      "country",
+      "zip",
+      "state",
+      "city",
+      "address",
+      "email",
+      "phone",
+      "allow_comments",
+      "status",
+      "estimate_id",
+      "invoice_id",
+      "date_converted",
+      "pipeline_order",
+      "is_expiry_notified",
+      "acceptance_firstname",
+      "acceptance_lastname",
+      "acceptance_email",
+      "acceptance_date",
+      "acceptance_ip",
+      "signature",
+      "short_link"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "status",
+        "table": "tblproposals",
+        "columns": [
+          "status"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblproposals_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblproposal_comments": {
+    "table_name": "tblproposal_comments",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "content",
+      "proposalid",
+      "staffid",
+      "dateadded"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblproposal_comments_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblrelated_items": {
+    "table_name": "tblrelated_items",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "rel_id",
+      "rel_type",
+      "item_id"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblrelated_items_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblreminders": {
+    "table_name": "tblreminders",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "description",
+      "date",
+      "isnotified",
+      "rel_id",
+      "staff",
+      "rel_type",
+      "notify_by_email",
+      "creator"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "rel_id",
+        "table": "tblreminders",
+        "columns": [
+          "rel_id"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "rel_type",
+        "table": "tblreminders",
+        "columns": [
+          "rel_type"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "staff",
+        "table": "tblreminders",
+        "columns": [
+          "staff"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblreminders_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblroles": {
+    "table_name": "tblroles",
+    "schema": "public",
+    "row_count": 1,
+    "size": "0 KB",
+    "columns": [
+      "roleid",
+      "name",
+      "permissions"
+    ],
+    "primary_key": [
+      "roleid"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "roleid",
+    "sequence": "tblroles_roleid_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblsales_activity": {
+    "table_name": "tblsales_activity",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "rel_type",
+      "rel_id",
+      "description",
+      "additional_data",
+      "staffid",
+      "full_name",
+      "date"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblsales_activity_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblscheduled_emails": {
+    "table_name": "tblscheduled_emails",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "rel_id",
+      "rel_type",
+      "scheduled_at",
+      "contacts",
+      "cc",
+      "attach_pdf",
+      "template"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblscheduled_emails_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblservices": {
+    "table_name": "tblservices",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "serviceid",
+      "name"
+    ],
+    "primary_key": [
+      "serviceid"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "serviceid",
+    "sequence": "tblservices_serviceid_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblsessions": {
+    "table_name": "tblsessions",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "ip_address",
+      "timestamp",
+      "data"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "ci_sessions_timestamp",
+        "table": "tblsessions",
+        "columns": [
+          "timestamp"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": null,
+    "sequence": null,
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblshared_customer_files": {
+    "table_name": "tblshared_customer_files",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "file_id",
+      "contact_id"
+    ],
+    "primary_key": [],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": null,
+    "sequence": null,
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblspam_filters": {
+    "table_name": "tblspam_filters",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "type",
+      "rel_type",
+      "value"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblspam_filters_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblstaff": {
+    "table_name": "tblstaff",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "staffid",
+      "email",
+      "firstname",
+      "lastname",
+      "facebook",
+      "linkedin",
+      "phonenumber",
+      "skype",
+      "password",
+      "datecreated",
+      "profile_image",
+      "last_ip",
+      "last_login",
+      "last_activity",
+      "last_password_change",
+      "new_pass_key",
+      "new_pass_key_requested",
+      "admin",
+      "role",
+      "active",
+      "default_language",
+      "direction",
+      "media_path_slug",
+      "is_not_staff",
+      "hourly_rate",
+      "two_factor_auth_enabled",
+      "two_factor_auth_code",
+      "two_factor_auth_code_requested",
+      "email_signature",
+      "google_auth_secret"
+    ],
+    "primary_key": [
+      "staffid"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "firstname",
+        "table": "tblstaff",
+        "columns": [
+          "firstname"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "lastname",
+        "table": "tblstaff",
+        "columns": [
+          "lastname"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "staffid",
+    "sequence": "tblstaff_staffid_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblstaff_departments": {
+    "table_name": "tblstaff_departments",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "staffdepartmentid",
+      "staffid",
+      "departmentid"
+    ],
+    "primary_key": [
+      "staffdepartmentid"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "staffdepartmentid",
+    "sequence": "tblstaff_departments_staffdepartmentid_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblstaff_permissions": {
+    "table_name": "tblstaff_permissions",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "staff_id",
+      "feature",
+      "capability"
+    ],
+    "primary_key": [],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": null,
+    "sequence": null,
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblsubscriptions": {
+    "table_name": "tblsubscriptions",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "name",
+      "description",
+      "description_in_item",
+      "clientid",
+      "date",
+      "terms",
+      "currency",
+      "tax_id",
+      "stripe_tax_id",
+      "tax_id_2",
+      "stripe_tax_id_2",
+      "stripe_plan_id",
+      "stripe_subscription_id",
+      "next_billing_cycle",
+      "ends_at",
+      "status",
+      "quantity",
+      "project_id",
+      "hash",
+      "created",
+      "created_from",
+      "date_subscribed",
+      "in_test_environment",
+      "last_sent_at"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "clientid",
+        "table": "tblsubscriptions",
+        "columns": [
+          "clientid"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "currency",
+        "table": "tblsubscriptions",
+        "columns": [
+          "currency"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "tax_id",
+        "table": "tblsubscriptions",
+        "columns": [
+          "tax_id"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblsubscriptions_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tbltaggables": {
+    "table_name": "tbltaggables",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "rel_id",
+      "rel_type",
+      "tag_id",
+      "tag_order"
+    ],
+    "primary_key": [],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "rel_id",
+        "table": "tbltaggables",
+        "columns": [
+          "rel_id"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "rel_type",
+        "table": "tbltaggables",
+        "columns": [
+          "rel_type"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "tag_id",
+        "table": "tbltaggables",
+        "columns": [
+          "tag_id"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": null,
+    "sequence": null,
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tbltags": {
+    "table_name": "tbltags",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "name"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "name",
+        "table": "tbltags",
+        "columns": [
+          "name"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tbltags_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tbltasks": {
+    "table_name": "tbltasks",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "name",
+      "description",
+      "priority",
+      "dateadded",
+      "startdate",
+      "duedate",
+      "datefinished",
+      "addedfrom",
+      "is_added_from_contact",
+      "status",
+      "recurring_type",
+      "repeat_every",
+      "recurring",
+      "is_recurring_from",
+      "cycles",
+      "total_cycles",
+      "custom_recurring",
+      "last_recurring_date",
+      "rel_id",
+      "rel_type",
+      "is_public",
+      "billable",
+      "billed",
+      "invoice_id",
+      "hourly_rate",
+      "milestone",
+      "kanban_order",
+      "milestone_order",
+      "visible_to_client",
+      "deadline_notified"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "rel_id",
+        "table": "tbltasks",
+        "columns": [
+          "rel_id"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "rel_type",
+        "table": "tbltasks",
+        "columns": [
+          "rel_type"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "milestone",
+        "table": "tbltasks",
+        "columns": [
+          "milestone"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "kanban_order",
+        "table": "tbltasks",
+        "columns": [
+          "kanban_order"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "status",
+        "table": "tbltasks",
+        "columns": [
+          "status"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tbltasks_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tbltaskstimers": {
+    "table_name": "tbltaskstimers",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "task_id",
+      "start_time",
+      "end_time",
+      "staff_id",
+      "hourly_rate",
+      "note"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "task_id",
+        "table": "tbltaskstimers",
+        "columns": [
+          "task_id"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "staff_id",
+        "table": "tbltaskstimers",
+        "columns": [
+          "staff_id"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tbltaskstimers_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tbltasks_checklist_templates": {
+    "table_name": "tbltasks_checklist_templates",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "description"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tbltasks_checklist_templates_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tbltask_assigned": {
+    "table_name": "tbltask_assigned",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "staffid",
+      "taskid",
+      "assigned_from",
+      "is_assigned_from_contact"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "taskid",
+        "table": "tbltask_assigned",
+        "columns": [
+          "taskid"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "staffid",
+        "table": "tbltask_assigned",
+        "columns": [
+          "staffid"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tbltask_assigned_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tbltask_checklist_items": {
+    "table_name": "tbltask_checklist_items",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "taskid",
+      "description",
+      "finished",
+      "dateadded",
+      "addedfrom",
+      "finished_from",
+      "list_order",
+      "assigned"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "taskid",
+        "table": "tbltask_checklist_items",
+        "columns": [
+          "taskid"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tbltask_checklist_items_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tbltask_comments": {
+    "table_name": "tbltask_comments",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "content",
+      "taskid",
+      "staffid",
+      "contact_id",
+      "file_id",
+      "dateadded"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "file_id",
+        "table": "tbltask_comments",
+        "columns": [
+          "file_id"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "taskid",
+        "table": "tbltask_comments",
+        "columns": [
+          "taskid"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tbltask_comments_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tbltask_followers": {
+    "table_name": "tbltask_followers",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "staffid",
+      "taskid"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tbltask_followers_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tbltaxes": {
+    "table_name": "tbltaxes",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "name",
+      "taxrate"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tbltaxes_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tbltemplates": {
+    "table_name": "tbltemplates",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "name",
+      "type",
+      "addedfrom",
+      "content",
+      "content_type"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tbltemplates_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tbltickets": {
+    "table_name": "tbltickets",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "ticketid",
+      "adminreplying",
+      "userid",
+      "contactid",
+      "merged_ticket_id",
+      "email",
+      "name",
+      "department",
+      "priority",
+      "status",
+      "service",
+      "ticketkey",
+      "subject",
+      "message",
+      "admin",
+      "date",
+      "project_id",
+      "lastreply",
+      "clientread",
+      "adminread",
+      "assigned",
+      "staff_id_replying",
+      "cc"
+    ],
+    "primary_key": [
+      "ticketid"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "service",
+        "table": "tbltickets",
+        "columns": [
+          "service"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "department",
+        "table": "tbltickets",
+        "columns": [
+          "department"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "status",
+        "table": "tbltickets",
+        "columns": [
+          "status"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "userid",
+        "table": "tbltickets",
+        "columns": [
+          "userid"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "priority",
+        "table": "tbltickets",
+        "columns": [
+          "priority"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "project_id",
+        "table": "tbltickets",
+        "columns": [
+          "project_id"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      },
+      {
+        "index_name": "contactid",
+        "table": "tbltickets",
+        "columns": [
+          "contactid"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "ticketid",
+    "sequence": "tbltickets_ticketid_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tbltickets_pipe_log": {
+    "table_name": "tbltickets_pipe_log",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "date",
+      "email_to",
+      "name",
+      "subject",
+      "message",
+      "email",
+      "status"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tbltickets_pipe_log_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tbltickets_predefined_replies": {
+    "table_name": "tbltickets_predefined_replies",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "name",
+      "message"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tbltickets_predefined_replies_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tbltickets_priorities": {
+    "table_name": "tbltickets_priorities",
+    "schema": "public",
+    "row_count": 1,
+    "size": "0 KB",
+    "columns": [
+      "priorityid",
+      "name"
+    ],
+    "primary_key": [
+      "priorityid"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "priorityid",
+    "sequence": "tbltickets_priorities_priorityid_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tbltickets_status": {
+    "table_name": "tbltickets_status",
+    "schema": "public",
+    "row_count": 1,
+    "size": "0 KB",
+    "columns": [
+      "ticketstatusid",
+      "name",
+      "isdefault",
+      "statuscolor",
+      "statusorder"
+    ],
+    "primary_key": [
+      "ticketstatusid"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "ticketstatusid",
+    "sequence": "tbltickets_status_ticketstatusid_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblticket_attachments": {
+    "table_name": "tblticket_attachments",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "ticketid",
+      "replyid",
+      "file_name",
+      "filetype",
+      "dateadded"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblticket_attachments_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblticket_replies": {
+    "table_name": "tblticket_replies",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "ticketid",
+      "userid",
+      "contactid",
+      "name",
+      "email",
+      "date",
+      "message",
+      "attachment",
+      "admin"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblticket_replies_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tbltodos": {
+    "table_name": "tbltodos",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "todoid",
+      "description",
+      "staffid",
+      "dateadded",
+      "finished",
+      "datefinished",
+      "item_order"
+    ],
+    "primary_key": [
+      "todoid"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "todoid",
+    "sequence": "tbltodos_todoid_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tbltracked_mails": {
+    "table_name": "tbltracked_mails",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "uid",
+      "rel_id",
+      "rel_type",
+      "date",
+      "email",
+      "opened",
+      "date_opened",
+      "subject"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tbltracked_mails_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tbltwocheckout_log": {
+    "table_name": "tbltwocheckout_log",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "reference",
+      "invoice_id",
+      "amount",
+      "created_at",
+      "attempt_reference"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [
+      {
+        "constraint_name": "tbltwocheckout_log_ibfk_1",
+        "table": "tbltwocheckout_log",
+        "column": "invoice_id",
+        "ref_table": "tblinvoices",
+        "ref_column": "id",
+        "on_delete": "CASCADE",
+        "on_update": "RESTRICT"
+      }
+    ],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [
+      {
+        "index_name": "invoice_id",
+        "table": "tbltwocheckout_log",
+        "columns": [
+          "invoice_id"
+        ],
+        "unique": false,
+        "index_type": "BTREE"
+      }
+    ],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tbltwocheckout_log_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tbluser_auto_login": {
+    "table_name": "tbluser_auto_login",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "key_id",
+      "user_id",
+      "user_agent",
+      "last_ip",
+      "last_login",
+      "staff"
+    ],
+    "primary_key": [],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": null,
+    "sequence": null,
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tbluser_meta": {
+    "table_name": "tbluser_meta",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "umeta_id",
+      "staff_id",
+      "client_id",
+      "contact_id",
+      "meta_key",
+      "meta_value"
+    ],
+    "primary_key": [
+      "umeta_id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "umeta_id",
+    "sequence": "tbluser_meta_umeta_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblvault": {
+    "table_name": "tblvault",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "customer_id",
+      "server_address",
+      "port",
+      "username",
+      "password",
+      "description",
+      "creator",
+      "creator_name",
+      "visibility",
+      "share_in_projects",
+      "last_updated",
+      "last_updated_from",
+      "date_created"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblvault_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblviews_tracking": {
+    "table_name": "tblviews_tracking",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "rel_id",
+      "rel_type",
+      "date",
+      "view_ip"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblviews_tracking_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "tblweb_to_lead": {
+    "table_name": "tblweb_to_lead",
+    "schema": "public",
+    "row_count": 0,
+    "size": "0 KB",
+    "columns": [
+      "id",
+      "form_key",
+      "lead_source",
+      "lead_status",
+      "notify_lead_imported",
+      "notify_type",
+      "notify_ids",
+      "responsible",
+      "name",
+      "form_data",
+      "recaptcha",
+      "submit_btn_name",
+      "submit_btn_text_color",
+      "submit_btn_bg_color",
+      "success_submit_msg",
+      "submit_action",
+      "lead_name_prefix",
+      "submit_redirect_url",
+      "language",
+      "allow_duplicate",
+      "mark_public",
+      "track_duplicate_field",
+      "track_duplicate_field_and",
+      "create_task_on_duplicate",
+      "dateadded"
+    ],
+    "primary_key": [
+      "id"
+    ],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "partition": null,
+    "identity": "id",
+    "sequence": "tblweb_to_lead_id_seq",
+    "comments": null,
+    "source": "perfex_crm/install/database.sql"
+  },
+  "__PFX__woocommerce_stores": {
+    "table_name": "__PFX__woocommerce_stores",
+    "schema": "public",
+    "columns": [
+      "store_id",
+      "name",
+      "url",
+      "key",
+      "secret",
+      "productPage",
+      "orderPage",
+      "customerPage",
+      "date_created",
+      "query_auth",
+      "auto_convert_customer",
+      "auto_convert_product",
+      "auto_convert_order",
+      "auto_invoice_statuses",
+      "verify_ssl",
+      "webhook_secret",
+      "pages_per_tick",
+      "is_active",
+      "date_modified",
+      "woocommerce_payment_mode_id",
+      "id",
+      "store_id",
+      "staff_id",
+      "id",
+      "order_id",
+      "order_number",
+      "customer_id",
+      "address",
+      "phone",
+      "status",
+      "currency",
+      "date_created",
+      "date_modified",
+      "total",
+      "invoice_id",
+      "store_id",
+      "last_synced_at",
+      "is_deleted",
+      "deleted_at",
+      "id",
+      "product_id",
+      "itemid",
+      "name",
+      "permalink",
+      "type",
+      "status",
+      "sku",
+      "price",
+      "sales",
+      "picture",
+      "category",
+      "date_created",
+      "date_modified",
+      "store_id",
+      "last_synced_at",
+      "is_deleted",
+      "deleted_at",
+      "id",
+      "woo_customer_id",
+      "userid",
+      "email",
+      "first_name",
+      "last_name",
+      "phone",
+      "role",
+      "username",
+      "avatar_url",
+      "store_id",
+      "last_synced_at",
+      "is_deleted",
+      "deleted_at",
+      "id",
+      "store_id",
+      "customers",
+      "orders",
+      "products",
+      "id",
+      "store_id",
+      "wc_field",
+      "perfex_field",
+      "is_required",
+      "default_value",
+      "is_predefined",
+      "is_overridden",
+      "original_wc_field",
+      "original_perfex_field",
+      "id",
+      "store_id",
+      "wc_field",
+      "perfex_field",
+      "is_required",
+      "default_value",
+      "is_predefined",
+      "is_overridden",
+      "original_wc_field",
+      "original_perfex_field",
+      "id",
+      "store_id",
+      "wc_field",
+      "perfex_field",
+      "is_required",
+      "default_value",
+      "is_predefined",
+      "is_overridden",
+      "original_wc_field",
+      "original_perfex_field",
+      "id",
+      "store_id",
+      "topic",
+      "resource",
+      "woo_id",
+      "delivery_id",
+      "received_at",
+      "signature_ok",
+      "processed",
+      "error",
+      "payload_hash",
+      "id",
+      "store_id",
+      "level",
+      "event",
+      "context_json",
+      "correlation_id",
+      "created_at",
+      "store_id",
+      "tokens",
+      "updated_at",
+      "id",
+      "type",
+      "store_id",
+      "payload_json",
+      "status",
+      "attempts",
+      "max_attempts",
+      "last_error",
+      "scheduled_for",
+      "locked_at",
+      "last_run_at",
+      "created_at"
+    ],
+    "primary_key": [],
+    "foreign_keys": [],
+    "unique_constraints": [],
+    "check_constraints": [],
+    "indexes": [],
+    "triggers": [],
+    "source": "woocommerce\\install.sql"
+  }
+}

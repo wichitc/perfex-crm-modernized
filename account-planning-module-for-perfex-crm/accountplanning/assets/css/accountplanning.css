@@ -1,0 +1,108 @@
+.ap-auto-margin {
+	margin: auto;
+}
+
+.ap-danger {
+	font-size: 16px; 
+	background-color: #626f80;
+    color: white;
+    padding: 10px;
+}
+
+.ap-font-500 {
+	font-weight: 500;
+}
+
+.ap-margin-right-5 {
+    margin-right: 5px;
+}
+
+.ap-margin-left-20 {
+    margin-left: 20px;
+}
+
+.ap-margin-left-10 {
+    margin-left: 10px;
+}
+
+.ap-width400-left-20 {
+    max-width: 400px;
+	margin-left: 20px;
+}
+
+.ap-float-right {
+	float: right;
+}
+	
+/* Full-width bottom toolbar - extends to full content width in all module views */
+.btn-bottom-toolbar.btn-toolbar-container-out,
+.btn-bottom-toolbar.ap-calc100-20left {
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+}
+/* Break out of panel-body padding (15px Bootstrap default, 20px some themes) */
+.panel_s .panel-body .btn-bottom-toolbar.ap-calc100-20left,
+.panel_s .panel-body .btn-bottom-toolbar.btn-toolbar-container-out,
+.panel-body .btn-bottom-toolbar.ap-calc100-20left,
+.panel-body .btn-bottom-toolbar.btn-toolbar-container-out {
+    margin-left: -20px;
+    margin-right: -20px;
+    width: calc(100% + 40px);
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+/* Direct child of panel_s (e.g. new_account view) - full width of panel */
+.panel_s > .btn-bottom-toolbar.ap-calc100-20left,
+.panel_s > .btn-bottom-toolbar.btn-toolbar-container-out {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.ap-width65 {
+	width: 65%;
+}
+
+.ap-minmap-icon {
+	background-image: url('/modules/accountplanning/assets/plugins/tinymce/plugins/leaui_mindmap/icon.png');
+}
+
+#hot-display-license-info { 
+	display: none !important; 
+}
+
+.ap-template-actions-col {
+	width: 1%;
+	white-space: nowrap;
+	text-align: right;
+}
+
+.ap-template-actions {
+	white-space: nowrap;
+	text-align: right;
+}
+
+.ap-template-actions .btn {
+	margin-left: 5px;
+	vertical-align: middle;
+}
+
+.ap-template-actions .btn:first-child {
+	margin-left: 0;
+}
+
+/* Meeting notes & competitors action buttons - inline, no wrap */
+.ap-actions-cell {
+	white-space: nowrap;
+	text-align: right;
+}
+.ap-actions-cell .btn {
+	display: inline-block;
+	margin-left: 5px;
+	vertical-align: middle;
+}
+.ap-actions-cell .btn:first-child {
+	margin-left: 0;
+}
+

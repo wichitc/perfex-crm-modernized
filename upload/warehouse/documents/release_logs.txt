@@ -1,0 +1,259 @@
+1.3.1
+-	Fix Bug - Serial number :Remove Serial number have value is "null"
+-	Bug - Inventory delivery voucher: in case the warehouse receipt has > 57 items => when creating the warehouse voucher, the 58th item will not be saved onwards, the reason is that the parameters in the PHP file.ini there is a data capacity limit when data is transferred from the client => Increase 2 parameters "max_input_vars" and "post_max_size"
+-	Fix Bug - filter by barcode: update filter
+
+
+1.3.2
+-	Update language key: unit name in Inventory valuation report
+-	Fix bug inventory_valuation_report: filter is wrong when selecting all repositories and not selecting warehouses
+-	Update Inventory Delivery voucher: don't create delivery note from invoice if quantity is not available
+-	Revert Delivery note after invoice deleted
+-	Update Inventory receiving voucher: Save the corresponding inventory quantity according to the inventory price
+-	Item: update filter related Commodity group, sub Group, Style, Model, Size, Color, Warranty
+
+
+1.3.3
+Item
+-	Fix bugs: Pressing save multiple times creates many duplicate items
+Warehouse
+-	Update, for each warehouse there will be an option "show warehouse when inventory = 0" otherwise it will hide this warehouse on the product management screen
+Permission
+-	Add permissions to Inventory: right to export only and right to import only warehouse
+Inventory Delivery note
+-	Update Delivery Note PDF with shortened form when item has multiple serial numbers
+Bugs
+-	Uniform inventory quantity in item view and report stock. Revert serial number after deleting approved release slip
+
+
+1.3.4
+-	Fix bug related new template
+-	Fix bug when run on PHP 8.1
+Permission
+-	Inventory delivery voucher: add permission for change serial number on delivery note
+.PDF
+-	Add setting "Display price when print barcode"
+Inventory delivery note
+-	Show invoice no on view receipt note
+Item
+-	Check commodity code is unique
+Bugs
+-	Return order: fix bug create return from Sales Order.
+-	Loss &; Adjustment: fix bug when create loss &; adjustment
+-	Inventory delivery voucher: Fix bug Revert quantity twice when deleting approved stock release slip (in case the product does not enter expiry date, lot number). And Unify inventory quantity in item view and report stock. Revert serial number
+-	Inventory receipt voucher: fix bug don't load item when create receipt voucher from Purchase Order
+
+
+1.3.5
+Bugs
+-	Item: fix bug Create variant products
+-	Fix the error of Custom field (belong to Items) of multiselect type not being able to save multiple options
+-	The shipment display does not match the invoice
+-	Fix the error of items not being stocked correctly in settings related to the option "Create an inventory receipt when the Purchase Order is approved"
+-	Return Order :Fix bug "Select Inventory" error after approving Return Order created from "Inventory Receipt Voucher"
+-	Delivery note: Fix bug revert serial number when create return from Delivery note
+-	Fix bug create invoice for product is service
+Warehouse:
+-	New feature: Assign warehouse management to employees
+Inventory receipt voucher:
+-	New feature :Allows deleting and recreating Inventory receipt voucher from Purchase Order
+-	Fix bug “csrf_token_name” dynamic
+Delivery note
+-	Fix bug create delivery note from invoice ( invoices have many similar items )
+
+
+1.3.6
+Report
+-	Fix bug filter on report
+Delivery note
+-	Add option “notify customer when change delivery status
+
+
+1.3.7
+Setting
+-	Add option hidden shipping fee
+
+
+1.3.8
+Lotnumber
+-	Automatically generate batch numbers when create Inventory Receipt Voucher: Lot Number Structures
+Example: LOT-0123-00000
+LOT: Prefix for allowing options
+0123: month (2 numbers) + year (2 numbers)
+00000: Increase by 5 numbers
+-	Setting :Lot Number Prefix and Next Lot Number
+Packing List
+-	Customizing Measurement unit name on Packing list.
+-	Customizing the display of information on the Packing list PDF.
+Items
+-	Hide option “Add opening stock” on table when Item is a non-stock products
+Bugs:
+-	Inventory Delivery Voucher: decrease Double the amount of inventory when Delivery Note automatically creates it from Invoice.
+-	Inventory Receipt Voucher: 2 inventory receiving vouchers are automatically created from 1 purchase order (if the admin approves the purchase order with options without following the process).
+-	Items: Fix bug import item
+
+1.3.8.1
+	       Bugs:
+-	Items Cron job data: fix bug save data Notification recipients in Inventory Cron Setting
+-	Item: Fix bug update variation + custom fields select multiple
+Report:
+-	Add excel export function for INVENTORY VALUATION REPORT, STOCK SUMMARY REPORT
+
+1.3.8.2
+Items:
+-	Additional import, Excel export for field Tax2
+-	Fix bugs Import item color, Inventory min
+Permission:
+-	Add Own view permission for features:Inventory receiving voucher, Inventory delivery voucher, Packing Lists, Internal delivery note, Loss & adjustment, Receiving-Exporting return order.
+Inventory History:
+-	Update inventory balance at the beginning of the period when Inventory delivery voucher is created from Invoice
+
+
+1.3.9
+Return order:
+-	Add Purchase Price column for Return order create from Inventory delivery
+
+10_04_2024
+V_1.4.0
+-Serial Number: Add a "Auto Generate Serial Numbers", serial number will be auto populated.
+The format of the serial number would be yyyymmddxxxxxx where yyyy = year, mm  = month, dd = day, xxxxxx = auto increment number.
+-Setting Serial Number: Serial number is required
+
+22_04_2024
+Update Number padding zero for format: Inventory receipt, Inventory delivery, Internal delivery, Packing list, Return Order
+
+07_05_2024
+V_1.4.1
+Update Serial Number data Type
+
+07_05_2024
+V_1.4.1.1
+Add New Report: Stock movement summary report, Stock Balance Report
+
+04_06_2024
+V_1.4.2
+Setting: New Option "Do not update inventory numbers"
+
+06_06_2024
+V_1.4.3
+Packing List: Display Expiry Date
+Setting: Packing List: New Option "Display Expiry Date"
+
+21_06_2024
+V_1.4.3.1
+Inventory Receiving Voucher: Fix bug automatically add Column "wh_quantity_received" when Purchase Module active
+
+25_06_2024
+V_1.4.4
+Setting: New Option "Do not convert to Base currency"
+Inventory reciept voucher: Allow create "Inventory Receiving" from PO will allow to keep the same currency as PO
+Receiving-exporting return order: Allow create Return Order from "Inventory Receiving" will allow to keep the same currency as "Inventory Receiving"
+
+26_06_2024
+ 1.4.5
+ Approval setting: new option Only 1 person needs to approve the transaction
+
+27_06_2024
+ V_1.4.6
+ Inventory: V1.4.6 display product image on Inventory receipt and Inventory delivery 
+Setting: add option:  display product image on Inventory receipt and Inventory delivery 
+Inventory receipt: display product image
+Inventory delivery: display product image
+
+27_06_2024
+ V_1.4.6.1
+ Report: display currency on report
+ Inventory History: detail of types of Loss & Adjustment,
+ 	if the type is adjustment then, the status of the Inventory History should be "Adjustment"
+	if the type is Lost then, the status of the Inventory History should be "Lost"
+
+16_07_2024
+Items: fix bug Import Excel on PHP 8.3.2
+
+23_07_2024
+Items: displays the currency by Sell price and Purchase price
+
+
+1.4.7
+29_07_2024
+Inventory delivery: Allow create "Inventory delivery" from Invoice or Purchase Order will allow to keep the same currency
+Packing List: Allow create "Packing List" from Inventory delivery will allow to keep the same currency
+Receiving-exporting return order: Allow create Return Order from "Inventory delivery" will allow to keep the same currency 
+
+13_08_2024
+Variant products: fix bugs format Purchase price and sale price when update variant products
+
+1.4.8
+27_09_2024
+add "acc_mapping" column for accounting module
+
+02_10_2024:
+update error Black screen appearance when choosing on select box in Handsontable  (only RTL direction )
+
+09_10_2024:
+Shipment on Client: fix bugs show error when view shipment on client
+
+11_10_2024:
+Warehouse: permission assign warehouse to staff
+
+1.4.8
+16_10_2024
+PDF Packing List: added option to show only item names on PDF
+
+21_10_2024
+Inventory receitp: update select Supplier Search using Ajax
+
+28_10_2024
+item: fix bug that does not display images on PDF because item name contains special characters
+
+11_12_2024
+Revert Inventory delivery: fix bug double item quantity when reverse delivery note
+Items: fix bug submit form via Ajax
+
+02_01_2025
+Show "Inventory Receipt and Inventory Delivery" on Project Details
+
+09_01_2025
+Inventory Delivery: show "Subtotal", "Total discount", "Total payment" column
+Inventory Receipt: 
+	+ Change PO delivery status to "Partially Delivered" if creating a Partial Inventory Receipt,
+	+ Change PO delivery status to "Completely Delivered" if creating a Full Inventory Receipt
+04_03_2025
+Inventory  module: Fix bug generate_barcode with ean13_check_digit
+
+14_04_2025
+Packing list: Fix bug filter by status
+
+1.5.0
+fix bug when delivery voucher has amount greater than 15 digits
+
+09_05_2025
+Fix bug approval process: Inventory receipt, Inventory delivery, Internal delivery, Loss & Adjustment, Paking list, Order Return 
+
+23_05_2025
+Inventory receipt, Inventory delivery, Internal delivery: fix bug logo size
+
+1.5.1
+30_06_2025
+-	Integration with Quality Mangement module: features (Inventory Receipt Voucher; Inventory Delivery Voucher; Internal Delivery Vourcher).
+
+14_07_2025
+Inventory delivery: add Custom field
+
+26_11_2025
+Inventory receiving, Inventory Delivery, Packing list, Loss & adjustment, Internal Delivery, Return Order: Update button disabling logic in warehouse JS forms
+
+04_12_2025
+Inventory receipt: fix bug revert Inventory Receipt
+
+09_12_2025
+New Feature: Add inventory management and barcode scanning features
+
+22_01_2026
+Inventory receiving, Inventory Delivery, Packing list, Loss & adjustment, Internal Delivery, Return Order: Add support for signature image upload in approvals
+
+05_02_2026
+Print barcode advanced: Add custom barcode label printing support with 2 mode: Pager Roll and A4
+
+23_02_2026
+Inventory receipts: Support custom fields for Inventory receipts

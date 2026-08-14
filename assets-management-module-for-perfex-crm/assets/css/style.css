@@ -1,0 +1,547 @@
+/**
+ * Assets Management Module - Styles
+ * Version 1.2.0
+ */
+
+/* Modal Widths */
+.modalwidth {
+    width: 700px;
+}
+
+@media (max-width: 768px) {
+    .modalwidth {
+        width: auto;
+    }
+}
+
+/* Asset Image */
+.asset-image-preview {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.asset-image-preview:hover {
+    transform: scale(1.05);
+}
+
+/* Dashboard Cards */
+.dashboard-stat-card {
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: #fff;
+}
+
+.dashboard-stat-card:hover {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transform: translateY(-3px);
+}
+
+.dashboard-stat-card .panel-body {
+    padding: 18px 15px;
+}
+
+.dashboard-stat-card h3 {
+    line-height: 1.2;
+}
+
+.dashboard-stat-card span {
+    line-height: 1.4;
+}
+
+/* Status Labels */
+.status-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.status-not-used {
+    background-color: #1cc88a;
+    color: white;
+}
+
+.status-using {
+    background-color: #4e73df;
+    color: white;
+}
+
+.status-liquidation {
+    background-color: #858796;
+    color: white;
+}
+
+.status-warranty {
+    background-color: #f6c23e;
+    color: #333;
+}
+
+.status-lost {
+    background-color: #e74a3b;
+    color: white;
+}
+
+.status-broken {
+    background-color: #fd7e14;
+    color: white;
+}
+
+/* Barcode/QR Code Display */
+.barcode-container {
+    text-align: center;
+    padding: 15px;
+    background: #f8f9fc;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.barcode-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.qr-code-container {
+    text-align: center;
+    padding: 15px;
+}
+
+.qr-code-container img {
+    max-width: 150px;
+    border: 1px solid #ddd;
+    padding: 5px;
+    background: white;
+}
+
+/* Asset Preview Panel */
+#asset_sm_view {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.asset-preview-header {
+    padding: 20px;
+    background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
+    color: white;
+    border-radius: 8px 8px 0 0;
+}
+
+.asset-preview-body {
+    padding: 20px;
+}
+
+/* Tab Improvements */
+.nav-tabs-horizontal {
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+.nav-tabs-horizontal > li {
+    display: inline-block;
+    float: none;
+}
+
+.nav-tabs-horizontal > li > a {
+    border-radius: 4px 4px 0 0;
+    transition: all 0.2s ease;
+}
+
+.nav-tabs-horizontal > li > a:hover {
+    background: #f8f9fc;
+}
+
+.nav-tabs-horizontal > li.active > a {
+    border-bottom: 2px solid #4e73df;
+    color: #4e73df;
+    font-weight: 500;
+}
+
+/* Enhanced Action Buttons */
+.btn-toolbar .btn {
+    margin-bottom: 5px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    transition: all 0.2s ease;
+}
+
+.btn-toolbar .btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Asset Preview Header Gradient */
+.asset-preview-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Table Styling Improvements */
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #f8f9fc;
+}
+
+.table-bordered > tbody > tr > td {
+    border-color: #e3e6f0;
+}
+
+.table > tbody > tr.project-overview > td.bold {
+    background-color: #f0f3f8;
+    font-weight: 600;
+    color: #5a5c69;
+}
+
+/* Maintenance Calendar */
+#reservationsCalendar {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.fc-event {
+    cursor: pointer;
+    border: none;
+    padding: 2px 4px;
+}
+
+/* Audit Log */
+.audit-log-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #e3e6f0;
+}
+
+.audit-log-item:last-child {
+    border-bottom: none;
+}
+
+.audit-action-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Activity Timeline */
+.activity-timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.activity-timeline::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #e3e6f0;
+}
+
+.activity-item {
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.activity-item::before {
+    content: '';
+    position: absolute;
+    left: -24px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    background: #4e73df;
+    border-radius: 50%;
+}
+
+/* Print Labels */
+.print-label {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px;
+    display: inline-block;
+    text-align: center;
+    page-break-inside: avoid;
+}
+
+.print-label .asset-name {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.print-label .asset-code {
+    color: #666;
+    font-size: 12px;
+}
+
+@media print {
+    .print-label {
+        border: 1px solid #000;
+        margin: 5mm;
+    }
+}
+
+/* Notification Badge */
+.asset-notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #e74a3b;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+/* Tables */
+.table-assets th,
+.table-assets td {
+    vertical-align: middle;
+}
+
+.table-assets .asset-image-thumb {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Asset images in DataTables - constrain height */
+.dataTable img,
+.table img.asset-img,
+.table img[src*="assets/uploads"],
+.table img[src*="module=assets"] {
+    max-width: 50px;
+    max-height: 50px;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Asset image in preview panel */
+.asset-detail-image {
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: contain;
+}
+
+/* Asset image in asset form */
+.asset-image-form-preview {
+    max-width: 150px;
+    max-height: 150px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+/* Form Sections */
+.form-section {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e3e6f0;
+}
+
+.form-section:last-child {
+    border-bottom: none;
+}
+
+.form-section-title {
+    font-weight: 600;
+    color: #4e73df;
+    margin-bottom: 15px;
+}
+
+/* Responsive Improvements */
+@media (max-width: 768px) {
+    .dashboard-stat-card h3 {
+        font-size: 1.5rem;
+    }
+    
+    #asset_sm_view {
+        margin-top: 20px;
+    }
+    
+    .asset-preview-header {
+        padding: 15px;
+    }
+}
+
+/* Loading State */
+.loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255,255,255,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #4e73df;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Quick Action Buttons */
+.quick-action-btn {
+    margin: 2px;
+}
+
+.btn-group-actions .btn {
+    padding: 4px 8px;
+    font-size: 12px;
+}
+
+/* Dashboard Quick Action Grid Buttons */
+.panel-body .btn-lg.btn-block {
+    transition: all 0.3s ease;
+}
+
+.panel-body .btn-lg.btn-block:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    opacity: 0.95;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #858796;
+}
+
+.empty-state i {
+    font-size: 48px;
+    margin-bottom: 15px;
+    opacity: 0.5;
+}
+
+.empty-state p {
+    margin-bottom: 20px;
+}
+
+/* Transfer Arrow */
+.transfer-arrow {
+    display: inline-block;
+    padding: 0 10px;
+    color: #4e73df;
+}
+
+/* Condition Badges */
+.condition-excellent {
+    background-color: #1cc88a;
+    color: white;
+}
+
+.condition-good {
+    background-color: #4e73df;
+    color: white;
+}
+
+.condition-fair {
+    background-color: #f6c23e;
+    color: #333;
+}
+
+.condition-poor {
+    background-color: #fd7e14;
+    color: white;
+}
+
+.condition-damaged {
+    background-color: #e74a3b;
+    color: white;
+}
+
+/* Custom Fields Section */
+.custom-fields-section {
+    background: #f8f9fc;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.custom-field-row {
+    margin-bottom: 10px;
+}
+
+/* Webhook Status */
+.webhook-status-active {
+    color: #1cc88a;
+}
+
+.webhook-status-inactive {
+    color: #e74a3b;
+}
+
+/* Import Progress */
+.import-progress {
+    margin-top: 20px;
+}
+
+.import-progress .progress {
+    height: 25px;
+    border-radius: 5px;
+}
+
+.import-progress .progress-bar {
+    line-height: 25px;
+}
+
+/* Chart Containers */
+.chart-container {
+    position: relative;
+    height: 250px;
+}
+
+/* Settings Tabs */
+.settings-tab-content {
+    padding: 20px 0;
+}
+
+/* Reservation Calendar */
+.fc .fc-toolbar-title {
+    font-size: 1.2rem;
+}
+
+.fc .fc-button-primary {
+    background-color: #4e73df;
+    border-color: #4e73df;
+}
+
+.fc .fc-button-primary:hover {
+    background-color: #2e59d9;
+    border-color: #2653d4;
+}
+
+.fc .fc-button-primary:disabled {
+    background-color: #a5b4fc;
+    border-color: #a5b4fc;
+}
+
+/* Dark mode support (if Perfex CRM has dark mode) */
+.dark-mode .panel_s {
+    background: #1e1e2d;
+}
+
+.dark-mode .asset-preview-body {
+    background: #1e1e2d;
+}

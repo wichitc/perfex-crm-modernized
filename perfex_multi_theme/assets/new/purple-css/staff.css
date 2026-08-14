@@ -1,0 +1,93 @@
+	/*******ROOT CSS COLOR********/
+
+:root {
+	--main-bg-color: #392ab7;
+	--second-bg-color: #232b3e;
+	--white-bg-color: #fff;
+	--header-search-bg: rgba(0, 0, 0, .2);
+	--white-text-color: #fff;
+	--btn-color: #392ab7;
+	--menu-hover-bg: rgba(200, 200, 200, 0.2);
+}
+
+
+/*******CLOSE********/
+
+.login_admin {
+	background: var(--main-bg-color);
+}
+
+.company-logo {
+	padding: 25px 10px;
+	display: block;
+	text-align: center;
+}
+
+.company-logo a {
+	color: white;
+	font-size: 40px;
+}
+
+.authentication-form {
+	border: 1px solid #e4e5e7ad;
+	padding: 20px;
+	background: linear-gradient(#392ab7, #2861b7);
+	border-radius: 10px !important;
+	box-shadow: 0px 0px 21px -9px #000;
+}
+
+.btn-info.active.focus,
+.btn-info.active:focus,
+.btn-info.active:hover,
+.btn-info:active.focus,
+.btn-info:active:focus,
+.btn-info:active:hover,
+.open>.dropdown-toggle.btn-info.focus,
+.open>.dropdown-toggle.btn-info:focus,
+.open>.dropdown-toggle.btn-info:hover {
+	color: #fff;
+	background-color: var(--btn-color) !important;
+}
+
+.btn-info {
+	color: #fff;
+	background-color: var(--btn-color) !important;
+}
+
+.company-logo img {
+	width: 120px;
+}
+
+h1 {
+	color: white;
+}
+
+body {
+	background-image: url('../bg_img/bg.jpg') !important;
+}
+
+label {
+	color: white;
+}
+
+a {
+	color: white;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus,
+input[type="color"]:focus {
+    border-color: transparent;}

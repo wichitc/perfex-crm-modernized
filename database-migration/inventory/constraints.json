@@ -1,0 +1,924 @@
+[
+  {
+    "constraint_name": "tblactivity_log_pkey",
+    "table": "tblactivity_log",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblannouncements_pkey",
+    "table": "tblannouncements",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "announcementid"
+    ]
+  },
+  {
+    "constraint_name": "tblclients_pkey",
+    "table": "tblclients",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "userid"
+    ]
+  },
+  {
+    "constraint_name": "tblconsents_pkey",
+    "table": "tblconsents",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblconsent_purposes_pkey",
+    "table": "tblconsent_purposes",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblcontacts_pkey",
+    "table": "tblcontacts",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblcontact_permissions_pkey",
+    "table": "tblcontact_permissions",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblcontracts_pkey",
+    "table": "tblcontracts",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblcontracts_types_pkey",
+    "table": "tblcontracts_types",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblcontract_comments_pkey",
+    "table": "tblcontract_comments",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblcontract_renewals_pkey",
+    "table": "tblcontract_renewals",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblcountries_pkey",
+    "table": "tblcountries",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "country_id"
+    ]
+  },
+  {
+    "constraint_name": "tblcreditnotes_pkey",
+    "table": "tblcreditnotes",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblcreditnote_refunds_pkey",
+    "table": "tblcreditnote_refunds",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblcredits_pkey",
+    "table": "tblcredits",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblcurrencies_pkey",
+    "table": "tblcurrencies",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblcustomers_groups_pkey",
+    "table": "tblcustomers_groups",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblcustomer_groups_pkey",
+    "table": "tblcustomer_groups",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblcustomfields_pkey",
+    "table": "tblcustomfields",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblcustomfieldsvalues_pkey",
+    "table": "tblcustomfieldsvalues",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tbldepartments_pkey",
+    "table": "tbldepartments",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "departmentid"
+    ]
+  },
+  {
+    "constraint_name": "tbldismissed_announcements_pkey",
+    "table": "tbldismissed_announcements",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "dismissedannouncementid"
+    ]
+  },
+  {
+    "constraint_name": "tblemailtemplates_pkey",
+    "table": "tblemailtemplates",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "emailtemplateid"
+    ]
+  },
+  {
+    "constraint_name": "tblestimates_pkey",
+    "table": "tblestimates",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblestimate_requests_pkey",
+    "table": "tblestimate_requests",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblestimate_request_forms_pkey",
+    "table": "tblestimate_request_forms",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblestimate_request_status_pkey",
+    "table": "tblestimate_request_status",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblevents_pkey",
+    "table": "tblevents",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "eventid"
+    ]
+  },
+  {
+    "constraint_name": "tblexpenses_pkey",
+    "table": "tblexpenses",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblexpenses_categories_pkey",
+    "table": "tblexpenses_categories",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblfiles_pkey",
+    "table": "tblfiles",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblfilters_pkey",
+    "table": "tblfilters",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblform_questions_pkey",
+    "table": "tblform_questions",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "questionid"
+    ]
+  },
+  {
+    "constraint_name": "tblform_question_box_pkey",
+    "table": "tblform_question_box",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "boxid"
+    ]
+  },
+  {
+    "constraint_name": "tblform_question_box_description_pkey",
+    "table": "tblform_question_box_description",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "questionboxdescriptionid"
+    ]
+  },
+  {
+    "constraint_name": "tblform_results_pkey",
+    "table": "tblform_results",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "resultid"
+    ]
+  },
+  {
+    "constraint_name": "tblgdpr_requests_pkey",
+    "table": "tblgdpr_requests",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblinvoicepaymentrecords_pkey",
+    "table": "tblinvoicepaymentrecords",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblinvoices_pkey",
+    "table": "tblinvoices",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblitemable_pkey",
+    "table": "tblitemable",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblitems_pkey",
+    "table": "tblitems",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblitems_groups_pkey",
+    "table": "tblitems_groups",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblitem_tax_pkey",
+    "table": "tblitem_tax",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblknowedge_base_article_feedback_pkey",
+    "table": "tblknowedge_base_article_feedback",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "articleanswerid"
+    ]
+  },
+  {
+    "constraint_name": "tblknowledge_base_pkey",
+    "table": "tblknowledge_base",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "articleid"
+    ]
+  },
+  {
+    "constraint_name": "tblknowledge_base_groups_pkey",
+    "table": "tblknowledge_base_groups",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "groupid"
+    ]
+  },
+  {
+    "constraint_name": "tblleads_pkey",
+    "table": "tblleads",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblleads_email_integration_pkey",
+    "table": "tblleads_email_integration",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblleads_sources_pkey",
+    "table": "tblleads_sources",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblleads_status_pkey",
+    "table": "tblleads_status",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tbllead_activity_log_pkey",
+    "table": "tbllead_activity_log",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tbllead_integration_emails_pkey",
+    "table": "tbllead_integration_emails",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblmail_queue_pkey",
+    "table": "tblmail_queue",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblmilestones_pkey",
+    "table": "tblmilestones",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblmodules_pkey",
+    "table": "tblmodules",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblnewsfeed_comment_likes_pkey",
+    "table": "tblnewsfeed_comment_likes",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblnewsfeed_posts_pkey",
+    "table": "tblnewsfeed_posts",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "postid"
+    ]
+  },
+  {
+    "constraint_name": "tblnewsfeed_post_comments_pkey",
+    "table": "tblnewsfeed_post_comments",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblnewsfeed_post_likes_pkey",
+    "table": "tblnewsfeed_post_likes",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblnotes_pkey",
+    "table": "tblnotes",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblnotifications_pkey",
+    "table": "tblnotifications",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tbloptions_pkey",
+    "table": "tbloptions",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblpayment_attempts_pkey",
+    "table": "tblpayment_attempts",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblpayment_modes_pkey",
+    "table": "tblpayment_modes",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblpinned_projects_pkey",
+    "table": "tblpinned_projects",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblprojectdiscussioncomments_pkey",
+    "table": "tblprojectdiscussioncomments",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblprojectdiscussions_pkey",
+    "table": "tblprojectdiscussions",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblprojects_pkey",
+    "table": "tblprojects",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblproject_activity_pkey",
+    "table": "tblproject_activity",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblproject_files_pkey",
+    "table": "tblproject_files",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblproject_members_pkey",
+    "table": "tblproject_members",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblproject_notes_pkey",
+    "table": "tblproject_notes",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblproject_settings_pkey",
+    "table": "tblproject_settings",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblproposals_pkey",
+    "table": "tblproposals",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblproposal_comments_pkey",
+    "table": "tblproposal_comments",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblrelated_items_pkey",
+    "table": "tblrelated_items",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblreminders_pkey",
+    "table": "tblreminders",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblroles_pkey",
+    "table": "tblroles",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "roleid"
+    ]
+  },
+  {
+    "constraint_name": "tblsales_activity_pkey",
+    "table": "tblsales_activity",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblscheduled_emails_pkey",
+    "table": "tblscheduled_emails",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblservices_pkey",
+    "table": "tblservices",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "serviceid"
+    ]
+  },
+  {
+    "constraint_name": "tblsessions_pkey",
+    "table": "tblsessions",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblspam_filters_pkey",
+    "table": "tblspam_filters",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblstaff_pkey",
+    "table": "tblstaff",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "staffid"
+    ]
+  },
+  {
+    "constraint_name": "tblstaff_departments_pkey",
+    "table": "tblstaff_departments",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "staffdepartmentid"
+    ]
+  },
+  {
+    "constraint_name": "tblsubscriptions_pkey",
+    "table": "tblsubscriptions",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tbltags_pkey",
+    "table": "tbltags",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tbltasks_pkey",
+    "table": "tbltasks",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tbltaskstimers_pkey",
+    "table": "tbltaskstimers",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tbltasks_checklist_templates_pkey",
+    "table": "tbltasks_checklist_templates",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tbltask_assigned_pkey",
+    "table": "tbltask_assigned",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tbltask_checklist_items_pkey",
+    "table": "tbltask_checklist_items",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tbltask_comments_pkey",
+    "table": "tbltask_comments",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tbltask_followers_pkey",
+    "table": "tbltask_followers",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tbltaxes_pkey",
+    "table": "tbltaxes",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tbltemplates_pkey",
+    "table": "tbltemplates",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tbltickets_pkey",
+    "table": "tbltickets",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "ticketid"
+    ]
+  },
+  {
+    "constraint_name": "tbltickets_pipe_log_pkey",
+    "table": "tbltickets_pipe_log",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tbltickets_predefined_replies_pkey",
+    "table": "tbltickets_predefined_replies",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tbltickets_priorities_pkey",
+    "table": "tbltickets_priorities",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "priorityid"
+    ]
+  },
+  {
+    "constraint_name": "tbltickets_status_pkey",
+    "table": "tbltickets_status",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "ticketstatusid"
+    ]
+  },
+  {
+    "constraint_name": "tblticket_attachments_pkey",
+    "table": "tblticket_attachments",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblticket_replies_pkey",
+    "table": "tblticket_replies",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tbltodos_pkey",
+    "table": "tbltodos",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "todoid"
+    ]
+  },
+  {
+    "constraint_name": "tbltracked_mails_pkey",
+    "table": "tbltracked_mails",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tbltwocheckout_log_pkey",
+    "table": "tbltwocheckout_log",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tbluser_meta_pkey",
+    "table": "tbluser_meta",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "umeta_id"
+    ]
+  },
+  {
+    "constraint_name": "tblvault_pkey",
+    "table": "tblvault",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblviews_tracking_pkey",
+    "table": "tblviews_tracking",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblweb_to_lead_pkey",
+    "table": "tblweb_to_lead",
+    "type": "PRIMARY KEY",
+    "columns": [
+      "id"
+    ]
+  },
+  {
+    "constraint_name": "tblfilter_defaults_ibfk_1",
+    "table": "tblfilter_defaults",
+    "type": "FOREIGN KEY",
+    "definition": {
+      "constraint_name": "tblfilter_defaults_ibfk_1",
+      "table": "tblfilter_defaults",
+      "column": "filter_id",
+      "ref_table": "tblfilters",
+      "ref_column": "id",
+      "on_delete": "CASCADE",
+      "on_update": "RESTRICT"
+    }
+  },
+  {
+    "constraint_name": "tblfilter_defaults_ibfk_2",
+    "table": "tblfilter_defaults",
+    "type": "FOREIGN KEY",
+    "definition": {
+      "constraint_name": "tblfilter_defaults_ibfk_2",
+      "table": "tblfilter_defaults",
+      "column": "staff_id",
+      "ref_table": "tblstaff",
+      "ref_column": "staffid",
+      "on_delete": "CASCADE",
+      "on_update": "RESTRICT"
+    }
+  },
+  {
+    "constraint_name": "tbltwocheckout_log_ibfk_1",
+    "table": "tbltwocheckout_log",
+    "type": "FOREIGN KEY",
+    "definition": {
+      "constraint_name": "tbltwocheckout_log_ibfk_1",
+      "table": "tbltwocheckout_log",
+      "column": "invoice_id",
+      "ref_table": "tblinvoices",
+      "ref_column": "id",
+      "on_delete": "CASCADE",
+      "on_update": "RESTRICT"
+    }
+  }
+]

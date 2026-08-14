@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="dist/jquery-simple-tree-table.js"></script>
+</head>
+<body>
+  <h1>Basic Table</h1>
+  <button type="button" id="expander">expand</button>
+  <button type="button" id="collapser">collapse</button>
+  <button type="button" id="open1">open 1</button>
+  <button type="button" id="close1">close 1</button>
+  <table id="basic" border="1">
+    <tr data-node-id="1">
+      <td><a href="#">1</a></td>
+      <td>text of 1</td>
+    </tr>
+    <tr data-node-id="1.1" data-node-pid="1">
+      <td><a href="#">1.1</a></td>
+      <td>text of 1.1</td>
+    </tr>
+    <tr data-node-id="1.1.1" data-node-pid="1.1">
+      <td><a href="#">1.1.1</a></td>
+      <td>text of 1.1.1</td>
+    </tr>
+    <tr data-node-id="1.1.2" data-node-pid="1.1">
+      <td><a href="#">1.1.2</a></td>
+      <td>text of 1.1.2</td>
+    </tr>
+    <tr data-node-id="1.2" data-node-pid="1">
+      <td><a href="#">1.2</a></td>
+      <td>text of 1.2</td>
+    </tr>
+    <tr data-node-id="1.2.1" data-node-pid="1.2">
+      <td><a href="#">1.2.1</a></td>
+      <td>text of 1.2.1</td>
+    </tr>
+    <tr data-node-id="1.2.2" data-node-pid="1.2">
+      <td><a href="#">1.2.2</a></td>
+      <td>text of 1.2.2</td>
+    </tr>
+    <tr data-node-id="2">
+      <td><a href="#">2</a></td>
+      <td>text of 2</td>
+    </tr>
+    <tr data-node-id="2.1" data-node-pid="2">
+      <td><a href="#">2.1</a></td>
+      <td>text of 2.1</td>
+    </tr>
+    <tr data-node-id="2.2" data-node-pid="2">
+      <td><a href="#">2.2</a></td>
+      <td>text of 2.2</td>
+    </tr>
+  </table>
+  <script>
+  $('#basic').simpleTreeTable({
+    expander: $('#expander'),
+    collapser: $('#collapser'),
+    store: 'session',
+    storeKey: 'simple-tree-table-basic'
+  });
+  $('#open1').on('click', function() {
+    $('#basic').data('simple-tree-table').openByID("1");
+  });
+  $('#close1').on('click', function() {
+    $('#basic').data('simple-tree-table').closeByID("1");
+  });
+  </script>
+
+  <h1>Specify opened nodes</h1>
+  <table id="opened" border="1">
+    <tr data-node-id="1">
+      <td>1</td>
+      <td>text of 1</td>
+    </tr>
+    <tr data-node-id="1.1" data-node-pid="1">
+      <td>1.1</td>
+      <td>text of 1.1</td>
+    </tr>
+    <tr data-node-id="1.1.1" data-node-pid="1.1">
+      <td>1.1.1</td>
+      <td>text of 1.1.1</td>
+    </tr>
+    <tr data-node-id="1.1.1.1" data-node-pid="1.1.1">
+      <td>1.1.1.1</td>
+      <td>text of 1.1.1.1</td>
+    </tr>
+    <tr data-node-id="1.2" data-node-pid="1">
+      <td>1.2</td>
+      <td>text of 1.2</td>
+    </tr>
+    <tr data-node-id="1.2.1" data-node-pid="1.2">
+      <td>1.2.1</td>
+      <td>text of 1.2.1</td>
+    </tr>
+    <tr data-node-id="1.2.1.1" data-node-pid="1.2.1">
+      <td>1.2.1.1</td>
+      <td>text of 1.2.1.1</td>
+    </tr>
+  </table>
+  <script>
+  $('#opened').simpleTreeTable({
+    opened: [1, 1.1]
+  });
+  </script>
+
+  <h1>Callback</h1>
+  <table id="callback" border="1">
+    <tr data-node-id="1">
+      <td>1</td>
+      <td>text of 1</td>
+    </tr>
+    <tr data-node-id="1.1" data-node-pid="1">
+      <td>1.1</td>
+      <td>text of 1.1</td>
+    </tr>
+    <tr data-node-id="1.1.1" data-node-pid="1.1">
+      <td>1.1.1</td>
+      <td>text of 1.1.1</td>
+    </tr>
+    <tr data-node-id="1.2" data-node-pid="1">
+      <td>1.2</td>
+      <td>text of 1.2</td>
+    </tr>
+  </table>
+  <p id="message"> </p>
+  <script>
+   $('#callback').simpleTreeTable({
+   }).on('node:open', function(e, $node) {
+     $('#message').append("opened " + $node.data('node-id') + " ");
+   }).on('node:close', function(e, $node) {
+     $('#message').append("closed " + $node.data('node-id') + " ");
+   });
+  </script>
+
+  <h1>Change icon position</h1>
+  <table id="icon_pos" border="1">
+    <tr data-node-id="1">
+      <td>1</td>
+      <td><span>text of 1</span></td>
+    </tr>
+    <tr data-node-id="1.1" data-node-pid="1">
+      <td>1.1</td>
+      <td><span>text of 1.1</span></td>
+    </tr>
+    <tr data-node-id="1.1.1" data-node-pid="1.1">
+      <td>1.1.1</td>
+      <td><span>text of 1.1.1</span></td>
+    </tr>
+  </table>
+  <script>
+  $('#icon_pos').simpleTreeTable({
+    iconPosition: 'td:last-child > span'
+  });
+  </script>
+</body>
+</html>

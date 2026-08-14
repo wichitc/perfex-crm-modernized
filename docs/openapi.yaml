@@ -1,0 +1,273 @@
+openapi: 3.0.3
+info:
+  title: Perfex CRM Modernized RESTful API
+  description: 100% Business Logic and Frontend Functional Parity API for Perfex CRM (Python FastAPI & Next.js 16)
+  version: 1.0.0
+servers:
+  - url: /api/v1
+    description: Primary API v1 Server
+
+paths:
+  /auth/login:
+    post:
+      summary: User Login
+      tags: [Authentication]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, password]
+              properties:
+                email: { type: string, format: email, example: admin@crm.com }
+                password: { type: string, example: admin_password }
+      responses:
+        '200':
+          description: Login Successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  access_token: { type: string }
+                  token_type: { type: string, example: bearer }
+
+  /auth/me:
+    get:
+      summary: Get Current User Profile
+      tags: [Authentication]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: User Profile Details
+
+  /dashboard/stats:
+    get:
+      summary: Get Dashboard Metrics & Active Tasks
+      tags: [Dashboard]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Dashboard Summary Statistics
+
+  /clients:
+    get:
+      summary: List Clients
+      tags: [Clients]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: List of corporate clients
+    post:
+      summary: Create Client
+      tags: [Clients]
+      security:
+        - bearerAuth: []
+      responses:
+        '201':
+          description: Client Created
+
+  /leads:
+    get:
+      summary: List Leads
+      tags: [Leads]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: List of sales leads
+    post:
+      summary: Create Lead
+      tags: [Leads]
+      security:
+        - bearerAuth: []
+      responses:
+        '201':
+          description: Lead Created
+
+  /leads/{lead_id}/convert:
+    post:
+      summary: Convert Lead to Client
+      tags: [Leads]
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: lead_id
+          in: path
+          required: true
+          schema: { type: integer }
+      responses:
+        '200':
+          description: Lead Converted
+
+  /tasks:
+    get:
+      summary: List Tasks
+      tags: [Tasks]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: List of tasks
+    post:
+      summary: Create Task
+      tags: [Tasks]
+      security:
+        - bearerAuth: []
+      responses:
+        '201':
+          description: Task Created
+
+  /invoices:
+    get:
+      summary: List Invoices
+      tags: [Billing]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: List of invoices
+    post:
+      summary: Create Invoice
+      tags: [Billing]
+      security:
+        - bearerAuth: []
+      responses:
+        '201':
+          description: Invoice Created
+
+  /invoices/{invoice_id}/payments:
+    post:
+      summary: Record Invoice Payment
+      tags: [Billing]
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: invoice_id
+          in: path
+          required: true
+          schema: { type: integer }
+      responses:
+        '201':
+          description: Payment Recorded & Posted to Ledger
+
+  /estimates:
+    get:
+      summary: List Estimates
+      tags: [Estimates]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: List of estimates
+
+  /accounting/summary:
+    get:
+      summary: Get Balance Sheet & Accounting Summary
+      tags: [Accounting]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Financial Summary & Accounts
+
+  /warehouse/items:
+    get:
+      summary: List Warehouse Inventory Items
+      tags: [Warehouse]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Stock Items List
+
+  /purchase/orders:
+    get:
+      summary: List Purchase Orders
+      tags: [Purchase]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Procurement Orders List
+
+  /recruitment/overview:
+    get:
+      summary: Get Recruitment Overview
+      tags: [Recruitment]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Job Openings & Candidates
+
+  /okrs:
+    get:
+      summary: List OKRs & Key Results
+      tags: [OKRs]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Objectives & Key Results
+
+  /woocommerce/status:
+    get:
+      summary: Get WooCommerce Sync Status
+      tags: [WooCommerce]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: E-Commerce Sync Metrics
+
+  /account-planning:
+    get:
+      summary: List Account Plans
+      tags: [Account Planning]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Account Plans & SWOT
+
+  /staff-outsourcing:
+    get:
+      summary: List Outsourced Staff Resources
+      tags: [Staff Outsourcing]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Outsourced Staff List
+
+  /tickets:
+    get:
+      summary: List Support Tickets
+      tags: [Tickets]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Tickets List
+
+  /settings:
+    get:
+      summary: Get System Settings
+      tags: [Settings]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Global System Options
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

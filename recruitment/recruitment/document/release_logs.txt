@@ -1,0 +1,90 @@
+1.1.6
+Recruitment form:
+-	Allow recruitment form
+Bugs
+-	Fix Recruitment form on portal (remove customfield related Lead)
+-	Mapping position from Recruitment module when transfer to HR records ( compare text if don't exist => create new) ( update on recruitment module)
+1.1.7
+Bugs
+-	Fix recruitment send email to candidate
+-	Fix bug campaign
+-	Fix UI on mobile
+-	Fix bug related setting/criteria
+Candidate
+-	Update recruitment form Desired salary, Nationality
+-	Candidate profile add other filter: filter by commpany, skill, Job title, Seniority, age group
+Recruitment Channels
+-	Update Total CV received of Recruitment channels
+1.1.8
+Candidate
+-	Add edit button on the candidate profile
+-	Add Linkedin field on application form
+Recruitment Portal
+-	Add "Apply" button on bottom view job detail, and allow duplicate forms application.
+Setting
+-	Add "Apply" button on bottom view job detail, and allow duplicate forms application.
+1.1.9
+Interview
+-	Allow add multiple date comments in the interview.
+-	Interview time for each candidate
+-	Send email for candidate
+-	Send email for interviewer
+Recruitment campaign
+-	Display more columns Display these columns too:, company, fromdate, todate, manager, recruitment channel, ( also search doesn't work property ).
+Candidate:
+-	Add more columns: skill name, birthday, gender, marital status, alternative contact Number (search doesn't work property, please make every field searchable).
+Add customfield : Plan, Campaingn, Candidate Profile, Interviews.
+Bug
+-	Recruitment portal: fix bug apply job => save applied job to this account
+1.2.0
+Candidate Portal
+-	Allow candidate register, login, logout
+-	Candidate profile detail: View detail, update profile.
+-	Applied Jobs Menu
+-	Interview Schedules Menu
+-	Allow candidate apply to many job at once, auto fill contact information to form when Candidate Apply job
+-	Allow Candidate has abandoned apply for this position.
+-	Forgot password on Candidate portal
+-	GDPR
+Admin
+-	Add setting for generate Candidate code
+-	Applied Jobs Menu
+-	GDPR
+
+1.2.1
+Notification to candidate when admin changed status of: Candidate Profile, Applied Job, Interview Schedule
+Email Template for changed status :Candidate Profile, Applied Job, Interview Schedule
+Candidate Portal
+-	Web Notification on Candidate Portal
+-	Notification details
+1.2.2
+Bugs
+-	Candidate Details: Reviews in Candidates do not display star Icon for reviews
+-	Fix icon display error
+-	Setting: Fix bug choose new criteria when update evaluate form
+-	Candidate: Fix candidate viewing using kanban
+Campaign:
+-	Add new field: meta title and meta description
+
+20_03_2024: V1.2.3
+- Add email Template using: New candidate have applied.
+- Send Email notify when New candidate have applied.
+26_03_2024:
+-Recuitment Channel: Allows creating a recruitment form from the Custom Field list created for Candidate
+
+08_08_2024
+Candidate: fix bug duplicate Candidate code when import excel
+
+04_09_2024
+Candidate Portal: Fix UI on Job detail
+
+10_09_2024: V1.2.4
+- Add email Template: Send Interview schedule to candidate.
+
+20_11_2024:
+- Candidate: fix bug send email welcome to candidate
+
+13_01_2025:
+V1.2.5
+-Candidate Profile: Fix sending email with header and footer from settings, losing email format
+-Select currency for Plan, campaign, candidate profile
