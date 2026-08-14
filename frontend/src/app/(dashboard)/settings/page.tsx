@@ -1,6 +1,6 @@
 "use client";
 
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api-client";
 import { usePerfexTheme, ThemeMode } from "@/providers/theme-provider";
 import { useTranslation, LanguageCode } from "@/providers/language-provider";
@@ -9,6 +9,7 @@ import { Settings, Palette, Check, Building2, Languages } from "lucide-react";
 export default function SettingsPage() {
   const { theme, setTheme } = usePerfexTheme();
   const { language, setLanguage, t } = useTranslation();
+  const queryClient = useQueryClient();
 
   const { data: sysSettings } = useQuery({
     queryKey: ["system-settings"],
@@ -17,6 +18,26 @@ export default function SettingsPage() {
       return response.data;
     },
   });
+
+  const updateSettingsMutation = useMutation({
+    mutationFn: async (updated: Record<string, string>) => {
+      const res = await apiClient.post("/settings", { settings: updated });
+      return res.data;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["system-settings"] });
+    },
+  });
+
+  const handleSetTheme = (newTheme: ThemeMode) => {
+    setTheme(newTheme);
+    updateSettingsMutation.mutate({ theme: newTheme });
+  };
+
+  const handleSetLanguage = (newLang: LanguageCode) => {
+    setLanguage(newLang);
+    updateSettingsMutation.mutate({ language: newLang });
+  };
 
   const companyName = sysSettings?.company_name || "NOVIXA CRM Solutions Thailand";
   const currency = sysSettings?.currency || "THB (฿)";
@@ -58,7 +79,7 @@ export default function SettingsPage() {
           {languages.map((l) => (
             <div
               key={l.id}
-              onClick={() => setLanguage(l.id)}
+              onClick={() => handleSetLanguage(l.id)}
               className={`p-4 rounded-2xl border transition-all cursor-pointer flex items-center justify-between ${
                 language === l.id
                   ? "bg-slate-800/90 border-cyan-500/60 shadow-lg shadow-cyan-500/10"
@@ -89,7 +110,7 @@ export default function SettingsPage() {
           {themes.map((tItem) => (
             <div
               key={tItem.id}
-              onClick={() => setTheme(tItem.id)}
+              onClick={() => handleSetTheme(tItem.id)}
               className={`p-4 rounded-2xl border transition-all cursor-pointer flex items-center justify-between ${
                 theme === tItem.id
                   ? "bg-slate-800/90 border-cyan-500/60 shadow-lg shadow-cyan-500/10"

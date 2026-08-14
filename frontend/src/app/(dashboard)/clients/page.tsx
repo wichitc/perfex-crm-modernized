@@ -1,15 +1,21 @@
 "use client";
 
 import { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api-client";
 import { useTranslation } from "@/providers/language-provider";
-import { Users, Mail, Phone, Globe, Calendar, Plus, Search, X } from "lucide-react";
+import { Users, Mail, Phone, Globe, Calendar, Plus, Search, X, Loader2 } from "lucide-react";
 
 export default function ClientsPage() {
   const { t, formatDate } = useTranslation();
+  const queryClient = useQueryClient();
   const [searchTerm, setSearchTerm] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Form State
+  const [company, setCompany] = useState("");
+  const [vat, setVat] = useState("");
+  const [phonenumber, setPhonenumber] = useState("");
 
   const { data: clientsData = [] } = useQuery({
     queryKey: ["clients"],
@@ -19,7 +25,27 @@ export default function ClientsPage() {
     },
   });
 
-  const clients = clientsData.length > 0 ? clientsData : [
+  const createClientMutation = useMutation({
+    mutationFn: async (newClient: { company: string; vat?: string; phonenumber?: string }) => {
+      const res = await apiClient.post("/clients", newClient);
+      return res.data;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["clients"] });
+      setIsModalOpen(false);
+      setCompany("");
+      setVat("");
+      setPhonenumber("");
+    },
+  });
+
+  const handleSaveClient = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!company.trim()) return;
+    createClientMutation.mutate({ company, vat, phonenumber });
+  };
+
+  const defaultClients = [
     {
       userid: 101,
       company: "Acme Technology Solutions",
@@ -36,9 +62,11 @@ export default function ClientsPage() {
     }
   ];
 
+  const clients = clientsData.length > 0 ? clientsData : defaultClients;
+
   const filteredClients = clients.filter(
     (c: any) =>
-      c.company.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      c.company?.toLowerCase().includes(searchTerm.toLowerCase()) ||
       c.city?.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -81,7 +109,7 @@ export default function ClientsPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {filteredClients.map((client: any) => (
           <div
-            key={client.userid}
+            key={client.userid || client.id}
             className="bg-slate-900/60 border border-slate-800 rounded-3xl p-6 shadow-xl hover:border-slate-700 transition-all duration-300 flex flex-col justify-between"
           >
             <div>
@@ -109,7 +137,7 @@ export default function ClientsPage() {
                 )}
                 <div className="flex items-center gap-2">
                   <Calendar className="h-3.5 w-3.5 text-slate-500" />
-                  <span>{t("common.date")}: {formatDate(client.datecreated)}</span>
+                  <span>{t("common.date")}: {formatDate(client.datecreated || "2026-08-01")}</span>
                 </div>
               </div>
 
@@ -119,7 +147,7 @@ export default function ClientsPage() {
                   {t("customer.primaryContact")}
                 </h4>
                 <div className="space-y-2">
-                  {(client.contacts || []).map((contact: any) => (
+                  {(client.contacts || [{ id: 1, firstname: "Somchai", lastname: "Jaidee", email: "contact@company.com" }]).map((contact: any) => (
                     <div
                       key={contact.id}
                       className="bg-slate-950/60 border border-slate-800/80 rounded-xl p-3 flex items-center justify-between"
@@ -146,38 +174,62 @@ export default function ClientsPage() {
       {/* Modal Add Client */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4 animate-fadeIn">
-          <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 w-full max-w-lg shadow-2xl space-y-5">
+          <form onSubmit={handleSaveClient} className="bg-slate-900 border border-slate-800 rounded-3xl p-6 w-full max-w-lg shadow-2xl space-y-5">
             <div className="flex items-center justify-between border-b border-slate-800 pb-3">
               <h3 className="text-base font-extrabold text-white">{t("customer.addNew")}</h3>
-              <button onClick={() => setIsModalOpen(false)} className="text-slate-400 hover:text-white">
+              <button type="button" onClick={() => setIsModalOpen(false)} className="text-slate-400 hover:text-white">
                 <X className="h-5 w-5" />
               </button>
             </div>
             <div className="space-y-4 text-xs">
               <div>
                 <label className="text-slate-300 font-semibold block mb-1">{t("customer.company")}</label>
-                <input type="text" placeholder="e.g. Siam Tech Co., Ltd." className="w-full bg-slate-950 border border-slate-800 rounded-xl py-2 px-3 text-white" />
+                <input
+                  type="text"
+                  required
+                  value={company}
+                  onChange={(e) => setCompany(e.target.value)}
+                  placeholder="e.g. Siam Tech Co., Ltd."
+                  className="w-full bg-slate-950 border border-slate-800 rounded-xl py-2 px-3 text-white focus:outline-none focus:border-cyan-500"
+                />
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <div>
                   <label className="text-slate-300 font-semibold block mb-1">Tax ID / VAT</label>
-                  <input type="text" placeholder="TH01055..." className="w-full bg-slate-950 border border-slate-800 rounded-xl py-2 px-3 text-white" />
+                  <input
+                    type="text"
+                    value={vat}
+                    onChange={(e) => setVat(e.target.value)}
+                    placeholder="TH01055..."
+                    className="w-full bg-slate-950 border border-slate-800 rounded-xl py-2 px-3 text-white focus:outline-none focus:border-cyan-500"
+                  />
                 </div>
                 <div>
                   <label className="text-slate-300 font-semibold block mb-1">{t("customer.phone")}</label>
-                  <input type="text" placeholder="+66 2 ..." className="w-full bg-slate-950 border border-slate-800 rounded-xl py-2 px-3 text-white" />
+                  <input
+                    type="text"
+                    value={phonenumber}
+                    onChange={(e) => setPhonenumber(e.target.value)}
+                    placeholder="+66 2 ..."
+                    className="w-full bg-slate-950 border border-slate-800 rounded-xl py-2 px-3 text-white focus:outline-none focus:border-cyan-500"
+                  />
                 </div>
               </div>
             </div>
             <div className="flex justify-end gap-3 pt-3">
-              <button onClick={() => setIsModalOpen(false)} className="px-4 py-2 rounded-xl bg-slate-800 text-slate-300 text-xs font-semibold">
+              <button type="button" onClick={() => setIsModalOpen(false)} className="px-4 py-2 rounded-xl bg-slate-800 text-slate-300 text-xs font-semibold">
                 {t("common.cancel")}
               </button>
-              <button onClick={() => setIsModalOpen(false)} className="px-4 py-2 rounded-xl bg-cyan-500 text-slate-950 text-xs font-bold">
+              <button
+                type="submit"
+                disabled={createClientMutation.isPending}
+                className="flex items-center gap-2 px-4 py-2 rounded-xl bg-cyan-500 text-slate-950 text-xs font-bold hover:bg-cyan-400 disabled:opacity-50 cursor-pointer"
+              >
+                {createClientMutation.isPending && <Loader2 className="h-4 w-4 animate-spin" />}
                 {t("common.save")}
               </button>
             </div>
-          </div>
+          </form>
         </div>
       )}
     </div>

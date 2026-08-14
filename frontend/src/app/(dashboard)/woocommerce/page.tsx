@@ -1,18 +1,29 @@
 "use client";
 
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api-client";
 import { useTranslation } from "@/providers/language-provider";
-import { Store, RefreshCw, CheckCircle2, ShoppingBag, Layers } from "lucide-react";
+import { Store, RefreshCw, CheckCircle2, ShoppingBag, Layers, Loader2 } from "lucide-react";
 
 export default function WooCommercePage() {
   const { t } = useTranslation();
+  const queryClient = useQueryClient();
 
   const { data: wooData } = useQuery({
     queryKey: ["woocommerce"],
     queryFn: async () => {
       const response = await apiClient.get("/woocommerce/status");
       return response.data;
+    },
+  });
+
+  const syncMutation = useMutation({
+    mutationFn: async () => {
+      const res = await apiClient.post("/woocommerce/sync");
+      return res.data;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["woocommerce"] });
     },
   });
 
@@ -40,8 +51,13 @@ export default function WooCommercePage() {
             {t("woocommerce.subtitle")}
           </p>
         </div>
-        <button className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs shadow-lg shadow-purple-500/25 transition-all cursor-pointer">
-          <RefreshCw className="h-4 w-4" /> {t("woocommerce.syncNow")}
+        <button
+          onClick={() => syncMutation.mutate()}
+          disabled={syncMutation.isPending}
+          className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs shadow-lg shadow-purple-500/25 transition-all cursor-pointer disabled:opacity-50"
+        >
+          {syncMutation.isPending ? <Loader2 className="h-4 w-4 animate-spin" /> : <RefreshCw className="h-4 w-4" />}
+          {t("woocommerce.syncNow")}
         </button>
       </div>
 

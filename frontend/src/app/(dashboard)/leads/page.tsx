@@ -1,14 +1,21 @@
 "use client";
 
 import { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api-client";
 import { useTranslation } from "@/providers/language-provider";
-import { GitMerge, Plus, Kanban, Table as TableIcon, ArrowRight } from "lucide-react";
+import { GitMerge, Plus, Kanban, Table as TableIcon, ArrowRight, X, Loader2 } from "lucide-react";
 
 export default function LeadsPage() {
   const { t, formatCurrency } = useTranslation();
+  const queryClient = useQueryClient();
   const [viewMode, setViewMode] = useState<"kanban" | "table">("kanban");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Form state
+  const [leadName, setLeadName] = useState("");
+  const [leadEmail, setLeadEmail] = useState("");
+  const [leadValue, setLeadValue] = useState("50000");
 
   const { data: leadsData = [] } = useQuery({
     queryKey: ["leads"],
@@ -18,10 +25,44 @@ export default function LeadsPage() {
     },
   });
 
+  const createLeadMutation = useMutation({
+    mutationFn: async (newLead: { name: string; email: string; lead_value: number }) => {
+      const res = await apiClient.post("/leads", newLead);
+      return res.data;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["leads"] });
+      setIsModalOpen(false);
+      setLeadName("");
+      setLeadEmail("");
+      setLeadValue("50000");
+    },
+  });
+
+  const convertLeadMutation = useMutation({
+    mutationFn: async (leadId: number) => {
+      const res = await apiClient.post(`/leads/${leadId}/convert`);
+      return res.data;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["leads"] });
+      queryClient.invalidateQueries({ queryKey: ["clients"] });
+    },
+  });
+
+  const handleSaveLead = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!leadName.trim()) return;
+    createLeadMutation.mutate({
+      name: leadName,
+      email: leadEmail,
+      lead_value: parseFloat(leadValue) || 50000,
+    });
+  };
+
   const defaultLeads = [
     { id: 1, name: "Supatra Enterprise", email: "contact@supatra.com", status: "New", value: 45000, source: "Web Form", assignedTo: "Somchai" },
     { id: 2, name: "Nexus Cloud Systems", email: "info@nexuscloud.io", status: "Contacted", value: 120000, source: "LinkedIn", assignedTo: "Ananya" },
-    { id: 3, name: "Bangkok Retail Corp", email: "sales@bangkokretail.th", status: "Proposal Sent", value: 85000, source: "Referral", assignedTo: "Admin" },
   ];
 
   const leads = leadsData.length > 0 ? leadsData : defaultLeads;
@@ -68,7 +109,10 @@ export default function LeadsPage() {
             </button>
           </div>
 
-          <button className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs shadow-lg shadow-purple-500/25 transition-all cursor-pointer">
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs shadow-lg shadow-purple-500/25 transition-all cursor-pointer"
+          >
             <Plus className="h-4 w-4" /> {t("lead.addNew")}
           </button>
         </div>
@@ -92,7 +136,7 @@ export default function LeadsPage() {
                   {stageLeads.map((lead: any) => (
                     <div
                       key={lead.id}
-                      className="bg-slate-950/80 border border-slate-800/80 rounded-2xl p-4 shadow-md hover:border-purple-500/40 transition-all space-y-3 cursor-grab"
+                      className="bg-slate-950/80 border border-slate-800/80 rounded-2xl p-4 shadow-md hover:border-purple-500/40 transition-all space-y-3"
                     >
                       <div>
                         <h4 className="text-xs font-bold text-white">{lead.name}</h4>
@@ -102,7 +146,13 @@ export default function LeadsPage() {
                         <span className="text-purple-400 font-extrabold flex items-center">
                           {formatCurrency(lead.value || lead.lead_value || 50000)}
                         </span>
-                        <span className="text-[10px] text-slate-500">{lead.source || "Web"}</span>
+                        <button
+                          onClick={() => convertLeadMutation.mutate(lead.id)}
+                          disabled={convertLeadMutation.isPending}
+                          className="text-[10px] text-cyan-400 hover:underline flex items-center gap-1 cursor-pointer"
+                        >
+                          Convert <ArrowRight className="h-3 w-3" />
+                        </button>
                       </div>
                     </div>
                   ))}
@@ -138,7 +188,11 @@ export default function LeadsPage() {
                     </span>
                   </td>
                   <td className="p-4 text-right">
-                    <button className="text-cyan-400 font-semibold hover:underline flex items-center justify-end gap-1 ml-auto">
+                    <button
+                      onClick={() => convertLeadMutation.mutate(lead.id)}
+                      disabled={convertLeadMutation.isPending}
+                      className="text-cyan-400 font-semibold hover:underline flex items-center justify-end gap-1 ml-auto cursor-pointer"
+                    >
                       Convert <ArrowRight className="h-3 w-3" />
                     </button>
                   </td>
@@ -146,6 +200,65 @@ export default function LeadsPage() {
               ))}
             </tbody>
           </table>
+        </div>
+      )}
+
+      {/* Modal Add Lead */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4 animate-fadeIn">
+          <form onSubmit={handleSaveLead} className="bg-slate-900 border border-slate-800 rounded-3xl p-6 w-full max-w-lg shadow-2xl space-y-5">
+            <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+              <h3 className="text-base font-extrabold text-white">{t("lead.addNew")}</h3>
+              <button type="button" onClick={() => setIsModalOpen(false)} className="text-slate-400 hover:text-white">
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+            <div className="space-y-4 text-xs">
+              <div>
+                <label className="text-slate-300 font-semibold block mb-1">{t("common.name")}</label>
+                <input
+                  type="text"
+                  required
+                  value={leadName}
+                  onChange={(e) => setLeadName(e.target.value)}
+                  placeholder="e.g. Bangkok Retail Enterprise"
+                  className="w-full bg-slate-950 border border-slate-800 rounded-xl py-2 px-3 text-white focus:outline-none focus:border-purple-500"
+                />
+              </div>
+              <div>
+                <label className="text-slate-300 font-semibold block mb-1">{t("common.email")}</label>
+                <input
+                  type="email"
+                  value={leadEmail}
+                  onChange={(e) => setLeadEmail(e.target.value)}
+                  placeholder="contact@lead.com"
+                  className="w-full bg-slate-950 border border-slate-800 rounded-xl py-2 px-3 text-white focus:outline-none focus:border-purple-500"
+                />
+              </div>
+              <div>
+                <label className="text-slate-300 font-semibold block mb-1">{t("lead.value")}</label>
+                <input
+                  type="number"
+                  value={leadValue}
+                  onChange={(e) => setLeadValue(e.target.value)}
+                  className="w-full bg-slate-950 border border-slate-800 rounded-xl py-2 px-3 text-white focus:outline-none focus:border-purple-500"
+                />
+              </div>
+            </div>
+            <div className="flex justify-end gap-3 pt-3">
+              <button type="button" onClick={() => setIsModalOpen(false)} className="px-4 py-2 rounded-xl bg-slate-800 text-slate-300 text-xs font-semibold">
+                {t("common.cancel")}
+              </button>
+              <button
+                type="submit"
+                disabled={createLeadMutation.isPending}
+                className="flex items-center gap-2 px-4 py-2 rounded-xl bg-purple-600 text-white text-xs font-bold hover:bg-purple-500 disabled:opacity-50 cursor-pointer"
+              >
+                {createLeadMutation.isPending && <Loader2 className="h-4 w-4 animate-spin" />}
+                {t("common.save")}
+              </button>
+            </div>
+          </form>
         </div>
       )}
     </div>
