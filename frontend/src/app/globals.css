@@ -102,19 +102,37 @@ body {
 }
 
 /* ----------------------------------------------------
-   CRITICAL CONTRAST FIX:
-   Elements with DARK Backgrounds (Top Banner, Dark Badges, Dark Buttons, Modals)
-   MUST KEEP BRIGHT WHITE TEXT IN LIGHT MODE!
+   CRITICAL BUTTON & DARK CONTAINER CONTRAST FIX:
+   Solid Dark Buttons & Containers ALWAYS HAVE BRIGHT WHITE TEXT (#ffffff)
    ---------------------------------------------------- */
-[class*="from-slate-900"],
-[class*="from-slate-950"],
 .bg-slate-900,
 .bg-slate-950,
 .bg-slate-800,
-.bg-slate-950\/90,
-.bg-slate-900\/95,
-.bg-black {
+.bg-black,
+[class*="from-slate-900"],
+[class*="from-slate-950"] {
   color: #ffffff !important;
+}
+
+[data-perfex-theme="light"] .bg-slate-900,
+[data-perfex-theme="light"] .bg-slate-950,
+[data-perfex-theme="light"] .bg-slate-800,
+[data-perfex-theme="light"] .bg-black {
+  color: #ffffff !important;
+}
+
+[data-perfex-theme="light"] .bg-slate-900 a,
+[data-perfex-theme="light"] .bg-slate-950 a,
+[data-perfex-theme="light"] .bg-slate-800 a,
+[data-perfex-theme="light"] .bg-black a,
+[data-perfex-theme="light"] a.bg-slate-900,
+[data-perfex-theme="light"] a.bg-slate-950,
+[data-perfex-theme="light"] a.bg-slate-800,
+[data-perfex-theme="light"] button.bg-slate-900,
+[data-perfex-theme="light"] button.bg-slate-950,
+[data-perfex-theme="light"] button.bg-slate-800 {
+  color: #ffffff !important;
+  font-weight: 700;
 }
 
 [data-perfex-theme="light"] [class*="from-slate-900"] h1,
