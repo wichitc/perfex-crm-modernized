@@ -1,0 +1,6 @@
+GAP-ID,Category,Priority,Legacy Source,New Source,Description,Expected Behavior,Current Behavior,Impact,Solution,Status
+GAP-001,BUSINESS_LOGIC,CRITICAL,Clients_model.php,clients.py,Full CRUD API Endpoints for Clients,GET/POST/PUT/DELETE endpoints exist,Fully implemented and verified in Docker,High,FastAPI router & SQLAlchemy Async session,VERIFIED
+GAP-002,BUSINESS_LOGIC,CRITICAL,Leads_model.php,leads.py,Lead Conversion Transaction to Client,Convert lead creates client + contact in SQL transaction,Fully implemented and verified in Docker,High,Async nested transaction block,VERIFIED
+GAP-003,BACKEND,HIGH,Invoices_model.php,invoices.py,Double-Entry Ledger Posting on Invoice Payment,Payment posts debit cash and credit accounts receivable,Fully implemented via PostingEngine,High,FastAPI PostingEngine Integration,VERIFIED
+GAP-004,FRONTEND,MEDIUM,theme.php,globals.css,Sign In & Dark Button Text Contrast in Light Mode,Dark background buttons must display crisp white text (#ffffff),Fully enforced with scoped CSS rules,Medium,Scoped CSS variables in globals.css,VERIFIED
+GAP-005,INTEGRATION,MEDIUM,Woocommerce.php,woocommerce.py,WooCommerce Real-Time Store Sync,Trigger store sync via Celery background task,Fully implemented POST /woocommerce/sync endpoint,Medium,FastAPI BackgroundTasks & Celery worker,VERIFIED

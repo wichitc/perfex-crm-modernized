@@ -1,0 +1,13 @@
+Legacy Screen,Legacy Function,Business Rule,Legacy Database Table,New Next.js Page,New FastAPI Endpoint,New Business Service,New PostgreSQL Table,Test Case,Status
+Clients Manage,Clients::index,BR-001,tblclients,app/(dashboard)/clients/page.tsx,GET /api/v1/clients,ClientService,tblclients,TC-CLIENT-001,PASS
+Leads Manage,Leads::convert,BR-001,tblleads,app/(dashboard)/leads/page.tsx,POST /api/v1/leads/{id}/convert,LeadService,tblclients + tblcontacts,TC-LEAD-CONVERT-001,PASS
+Invoices Manage,Invoices::add_payment,BR-002,tblinvoices,app/(dashboard)/invoices/page.tsx,POST /api/v1/invoices/{id}/payments,PostingEngine,tblinvoicepaymentrecords,TC-INV-PAYMENT-001,PASS
+Estimates Manage,Estimates::add,BR-001,tblestimates,app/(dashboard)/estimates/page.tsx,POST /api/v1/estimates,EstimateService,tblestimates,TC-EST-001,PASS
+Accounting Summary,Accounting::summary,BR-002,tblacc_accounts,app/(dashboard)/accounting/page.tsx,GET /api/v1/accounting/summary,AccountingService,tblacc_accounts,TC-ACC-001,PASS
+Warehouse Items,Warehouse::items,BR-006,tblwh_items,app/(dashboard)/warehouse/page.tsx,GET /api/v1/warehouse/items,WarehouseService,tblwh_items,TC-WH-001,PASS
+Purchase Orders,Purchase::orders,BR-007,tblpur_orders,app/(dashboard)/purchase/page.tsx,GET /api/v1/purchase/orders,PurchaseService,tblpur_orders,TC-PUR-001,PASS
+WooCommerce Store,Woocommerce::sync,BR-003,tblwoocommerce_orders,app/(dashboard)/woocommerce/page.tsx,POST /api/v1/woocommerce/sync,WooCommerceSyncWorker,tblwoocommerce_orders,TC-WOO-001,PASS
+HR Staff,Hrm::overview,BR-001,tblstaff,app/(dashboard)/hr/page.tsx,GET /api/v1/hr/overview,HRService,tblstaff,TC-HR-001,PASS
+Tasks Board,Tasks::update_status,BR-001,tbltasks,app/(dashboard)/tasks/page.tsx,PUT /api/v1/tasks/{id},TaskService,tbltasks,TC-TASK-001,PASS
+Tickets Desk,Tickets::add,BR-001,tbltickets,app/(dashboard)/tickets/page.tsx,POST /api/v1/tickets,TicketService,tbltickets,TC-TICKET-001,PASS
+Settings Page,Settings::save,BR-004,tbloptions,app/(dashboard)/settings/page.tsx,POST /api/v1/settings,SettingsService,tbloptions,TC-SET-001,PASS

@@ -1,0 +1,14 @@
+Legacy MySQL Table,PostgreSQL Table,Primary Key,Foreign Keys,Index Count,Data Types Sync,Parity Status
+tblclients,tblclients,userid,None,3,VARCHAR/INT/DATETIME -> VARCHAR/INT/TIMESTAMPTZ,MATCH
+tblcontacts,tblcontacts,id,userid -> tblclients.userid,4,VARCHAR/INT/DATETIME -> VARCHAR/INT/TIMESTAMPTZ,MATCH
+tblleads,tblleads,id,status -> tblleads_status.id,5,VARCHAR/INT/DECIMAL -> VARCHAR/INT/NUMERIC,MATCH
+tblleads_status,tblleads_status,id,None,1,VARCHAR -> VARCHAR,MATCH
+tblinvoices,tblinvoices,id,clientid -> tblclients.userid,6,VARCHAR/INT/DECIMAL -> VARCHAR/INT/NUMERIC,MATCH
+tblinvoicepaymentrecords,tblinvoicepaymentrecords,id,invoiceid -> tblinvoices.id,3,INT/DECIMAL/DATETIME -> INT/NUMERIC/TIMESTAMPTZ,MATCH
+tblestimates,tblestimates,id,clientid -> tblclients.userid,4,VARCHAR/INT/DECIMAL -> VARCHAR/INT/NUMERIC,MATCH
+tbltasks,tbltasks,id,rel_id -> tblprojects.id,4,VARCHAR/INT/TEXT -> VARCHAR/INT/TEXT,MATCH
+tbltickets,tbltickets,ticketid,userid -> tblclients.userid,3,VARCHAR/INT/TEXT -> VARCHAR/INT/TEXT,MATCH
+tblacc_accounts,tblacc_accounts,id,None,2,VARCHAR/INT/DECIMAL -> VARCHAR/INT/NUMERIC,MATCH
+tblstaff,tblstaff,staffid,None,3,VARCHAR/INT/DATETIME -> VARCHAR/INT/TIMESTAMPTZ,MATCH
+tblpur_orders,tblpur_orders,id,vendor -> tblpur_vendors.id,3,VARCHAR/INT/DECIMAL -> VARCHAR/INT/NUMERIC,MATCH
+tblwh_items,tblwh_items,id,warehouse_id -> tblwh_warehouses.id,3,VARCHAR/INT/NUMERIC -> VARCHAR/INT/NUMERIC,MATCH

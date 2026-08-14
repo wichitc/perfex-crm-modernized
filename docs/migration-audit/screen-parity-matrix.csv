@@ -1,0 +1,19 @@
+Screen ID,Screen Name,Legacy PHP View,New Next.js Route,UI Status,Parity Status
+SCR-001,Main Dashboard,admin/dashboard/dashboard.php,app/(dashboard)/page.tsx,MATCH,PASS
+SCR-002,Clients Directory,admin/clients/manage.php,app/(dashboard)/clients/page.tsx,MATCH,PASS
+SCR-003,Leads Pipeline,admin/leads/manage_leads.php,app/(dashboard)/leads/page.tsx,MATCH,PASS
+SCR-004,Invoices & Billing,admin/invoices/manage.php,app/(dashboard)/invoices/page.tsx,MATCH,PASS
+SCR-005,Estimates,admin/estimates/manage.php,app/(dashboard)/estimates/page.tsx,MATCH,PASS
+SCR-006,Financial Accounting,accounting/views/chart_of_accounts.php,app/(dashboard)/accounting/page.tsx,MATCH,PASS
+SCR-007,Warehouse Items,inventory/views/items.php,app/(dashboard)/warehouse/page.tsx,MATCH,PASS
+SCR-008,Purchase Orders,purchase/views/orders.php,app/(dashboard)/purchase/page.tsx,MATCH,PASS
+SCR-009,WooCommerce Store,woocommerce/views/store.php,app/(dashboard)/woocommerce/page.tsx,MATCH,PASS
+SCR-010,HR Directory,hrm/views/staff.php,app/(dashboard)/hr/page.tsx,MATCH,PASS
+SCR-011,Recruitment,recruitment/views/overview.php,app/(dashboard)/recruitment/page.tsx,MATCH,PASS
+SCR-012,OKRs & Goals,okrs/views/okrs.php,app/(dashboard)/okrs/page.tsx,MATCH,PASS
+SCR-013,Tasks Board,admin/tasks/manage.php,app/(dashboard)/tasks/page.tsx,MATCH,PASS
+SCR-014,Support Tickets,admin/tickets/index.php,app/(dashboard)/tickets/page.tsx,MATCH,PASS
+SCR-015,Staff Outsourcing,staff_outsourcing/views/list.php,app/(dashboard)/staff-outsourcing/page.tsx,MATCH,PASS
+SCR-016,Account Planning,account_planning/views/swot.php,app/(dashboard)/account-planning/page.tsx,MATCH,PASS
+SCR-017,System Settings,admin/settings/all.php,app/(dashboard)/settings/page.tsx,MATCH,PASS
+SCR-018,Authentication Login,admin/authentication/login.php,app/login/page.tsx,MATCH,PASS

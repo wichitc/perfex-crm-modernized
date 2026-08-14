@@ -1,0 +1,10 @@
+Process ID,Process Name,Legacy Workflow,New System Execution,Parity Status,Verification
+PROC-001,Customer Onboarding,Create -> Validate -> Primary Contact -> Active Client,POST /api/v1/clients -> SQL Insert -> Invalidated React Query Cache,MATCH,Pass (HTTP 201)
+PROC-002,Lead Pipeline Conversion,New Lead -> Kanban Movement -> Convert to Client Transaction,POST /api/v1/leads/{id}/convert -> Async SQL Transaction (Client + Contact),MATCH,Pass (HTTP 200)
+PROC-003,Billing & Double-Entry Ledger,Create Invoice -> Payment Record -> Ledger Posting (Debit/Credit),POST /api/v1/invoices/{id}/payments -> PostingEngine Async Transaction,MATCH,Pass (HTTP 201)
+PROC-004,WooCommerce Inventory Sync,Manual/Cron Sync -> Fetch Orders/Products -> Update Stock,POST /api/v1/woocommerce/sync -> Celery/Background Worker Task,MATCH,Pass (HTTP 202)
+PROC-005,HR Employee Onboarding,Register Staff -> Assign Department -> Salary Record,POST /api/v1/hr/employees -> SQL Insert -> Staff Directory Refresh,MATCH,Pass (HTTP 201)
+PROC-006,Recruitment Pipeline,Campaign Creation -> Candidate Screening -> Stage Update,POST /api/v1/recruitment/campaigns -> Job Board & Candidate Table,MATCH,Pass (HTTP 201)
+PROC-007,Task Lifecycle,Task Creation -> Priority Set -> Assignment -> Mark Done,PUT /api/v1/tasks/{id} -> Status Update (Done/In Progress),MATCH,Pass (HTTP 200)
+PROC-008,Support Ticketing,Open Ticket -> Category Assignment -> Resolution Workflow,POST /api/v1/tickets -> Ticket Key Generation & DB Save,MATCH,Pass (HTTP 201)
+PROC-009,Settings & Theme Localization,Switch Theme/Lang -> Save Config -> Dynamic UI Scoped Re-render,POST /api/v1/settings -> Theme Context & i18n Dictionary Switch,MATCH,Pass (HTTP 200)

@@ -1,0 +1,8 @@
+Rule ID,Rule Name,Condition / Business Logic,Legacy Execution,New FastAPI / Service Implementation,Parity Status
+BR-001,Lead Conversion Rule,Lead converted to Client must create tblclients + tblcontacts in single transaction,Leads_model::convert_to_customer,Async Transaction (`async with db.begin_nested():`) in `leads.py`,MATCH
+BR-002,Invoice Ledger Posting,Payment record must auto-post Debit Cash and Credit Accounts Receivable,Invoices_model::add_payment,`PostingEngine.post_invoice_payment(...)` in `invoices.py`,MATCH
+BR-003,JWT Token Refresh,Session authentication must generate JWT Access Token and HTTP-Only Refresh Cookie,Authentication::login,`auth.py` router with OAuth2 Bearer token & refresh strategy,MATCH
+BR-004,Multi-Theme Scoped Styling,Theme selection must scope Dark/Light/Custom themes without broken button contrast,globals.css / theme.php,Scoped CSS variables & theme provider in `globals.css` & `theme-provider.tsx`,MATCH
+BR-005,Language Dictionary Switch,Language switch must change text dynamically between Thai and English,language/thailand / english,i18n Providers (`th/navigation.json`, `en/navigation.json`),MATCH
+BR-006,Stock Minimum Alert,Warehouse item stock below minStock triggers warning alert badge,Warehouse_model::check_stock,`warehouse/page.tsx` dynamic minStock calculation & warning badges,MATCH
+BR-007,Purchase Order Approval,PO total exceeding threshold requires status change to Pending Approval,Purchase_model::add_order,`purchase.py` status flag handling,MATCH

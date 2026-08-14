@@ -1,0 +1,11 @@
+UI Category,Legacy Implementation,New Next.js Implementation,Parity Status,Verification
+Layout Framework,Bootstrap 3 / AdminLTE Sidebar,Tailwind CSS v4 App Layout + Dynamic Sidebar,MATCH,PASS
+Color Palette,Classic Perfex Teal (#28b8da),NOVIXA Classic Teal + 5 Custom Scoped Themes,MATCH,PASS
+Dark Mode,Basic CSS override,Midnight Dark Mode with crisp high contrast text,MATCH,PASS
+Light Mode,Default Light Theme,Clean Light Mode with slate headers & #ffffff dark buttons,MATCH,PASS
+Typography,Browser System Fonts,Inter / Outfit Google Fonts with crisp rendering,MATCH,PASS
+Kanban Board,jQuery UI Sortable,React Drag & Touch Responsive Kanban Board,MATCH,PASS
+Modal Forms,Bootstrap Modal Dialog,React Portal Modal with Backdrop Blur & Form Validation,MATCH,PASS
+Table View,DataTables jQuery plugin,Responsive HTML5 Table with React Query Pagination & Filters,MATCH,PASS
+Toast Notifications,Toastr.js,React Toast Provider with Alert Badges,MATCH,PASS
+Icons,FontAwesome 4/5,Lucide React Vector Icons,MATCH,PASS

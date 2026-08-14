@@ -1,0 +1,30 @@
+Legacy Function,New API Endpoint,HTTP Method,Payload Schema,Response Schema,Auth Requirement,Status
+Clients::index,GET /api/v1/clients,GET,N/A,List[ClientResponse],Bearer JWT,MATCH
+Clients::add,POST /api/v1/clients,POST,ClientCreate,ClientResponse,Bearer JWT,MATCH
+Clients::update,PUT /api/v1/clients/{id},PUT,ClientUpdate,ClientResponse,Bearer JWT,MATCH
+Clients::delete,DELETE /api/v1/clients/{id},DELETE,N/A,204 No Content,Bearer JWT,MATCH
+Leads::index,GET /api/v1/leads,GET,N/A,List[LeadResponse],Bearer JWT,MATCH
+Leads::add,POST /api/v1/leads,POST,LeadCreate,LeadResponse,Bearer JWT,MATCH
+Leads::convert,POST /api/v1/leads/{id}/convert,POST,N/A,LeadResponse,Bearer JWT,MATCH
+Invoices::index,GET /api/v1/invoices,GET,N/A,List[InvoiceResponse],Bearer JWT,MATCH
+Invoices::add,POST /api/v1/invoices,POST,InvoiceCreate,InvoiceResponse,Bearer JWT,MATCH
+Invoices::payment,POST /api/v1/invoices/{id}/payments,POST,InvoicePaymentCreate,InvoicePaymentResponse,Bearer JWT,MATCH
+Estimates::index,GET /api/v1/estimates,GET,N/A,List[EstimateResponse],Bearer JWT,MATCH
+Estimates::add,POST /api/v1/estimates,POST,EstimateCreate,EstimateResponse,Bearer JWT,MATCH
+Accounting::summary,GET /api/v1/accounting/summary,GET,N/A,AccountingSummary,Bearer JWT,MATCH
+Warehouse::items,GET /api/v1/warehouse/items,GET,N/A,List[StockItem],Bearer JWT,MATCH
+Warehouse::add,POST /api/v1/warehouse/items,POST,StockItemCreate,StockItemResponse,Bearer JWT,MATCH
+Purchase::orders,GET /api/v1/purchase/orders,GET,N/A,List[PurchaseOrder],Bearer JWT,MATCH
+WooCommerce::sync,POST /api/v1/woocommerce/sync,POST,N/A,SyncStatusResponse,Bearer JWT,MATCH
+HRM::overview,GET /api/v1/hr/overview,GET,N/A,HROverviewResponse,Bearer JWT,MATCH
+HRM::add_employee,POST /api/v1/hr/employees,POST,EmployeeCreate,EmployeeResponse,Bearer JWT,MATCH
+Recruitment::overview,GET /api/v1/recruitment/overview,GET,N/A,RecruitmentOverviewResponse,Bearer JWT,MATCH
+OKRs::index,GET /api/v1/okrs,GET,N/A,List[OKRResponse],Bearer JWT,MATCH
+Tasks::index,GET /api/v1/tasks,GET,N/A,List[TaskResponse],Bearer JWT,MATCH
+Tasks::update,PUT /api/v1/tasks/{id},PUT,TaskUpdate,TaskResponse,Bearer JWT,MATCH
+Tickets::index,GET /api/v1/tickets,GET,N/A,List[TicketResponse],Bearer JWT,MATCH
+Tickets::add,POST /api/v1/tickets,POST,TicketCreate,TicketResponse,Bearer JWT,MATCH
+Outsourcing::index,GET /api/v1/staff-outsourcing,GET,N/A,List[ContractorResponse],Bearer JWT,MATCH
+AccountPlanning::index,GET /api/v1/account-planning,GET,N/A,List[PlanResponse],Bearer JWT,MATCH
+Settings::index,GET /api/v1/settings,GET,N/A,SettingsResponse,Bearer JWT,MATCH
+Settings::save,POST /api/v1/settings,POST,SettingsUpdate,SettingsResponse,Bearer JWT,MATCH
