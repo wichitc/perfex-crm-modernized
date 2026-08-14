@@ -34,13 +34,11 @@ async def create_invoice(
     db: AsyncSession = Depends(get_db),
     current_user: Staff = Depends(get_current_user)
 ):
-    # Verify client
     client_check = await db.execute(select(Client).where(Client.userid == invoice_data.clientid))
     if not client_check.scalar_one_or_none():
         raise HTTPException(status_code=404, detail="Client not found")
 
     async with db.begin_nested():
-        # Create Invoice Header
         invoice = Invoice(
             clientid=invoice_data.clientid,
             number=invoice_data.number,
@@ -58,9 +56,8 @@ async def create_invoice(
             addedfrom=current_user.staffid
         )
         db.add(invoice)
-        await db.flush() # Populate invoice ID
+        await db.flush()
 
-        # Create Line Items
         for item_data in invoice_data.items:
             item = InvoiceItem(
                 rel_id=invoice.id,
@@ -89,6 +86,38 @@ async def get_invoice(
         raise HTTPException(status_code=404, detail="Invoice not found")
     return invoice
 
+@router.put("/{invoice_id}", response_model=InvoiceResponse)
+async def update_invoice(
+    invoice_id: int,
+    payload: dict,
+    db: AsyncSession = Depends(get_db),
+    current_user: Staff = Depends(get_current_user)
+):
+    result = await db.execute(select(Invoice).where(Invoice.id == invoice_id))
+    invoice = result.scalar_one_or_none()
+    if not invoice:
+        raise HTTPException(status_code=404, detail="Invoice not found")
+    for k, v in payload.items():
+        if hasattr(invoice, k):
+            setattr(invoice, k, v)
+    await db.commit()
+    await db.refresh(invoice)
+    return invoice
+
+@router.delete("/{invoice_id}", status_code=status.HTTP_204_NO_CONTENT)
+async def delete_invoice(
+    invoice_id: int,
+    db: AsyncSession = Depends(get_db),
+    current_user: Staff = Depends(get_current_user)
+):
+    result = await db.execute(select(Invoice).where(Invoice.id == invoice_id))
+    invoice = result.scalar_one_or_none()
+    if not invoice:
+        raise HTTPException(status_code=404, detail="Invoice not found")
+    await db.delete(invoice)
+    await db.commit()
+    return None
+
 @router.post("/{invoice_id}/payments", response_model=InvoicePaymentResponse, status_code=status.HTTP_201_CREATED)
 async def create_payment(
     invoice_id: int,
@@ -96,7 +125,6 @@ async def create_payment(
     db: AsyncSession = Depends(get_db),
     current_user: Staff = Depends(get_current_user)
 ):
-    # Fetch Invoice
     result = await db.execute(select(Invoice).where(Invoice.id == invoice_id))
     invoice = result.scalar_one_or_none()
     if not invoice:
@@ -105,9 +133,7 @@ async def create_payment(
     if invoice.status == 2:
         raise HTTPException(status_code=400, detail="Invoice already fully paid")
 
-    # Transactional execution block
     async with db.begin_nested():
-        # Create Payment Record
         payment = InvoicePayment(
             invoiceid=invoice_id,
             amount=payment_data.amount,
@@ -118,22 +144,19 @@ async def create_payment(
             transactionid=payment_data.transactionid or str(uuid.uuid4().hex[:16]).upper()
         )
         db.add(payment)
-        await db.flush() # Populate payment ID
+        await db.flush()
 
-        # Fetch all payment amounts
         total_payments_result = await db.execute(
             select(InvoicePayment).where(InvoicePayment.invoiceid == invoice_id)
         )
         all_payments = total_payments_result.scalars().all()
         total_paid = sum(p.amount for p in all_payments)
 
-        # Update Invoice Status
         if total_paid >= invoice.total:
-            invoice.status = 2 # Paid
+            invoice.status = 2
         else:
-            invoice.status = 3 # Partially Paid
+            invoice.status = 3
 
-        # Trigger Double-Entry Posting Engine
         await PostingEngine.post_invoice_payment(
             db=db,
             invoice=invoice,

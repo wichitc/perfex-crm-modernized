@@ -1,5 +1,5 @@
 from typing import List
-from fastapi import APIRouter, Depends, status
+from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 from app.infrastructure.database import get_db
@@ -26,7 +26,6 @@ async def get_recruitment_overview(
     ] if campaigns else [
         {"id": 1, "title": "Senior Fullstack Next.js Developer", "department": "Engineering", "applicants": 18, "status": "Active"},
         {"id": 2, "title": "Enterprise Account Executive", "department": "Sales", "applicants": 12, "status": "Active"},
-        {"id": 3, "title": "DevOps & Infrastructure Lead", "department": "IT", "applicants": 7, "status": "Draft"},
     ]
 
     formatted_candidates = [
@@ -35,7 +34,6 @@ async def get_recruitment_overview(
     ] if candidates else [
         {"id": 101, "name": "Chaiwat Saelim", "position": "Senior Fullstack Next.js Developer", "stage": "Interview", "rating": 4.8},
         {"id": 102, "name": "Pornpimol Wong", "position": "Enterprise Account Executive", "stage": "Offered", "rating": 4.9},
-        {"id": 103, "name": "Tawatchai Tech", "position": "DevOps & Infrastructure Lead", "stage": "Applied", "rating": 4.2},
     ]
 
     return {
@@ -43,18 +41,49 @@ async def get_recruitment_overview(
         "candidates": formatted_candidates
     }
 
-@router.get("/campaigns")
-async def get_campaigns(
+@router.post("/campaigns", status_code=status.HTTP_201_CREATED)
+async def create_campaign(
+    payload: dict,
     db: AsyncSession = Depends(get_db),
     current_user: Staff = Depends(get_current_user)
 ):
-    result = await db.execute(select(RecruitmentCampaign))
-    return result.scalars().all()
+    campaign = RecruitmentCampaign(
+        campaign_name=payload.get("title", "New Job Position"),
+        status=1
+    )
+    db.add(campaign)
+    await db.commit()
+    await db.refresh(campaign)
+    return campaign
 
-@router.get("/candidates")
-async def get_candidates(
+@router.put("/campaigns/{campaign_id}")
+async def update_campaign(
+    campaign_id: int,
+    payload: dict,
     db: AsyncSession = Depends(get_db),
     current_user: Staff = Depends(get_current_user)
 ):
-    result = await db.execute(select(RecruitmentCandidate))
-    return result.scalars().all()
+    result = await db.execute(select(RecruitmentCampaign).where(RecruitmentCampaign.id == campaign_id))
+    campaign = result.scalar_one_or_none()
+    if not campaign:
+        raise HTTPException(status_code=404, detail="Campaign not found")
+    for k, v in payload.items():
+        if hasattr(campaign, k):
+            setattr(campaign, k, v)
+    await db.commit()
+    await db.refresh(campaign)
+    return campaign
+
+@router.delete("/campaigns/{campaign_id}", status_code=status.HTTP_204_NO_CONTENT)
+async def delete_campaign(
+    campaign_id: int,
+    db: AsyncSession = Depends(get_db),
+    current_user: Staff = Depends(get_current_user)
+):
+    result = await db.execute(select(RecruitmentCampaign).where(RecruitmentCampaign.id == campaign_id))
+    campaign = result.scalar_one_or_none()
+    if not campaign:
+        raise HTTPException(status_code=404, detail="Campaign not found")
+    await db.delete(campaign)
+    await db.commit()
+    return None

@@ -27,18 +27,6 @@ async def get_okrs(
                 "progress": 74,
                 "keyResults": [
                     {"id": 11, "title": "Acquire 30 new Enterprise CRM Clients", "target": 30, "current": 22, "unit": "Clients"},
-                    {"id": 12, "title": "Increase Average Order Value to ฿150,000", "target": 150000, "current": 138000, "unit": "THB"},
-                ]
-            },
-            {
-                "id": 2,
-                "title": "Upgrade Platform UI to Next.js 16 Clean Architecture",
-                "period": "Q3 2026",
-                "owner": "Frontend Engineering Team",
-                "progress": 90,
-                "keyResults": [
-                    {"id": 21, "title": "Migrate 100% of CRM & Module Views to Next.js", "target": 100, "current": 90, "unit": "%"},
-                    {"id": 22, "title": "Achieve Page Load Speed under 1.2s", "target": 1.2, "current": 0.8, "unit": "Seconds"},
                 ]
             }
         ]
@@ -88,3 +76,35 @@ async def create_okr(
     await db.commit()
     await db.refresh(db_okr)
     return db_okr
+
+@router.put("/{okr_id}")
+async def update_okr(
+    okr_id: int,
+    payload: dict,
+    db: AsyncSession = Depends(get_db),
+    current_user: Staff = Depends(get_current_user)
+):
+    result = await db.execute(select(OKR).where(OKR.id == okr_id))
+    okr = result.scalar_one_or_none()
+    if not okr:
+        raise HTTPException(status_code=404, detail="OKR not found")
+    for k, v in payload.items():
+        if hasattr(okr, k):
+            setattr(okr, k, v)
+    await db.commit()
+    await db.refresh(okr)
+    return okr
+
+@router.delete("/{okr_id}", status_code=status.HTTP_204_NO_CONTENT)
+async def delete_okr(
+    okr_id: int,
+    db: AsyncSession = Depends(get_db),
+    current_user: Staff = Depends(get_current_user)
+):
+    result = await db.execute(select(OKR).where(OKR.id == okr_id))
+    okr = result.scalar_one_or_none()
+    if not okr:
+        raise HTTPException(status_code=404, detail="OKR not found")
+    await db.delete(okr)
+    await db.commit()
+    return None

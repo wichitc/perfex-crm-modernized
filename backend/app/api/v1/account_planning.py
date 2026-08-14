@@ -1,5 +1,5 @@
 from typing import List
-from fastapi import APIRouter, Depends, status
+from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 from app.infrastructure.database import get_db
@@ -53,3 +53,35 @@ async def create_account_plan(
     await db.commit()
     await db.refresh(plan)
     return plan
+
+@router.put("/{plan_id}", response_model=AccountPlanResponse)
+async def update_account_plan(
+    plan_id: int,
+    payload: dict,
+    db: AsyncSession = Depends(get_db),
+    current_user: Staff = Depends(get_current_user)
+):
+    result = await db.execute(select(AccountPlan).where(AccountPlan.id == plan_id))
+    plan = result.scalar_one_or_none()
+    if not plan:
+        raise HTTPException(status_code=404, detail="Account plan not found")
+    for k, v in payload.items():
+        if hasattr(plan, k):
+            setattr(plan, k, v)
+    await db.commit()
+    await db.refresh(plan)
+    return plan
+
+@router.delete("/{plan_id}", status_code=status.HTTP_204_NO_CONTENT)
+async def delete_account_plan(
+    plan_id: int,
+    db: AsyncSession = Depends(get_db),
+    current_user: Staff = Depends(get_current_user)
+):
+    result = await db.execute(select(AccountPlan).where(AccountPlan.id == plan_id))
+    plan = result.scalar_one_or_none()
+    if not plan:
+        raise HTTPException(status_code=404, detail="Account plan not found")
+    await db.delete(plan)
+    await db.commit()
+    return None

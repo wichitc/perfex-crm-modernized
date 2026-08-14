@@ -50,3 +50,35 @@ async def create_estimate(
     await db.commit()
     await db.refresh(estimate)
     return estimate
+
+@router.put("/{estimate_id}", response_model=EstimateResponse)
+async def update_estimate(
+    estimate_id: int,
+    payload: dict,
+    db: AsyncSession = Depends(get_db),
+    current_user: Staff = Depends(get_current_user)
+):
+    result = await db.execute(select(Estimate).where(Estimate.id == estimate_id))
+    estimate = result.scalar_one_or_none()
+    if not estimate:
+        raise HTTPException(status_code=404, detail="Estimate not found")
+    for k, v in payload.items():
+        if hasattr(estimate, k):
+            setattr(estimate, k, v)
+    await db.commit()
+    await db.refresh(estimate)
+    return estimate
+
+@router.delete("/{estimate_id}", status_code=status.HTTP_204_NO_CONTENT)
+async def delete_estimate(
+    estimate_id: int,
+    db: AsyncSession = Depends(get_db),
+    current_user: Staff = Depends(get_current_user)
+):
+    result = await db.execute(select(Estimate).where(Estimate.id == estimate_id))
+    estimate = result.scalar_one_or_none()
+    if not estimate:
+        raise HTTPException(status_code=404, detail="Estimate not found")
+    await db.delete(estimate)
+    await db.commit()
+    return None

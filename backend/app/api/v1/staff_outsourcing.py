@@ -1,5 +1,5 @@
 from typing import List
-from fastapi import APIRouter, Depends, status
+from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 from app.infrastructure.database import get_db
@@ -19,9 +19,8 @@ async def get_outsourced_staff(
     staff_list = result.scalars().all()
     if not staff_list:
         return [
-            OutsourcedStaffResponse(id=1, name="Phukhao Tech Consulting", role="React / Next.js Specialist", rate="฿1,800/hr", allocation="100%", status="Assigned", project="Perfex CRM Upgrade"),
+            OutsourcedStaffResponse(id=1, name="Phukhao Tech Consulting", role="React / Next.js Specialist", rate="฿1,800/hr", allocation="100%", status="Assigned", project="NOVIXA CRM Upgrade"),
             OutsourcedStaffResponse(id=2, name="Siam Cloud Solutions", role="DevOps Architect", rate="฿2,200/hr", allocation="50%", status="Assigned", project="AWS Infrastructure Migration"),
-            OutsourcedStaffResponse(id=3, name="Innovate Design Studio", role="UI/UX Designer", rate="฿1,500/hr", allocation="0%", status="Available", project="-"),
         ]
     return staff_list
 
@@ -36,3 +35,35 @@ async def create_outsourced_staff(
     await db.commit()
     await db.refresh(staff)
     return staff
+
+@router.put("/{staff_id}", response_model=OutsourcedStaffResponse)
+async def update_outsourced_staff(
+    staff_id: int,
+    payload: dict,
+    db: AsyncSession = Depends(get_db),
+    current_user: Staff = Depends(get_current_user)
+):
+    result = await db.execute(select(OutsourcedStaff).where(OutsourcedStaff.id == staff_id))
+    staff = result.scalar_one_or_none()
+    if not staff:
+        raise HTTPException(status_code=404, detail="Outsourced staff not found")
+    for k, v in payload.items():
+        if hasattr(staff, k):
+            setattr(staff, k, v)
+    await db.commit()
+    await db.refresh(staff)
+    return staff
+
+@router.delete("/{staff_id}", status_code=status.HTTP_204_NO_CONTENT)
+async def delete_outsourced_staff(
+    staff_id: int,
+    db: AsyncSession = Depends(get_db),
+    current_user: Staff = Depends(get_current_user)
+):
+    result = await db.execute(select(OutsourcedStaff).where(OutsourcedStaff.id == staff_id))
+    staff = result.scalar_one_or_none()
+    if not staff:
+        raise HTTPException(status_code=404, detail="Outsourced staff not found")
+    await db.delete(staff)
+    await db.commit()
+    return None
