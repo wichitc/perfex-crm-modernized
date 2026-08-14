@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #090d16;
+  --foreground: #f8fafc;
 }
 
 @theme inline {
@@ -12,15 +12,111 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.4);
+}
+
+/* ====================================================
+   Perfex CRM Light & Dark Theme Custom Variables
+   ==================================================== */
+
+[data-perfex-theme="light"] {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+}
+
+[data-perfex-theme="light"] body {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+[data-perfex-theme="light"] aside {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+}
+
+[data-perfex-theme="light"] header {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+[data-perfex-theme="light"] .bg-slate-900\/60,
+[data-perfex-theme="light"] .bg-slate-900\/50,
+[data-perfex-theme="light"] .bg-slate-900\/90,
+[data-perfex-theme="light"] .bg-slate-900 {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+[data-perfex-theme="light"] .bg-slate-950\/60,
+[data-perfex-theme="light"] .bg-slate-950\/80,
+[data-perfex-theme="light"] .bg-slate-950 {
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+[data-perfex-theme="light"] .bg-slate-800\/90,
+[data-perfex-theme="light"] .bg-slate-800\/60,
+[data-perfex-theme="light"] .bg-slate-800\/40,
+[data-perfex-theme="light"] .bg-slate-800 {
+  background-color: #e2e8f0 !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+[data-perfex-theme="light"] .text-white {
+  color: #0f172a !important;
+}
+
+[data-perfex-theme="light"] .text-slate-100,
+[data-perfex-theme="light"] .text-slate-200,
+[data-perfex-theme="light"] .text-slate-300 {
+  color: #1e293b !important;
+}
+
+[data-perfex-theme="light"] .text-slate-400 {
+  color: #475569 !important;
+}
+
+[data-perfex-theme="light"] .text-slate-500 {
+  color: #64748b !important;
+}
+
+[data-perfex-theme="light"] .border-slate-800,
+[data-perfex-theme="light"] .border-slate-800\/80,
+[data-perfex-theme="light"] .border-slate-700\/80,
+[data-perfex-theme="light"] .border-slate-700\/60 {
+  border-color: #e2e8f0 !important;
+}
+
+[data-perfex-theme="light"] input {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+[data-perfex-theme="light"] input::placeholder {
+  color: #94a3b8 !important;
 }
