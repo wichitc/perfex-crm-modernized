@@ -1,4 +1,4 @@
-// Comprehensive Mock Dataset for Perfex CRM Next.js Frontend
+// Comprehensive Mock Dataset for NOVIXA CRM Next.js Frontend
 
 export const MOCK_USER = {
   staffid: 1,
@@ -182,6 +182,22 @@ export const MOCK_WOOCOMMERCE = {
   ]
 };
 
+export const MOCK_HR = {
+  stats: {
+    totalEmployees: 64,
+    activeStaff: 61,
+    onLeave: 3,
+    openRequisitions: 5,
+  },
+  employees: [
+    { id: "EMP-001", name: "Somchai Jaidee", department: "Engineering", position: "Lead Architect", type: "Full-Time", salary: "฿120,000", status: "Active", email: "somchai@novixacrm.com" },
+    { id: "EMP-002", name: "Ananya Srisuk", department: "Human Resources", position: "HR Manager", type: "Full-Time", salary: "฿85,000", status: "Active", email: "ananya@novixacrm.com" },
+    { id: "EMP-003", name: "Kittisak Vong", department: "Sales & Business", position: "Account Director", type: "Full-Time", salary: "฿105,000", status: "On Leave", email: "kittisak@novixacrm.com" },
+    { id: "EMP-004", name: "Pornpimol Wong", department: "Marketing", position: "Content Strategist", type: "Full-Time", salary: "฿65,000", status: "Active", email: "pornpimol@novixacrm.com" },
+    { id: "EMP-005", name: "Chaiwat Saelim", department: "Engineering", position: "Senior Fullstack Dev", type: "Full-Time", salary: "฿95,000", status: "Active", email: "chaiwat@novixacrm.com" },
+  ]
+};
+
 export const MOCK_RECRUITMENT = {
   jobOpenings: [
     { id: 1, title: "Senior Fullstack Next.js Developer", department: "Engineering", applicants: 18, status: "Active" },
@@ -234,7 +250,7 @@ export const MOCK_TICKETS = [
 ];
 
 export const MOCK_STAFF_OUTSOURCING = [
-  { id: 1, name: "Phukhao Tech Consulting", role: "React / Next.js Specialist", rate: "฿1,800/hr", allocation: "100%", status: "Assigned", project: "Perfex CRM Upgrade" },
+  { id: 1, name: "Phukhao Tech Consulting", role: "React / Next.js Specialist", rate: "฿1,800/hr", allocation: "100%", status: "Assigned", project: "NOVIXA CRM Upgrade" },
   { id: 2, name: "Siam Cloud Solutions", role: "DevOps Architect", rate: "฿2,200/hr", allocation: "50%", status: "Assigned", project: "AWS Infrastructure Migration" },
   { id: 3, name: "Innovate Design Studio", role: "UI/UX Designer", rate: "฿1,500/hr", allocation: "0%", status: "Available", project: "-" },
 ];
