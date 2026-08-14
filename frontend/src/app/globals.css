@@ -35,22 +35,8 @@ body {
 }
 
 /* ====================================================
-   NOVIXA CRM Container-Aware Contrast Theme Engine
-   Rule: Any element with a Dark Background MUST HAVE White/Bright Text!
-   ==================================================== */
-
-/* Dark Container Text Standards */
-.bg-slate-900,
-.bg-slate-950,
-.bg-slate-800,
-.bg-black,
-[class*="from-slate-900"],
-[class*="from-slate-950"] {
-  color: #f8fafc;
-}
-
-/* ====================================================
-   Light Mode Theme Overrides
+   NOVIXA CRM Clean Light Mode Theme Overrides
+   [data-perfex-theme="light"]
    ==================================================== */
 
 [data-perfex-theme="light"] {
@@ -58,123 +44,137 @@ body {
   --foreground: #0f172a;
 }
 
-[data-perfex-theme="light"] body {
+[data-perfex-theme="light"] body,
+[data-perfex-theme="light"] main,
+[data-perfex-theme="light"] .min-h-screen,
+[data-perfex-theme="light"] .min-h-full {
   background-color: #f8fafc !important;
   color: #0f172a !important;
 }
 
-/* Sidebar & Header Crisp Light Backgrounds */
+/* 1. Sidebar Styles in Light Mode */
 [data-perfex-theme="light"] aside {
   background-color: #ffffff !important;
-  border-color: #cbd5e1 !important;
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
+  border-right-color: #e2e8f0 !important;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.03) !important;
 }
 
+[data-perfex-theme="light"] aside h1,
+[data-perfex-theme="light"] aside .text-white {
+  color: #0f172a !important;
+}
+
+[data-perfex-theme="light"] aside nav a {
+  color: #334155 !important;
+}
+
+[data-perfex-theme="light"] aside nav a:hover {
+  background-color: #f1f5f9 !important;
+  color: #0284c7 !important;
+}
+
+[data-perfex-theme="light"] aside nav a.bg-slate-800\/90,
+[data-perfex-theme="light"] aside nav a[class*="bg-slate-800"] {
+  background-color: #e0f2fe !important;
+  color: #0369a1 !important;
+  border-color: #bae6fd !important;
+}
+
+[data-perfex-theme="light"] aside nav svg {
+  color: #475569 !important;
+}
+
+[data-perfex-theme="light"] aside nav a.bg-slate-800\/90 svg,
+[data-perfex-theme="light"] aside nav a[class*="bg-slate-800"] svg {
+  color: #0284c7 !important;
+}
+
+[data-perfex-theme="light"] aside .text-slate-400 {
+  color: #64748b !important;
+}
+
+/* 2. Header Styles in Light Mode */
 [data-perfex-theme="light"] header {
   background-color: #ffffff !important;
-  border-color: #cbd5e1 !important;
-  box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.04);
+  border-bottom-color: #e2e8f0 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02) !important;
 }
 
-/* Standard White Cards in Light Mode */
-[data-perfex-theme="light"] .bg-slate-900\/60,
-[data-perfex-theme="light"] .bg-slate-900\/50,
-[data-perfex-theme="light"] .bg-slate-900\/90 {
-  background-color: #ffffff !important;
+[data-perfex-theme="light"] header input {
+  background-color: #f8fafc !important;
   border-color: #cbd5e1 !important;
   color: #0f172a !important;
-  box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.06) !important;
+}
+
+[data-perfex-theme="light"] header input::placeholder {
+  color: #64748b !important;
+}
+
+[data-perfex-theme="light"] header button,
+[data-perfex-theme="light"] header a {
+  color: #1e293b !important;
+}
+
+/* 3. Main Dashboard & Card Backgrounds in Light Mode */
+[data-perfex-theme="light"] .bg-slate-900\/60,
+[data-perfex-theme="light"] .bg-slate-900\/50,
+[data-perfex-theme="light"] .bg-slate-900\/90,
+[data-perfex-theme="light"] .bg-slate-900 {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+  box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.04) !important;
 }
 
 [data-perfex-theme="light"] .bg-slate-950\/60,
-[data-perfex-theme="light"] .bg-slate-950\/80 {
-  background-color: #f1f5f9 !important;
-  border-color: #cbd5e1 !important;
+[data-perfex-theme="light"] .bg-slate-950\/80,
+[data-perfex-theme="light"] .bg-slate-950 {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
   color: #0f172a !important;
 }
 
-[data-perfex-theme="light"] .bg-slate-800\/90,
-[data-perfex-theme="light"] .bg-slate-800\/60,
-[data-perfex-theme="light"] .bg-slate-800\/40 {
-  background-color: #e2e8f0 !important;
+/* 4. Top Banner in Light Mode */
+[data-perfex-theme="light"] [class*="from-slate-900"] {
+  background: linear-gradient(to right, #ffffff, #f1f5f9, #ffffff) !important;
   border-color: #cbd5e1 !important;
+  box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.04) !important;
+}
+
+[data-perfex-theme="light"] [class*="from-slate-900"] h1 {
   color: #0f172a !important;
 }
 
-/* ----------------------------------------------------
-   CRITICAL BUTTON & DARK CONTAINER CONTRAST FIX:
-   Solid Dark Buttons & Containers ALWAYS HAVE BRIGHT WHITE TEXT (#ffffff)
-   ---------------------------------------------------- */
-.bg-slate-900,
-.bg-slate-950,
-.bg-slate-800,
-.bg-black,
-[class*="from-slate-900"],
-[class*="from-slate-950"] {
-  color: #ffffff !important;
+[data-perfex-theme="light"] [class*="from-slate-900"] p {
+  color: #475569 !important;
 }
 
-[data-perfex-theme="light"] .bg-slate-900,
-[data-perfex-theme="light"] .bg-slate-950,
-[data-perfex-theme="light"] .bg-slate-800,
-[data-perfex-theme="light"] .bg-black {
-  color: #ffffff !important;
-}
-
-[data-perfex-theme="light"] .bg-slate-900 a,
-[data-perfex-theme="light"] .bg-slate-950 a,
-[data-perfex-theme="light"] .bg-slate-800 a,
-[data-perfex-theme="light"] .bg-black a,
-[data-perfex-theme="light"] a.bg-slate-900,
-[data-perfex-theme="light"] a.bg-slate-950,
-[data-perfex-theme="light"] a.bg-slate-800,
-[data-perfex-theme="light"] button.bg-slate-900,
-[data-perfex-theme="light"] button.bg-slate-950,
-[data-perfex-theme="light"] button.bg-slate-800 {
-  color: #ffffff !important;
-  font-weight: 700;
-}
-
-[data-perfex-theme="light"] [class*="from-slate-900"] h1,
-[data-perfex-theme="light"] [class*="from-slate-900"] h2,
-[data-perfex-theme="light"] [class*="from-slate-900"] h3,
-[data-perfex-theme="light"] [class*="from-slate-900"] h4,
-[data-perfex-theme="light"] [class*="from-slate-900"] span,
-[data-perfex-theme="light"] [class*="from-slate-900"] .text-white,
-[data-perfex-theme="light"] .bg-slate-900 .text-white,
-[data-perfex-theme="light"] .bg-slate-950 .text-white,
-[data-perfex-theme="light"] .bg-slate-800 .text-white,
-[data-perfex-theme="light"] .bg-black .text-white {
-  color: #ffffff !important;
-}
-
-[data-perfex-theme="light"] [class*="from-slate-900"] p,
-[data-perfex-theme="light"] [class*="from-slate-900"] .text-slate-400,
-[data-perfex-theme="light"] [class*="from-slate-950"] .text-slate-400,
-[data-perfex-theme="light"] .bg-slate-900 .text-slate-400,
-[data-perfex-theme="light"] .bg-slate-950 .text-slate-400,
-[data-perfex-theme="light"] .bg-slate-800 .text-slate-400 {
-  color: #cbd5e1 !important;
-}
-
-/* Light Mode Text for Light Cards */
-[data-perfex-theme="light"] .bg-slate-900\/60 .text-white,
-[data-perfex-theme="light"] .bg-slate-900\/50 .text-white,
-[data-perfex-theme="light"] aside .text-white,
-[data-perfex-theme="light"] header .text-white {
-  color: #020617 !important;
+/* 5. Typography Text Color Overrides in Light Mode */
+[data-perfex-theme="light"] .text-white {
+  color: #0f172a !important;
   font-weight: 800;
 }
 
-[data-perfex-theme="light"] .bg-slate-900\/60 .text-slate-400,
-[data-perfex-theme="light"] .bg-slate-900\/50 .text-slate-400,
-[data-perfex-theme="light"] aside .text-slate-400,
-[data-perfex-theme="light"] header .text-slate-400 {
-  color: #334155 !important;
+[data-perfex-theme="light"] .text-slate-100,
+[data-perfex-theme="light"] .text-slate-200,
+[data-perfex-theme="light"] .text-slate-300 {
+  color: #1e293b !important;
+}
+
+[data-perfex-theme="light"] .text-slate-400 {
+  color: #475569 !important;
   font-weight: 500;
 }
 
-/* Light Mode Accent Colors with WCAG AAA Contrast on Light Backgrounds */
+[data-perfex-theme="light"] .text-slate-500 {
+  color: #64748b !important;
+}
+
+[data-perfex-theme="light"] .text-slate-600 {
+  color: #94a3b8 !important;
+}
+
+/* 6. Accent Colors for Light Mode (High Legibility Contrast) */
 [data-perfex-theme="light"] .text-cyan-400 {
   color: #0284c7 !important;
 }
@@ -203,10 +203,25 @@ body {
   color: #ea580c !important;
 }
 
-/* Table Headings & Table Rows Contrast */
+/* 7. Action Buttons with Colored Backgrounds in Light Mode */
+[data-perfex-theme="light"] button.bg-cyan-500,
+[data-perfex-theme="light"] a.bg-cyan-500,
+[data-perfex-theme="light"] button.bg-amber-500,
+[data-perfex-theme="light"] button.bg-emerald-500,
+[data-perfex-theme="light"] button.bg-purple-600,
+[data-perfex-theme="light"] button.bg-indigo-600,
+[data-perfex-theme="light"] button.bg-rose-600,
+[data-perfex-theme="light"] button.bg-sky-500,
+[data-perfex-theme="light"] button.bg-teal-500,
+[data-perfex-theme="light"] button.bg-orange-500 {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}
+
+/* 8. Table Styling in Light Mode */
 [data-perfex-theme="light"] table thead {
   background-color: #f1f5f9 !important;
-  border-color: #cbd5e1 !important;
+  border-bottom-color: #cbd5e1 !important;
 }
 
 [data-perfex-theme="light"] table thead th {
@@ -214,8 +229,12 @@ body {
   font-weight: 800;
 }
 
+[data-perfex-theme="light"] table tbody tr {
+  border-bottom-color: #e2e8f0 !important;
+}
+
 [data-perfex-theme="light"] table tbody tr:hover {
-  background-color: #f1f5f9 !important;
+  background-color: #f8fafc !important;
 }
 
 [data-perfex-theme="light"] .border-slate-800,
@@ -225,13 +244,14 @@ body {
   border-color: #e2e8f0 !important;
 }
 
-/* Input Fields in Light Mode */
-[data-perfex-theme="light"] input {
-  background-color: #ffffff !important;
-  color: #0f172a !important;
-  border-color: #cbd5e1 !important;
+/* 9. Modal Overlays in Light Mode */
+[data-perfex-theme="light"] .fixed.inset-0.bg-black\/70 {
+  background-color: rgba(15, 23, 42, 0.5) !important;
 }
 
-[data-perfex-theme="light"] input::placeholder {
-  color: #64748b !important;
+[data-perfex-theme="light"] .fixed .bg-slate-900 {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1) !important;
 }
